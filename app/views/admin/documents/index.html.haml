@@ -1,0 +1,22 @@
+%table
+	%thead
+		%tr
+			%td
+				文件名
+			%td
+				上传人
+			%td
+				上传时间
+			%td
+				文件地址
+	%tbody
+		-@documents.each do |document|
+			%tr
+				%td
+					=document.name
+				%td
+					=document.uploader.name
+				%td
+					=document.created_at
+				%td
+					=link_to document.path,download_admin_document_path(document)

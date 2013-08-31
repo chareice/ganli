@@ -1,0 +1,9 @@
+=form_tag admin_lunches_path,method: :get do
+	按日期
+	=text_field_tag 'date',@query_date
+	=submit_tag "查看"
+%p
+	="日期 #{@query_date}"
+%p
+	="订餐人数 #{@lunches.size}"
+=render(partial: "lunch",collection: @lunches) unless @lunches.empty?

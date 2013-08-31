@@ -1,0 +1,11 @@
+=form_tag  url_for(controller:"admin/articles",action:"index"),method: :get do
+	=label_tag "articles_classification","按分类"
+	=collection_select :post,:post_id,Classification.all,:id,:name,!!params[:classification]?{:selected => params[:classification],prompt: "所有"}:{prompt: "所有"},{id:"articles_classification",name:"classification"}
+	=submit_tag "查看"
+-@articles.each do |article|
+	.article-list.clearfix
+		%h1
+			=article.title
+		.clearfix.article-contro
+			=button_to "删除",{action: "destroy",:id=>article.id},method: :delete,data:{confirm:"确定删除 #{article.title} ?"},class: "button-c"
+			=link_to "<button>修改</button>".html_safe,edit_admin_article_path(article),class: "button-c"

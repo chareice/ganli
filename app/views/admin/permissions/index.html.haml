@@ -1,0 +1,8 @@
+%ul
+	-@permissions.each do |permission|
+		%li
+			=permission.name
+			=permission.describe
+			-permission.permission_actions.each do |action|
+				%p
+					=action.action

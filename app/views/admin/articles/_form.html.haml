@@ -1,0 +1,27 @@
+-content_for :stylesheet do
+	= stylesheet_link_tag "ueditor/themes/default/css/ueditor.css"
+-content_for :javascript do
+	= javascript_include_tag "ueditor/ueditor.config.js"
+	= javascript_include_tag "ueditor/ueditor.all.min.js"
+	%script
+		var editor = new baidu.editor.ui.Editor();
+		editor.render("article_content");
+=form_for [:admin,@article] do |f|
+	%p
+		=f.label :title,"标题"
+		=f.text_field :title
+	%p
+		=f.label :classification_id,"文章分类"
+		=collection_select(:article, :classification_id, Classification.all, :id, :name)
+	%p
+		=f.label :status,"状态"
+		%select{id:"article_status",status:"article[status]"}
+			%option{value:0}
+				上线
+			%option{value:1}
+				下线
+	%p
+		=f.label :content,"内容"
+		=f.text_area :content
+	%p
+		=f.submit "提交"

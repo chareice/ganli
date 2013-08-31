@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id            :integer          not null, primary key
+#  title         :string(255)
+#  navigation_id :integer
+#  content       :text(16777215)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  isModel: false
+  model: MyString
+  context: MyText
+
+two:
+  name: MyString
+  isModel: false
+  model: MyString
+  context: MyText

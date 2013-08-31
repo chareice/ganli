@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: users_groups
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  group_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  group_id: 1
+
+two:
+  user_id: 1
+  group_id: 1

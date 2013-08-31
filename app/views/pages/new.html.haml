@@ -1,0 +1,22 @@
+= form_for @page,url:{action:"create"},html:{class:"pure-form pure-form-stacked"}do |f|
+	%p
+		= f.label :name
+		= f.text_field :name
+	%p
+		%label isModel
+		%input{id:"page_ismodel_yes",name:"page[ismodel]",type:"radio",value:"yes"}
+		yes
+		%input{id:"page_ismodel_no",name:"page[ismodel]",type:"radio",value:"no",checked:"checked"}
+		no
+	%p
+		= f.label :content
+		= f.text_area :content
+
+	%p
+		= f.label :parrent
+		= f.select :parrent,Page.where(parrent:0).collect{|page| [page.name,page.id]}.unshift(['Primary','0'])
+		= f.label :rank
+		= f.text_field :rank
+	%p
+		%button{type:"submit",class:"pure-button pure-button-primary"}
+			Submit

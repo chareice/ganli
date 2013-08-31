@@ -1,0 +1,30 @@
+%table
+	%thead
+		%tr
+			%td
+				文件名
+			%td
+				上传人
+			%td
+				上传时间
+			%td
+				文件地址
+	%tbody
+		%tr
+			%td
+				=@document.name
+			%td
+				=@document.uploader.name
+			%td
+				=@document.created_at
+			%td
+				=link_to @document.path,audit_download_admin_document_path(@document)
+=form_for [:admin,@document] do |f|
+	%p
+		=f.label :status,"审核结果"
+		=f.radio_button :status,"1"
+		通过
+		=f.radio_button :status,"2"
+		拒绝
+	%p
+		=f.submit

@@ -1,0 +1,19 @@
+=link_to "创建新用户组",action: :new
+%table
+	%thead
+		%tr
+			%td
+				用户组ID
+			%td
+				用户组名称
+			%td
+				操作
+	%tbody
+		-@groups.each do |group|
+			%tr
+				%td
+					=group.id
+				%td
+					=group.name
+				%td
+					=link_to "修改",edit_admin_group_path(group)

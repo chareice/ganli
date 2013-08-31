@@ -1,0 +1,8 @@
+-content_for :stylesheet do
+	= stylesheet_link_tag "ueditor/themes/default/css/ueditor.css"
+-content_for :javascript do
+	= javascript_include_tag "ueditor/ueditor.config.js"
+	= javascript_include_tag "ueditor/ueditor.all.min.js"
+	%script
+		var editor = new baidu.editor.ui.Editor();
+		editor.render("#{ueditor_id}");

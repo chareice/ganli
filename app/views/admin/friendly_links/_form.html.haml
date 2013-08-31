@@ -1,0 +1,12 @@
+=form_for [:admin,@friendlylink] do |f|
+	%p
+		=f.label :name,"名称"
+		=f.text_field :name
+	%p
+		=f.label :url,"链接地址"
+		=f.text_field :url
+	%p
+		=f.label :rank,"排序"
+		=f.text_field :rank
+	%p
+		=f.submit "提交"

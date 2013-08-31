@@ -1,0 +1,27 @@
+=link_to "新增用户",action: :new
+%table
+	%thead
+		%tr
+			%td
+				用户ID
+			%td
+				姓名
+			%td
+				Email
+			%td
+				用户组
+			%td
+				操作
+	%tbody
+		-@users.each do |user|
+			%tr
+				%td
+					=user.id
+				%td
+					=user.name
+				%td
+					=user.email
+				%td
+					=user.group.name
+				%td
+					=link_to "修改",edit_admin_user_path(user)

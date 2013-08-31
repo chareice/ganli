@@ -1,0 +1,11 @@
+%tr
+	%td
+		=guest_message.id
+	%td
+		=guest_message.nickname
+	%td
+		=guest_message.content
+	%td
+		=guest_message.ip
+	%td
+		=button_to "删除",{action: "destroy",:id=>guest_message},method: :delete,data:{confirm:"确定删除 #{guest_message.nickname} ?"},class: "button-c"

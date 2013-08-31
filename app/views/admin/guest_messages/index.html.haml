@@ -1,0 +1,34 @@
+=link_to "添加留言",action: :new
+%p
+	留言审核
+-if @audit_guest_messages.empty?
+	无需要审核的留言
+-else
+	%table
+		%tr
+			%th
+				ID
+			%th
+				昵称
+			%th
+				留言
+			%th
+				ip
+			%th
+				操作
+		=render partial: "audit_list",collection: @audit_guest_messages,as: :audit_guest_message
+%p
+	留言列表
+%table
+	%tr
+		%th
+			ID
+		%th
+			昵称
+		%th
+			留言
+		%th
+			ip
+		%th
+			操作
+	=render partial: "guest_message",collection: @guest_messages

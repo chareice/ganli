@@ -1,0 +1,2 @@
+module Bbs::BbsHelper
+end

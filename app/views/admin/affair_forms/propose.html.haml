@@ -1,0 +1,5 @@
+-unless @instances.empty?
+	-@instances.each do |instance|
+		=link_to instance.title, admin_affair_form_instance_path(instance)
+-else
+	你还没有提交过内务申请

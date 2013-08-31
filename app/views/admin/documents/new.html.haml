@@ -1,0 +1,9 @@
+=form_for [:admin,@document] do |f|
+	%p
+		=f.label :name,"资料名"
+		=f.text_field :name
+	%p
+		=f.label :path,"文件"
+		=f.file_field :path
+	%p
+		=f.submit "提交"

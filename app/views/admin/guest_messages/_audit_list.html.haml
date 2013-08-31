@@ -1,0 +1,12 @@
+%tr
+	%td
+		=audit_guest_message.id
+	%td
+		=audit_guest_message.nickname
+	%td
+		=audit_guest_message.content
+	%td
+		=audit_guest_message.ip
+	%td
+		=link_to "<button>审核</button>".html_safe,edit_admin_guest_message_path(audit_guest_message)
+		=button_to "删除",{action: "destroy",:id=>audit_guest_message},method: :delete,data:{confirm:"确定删除 #{audit_guest_message.nickname} ?"},class: "button-c"

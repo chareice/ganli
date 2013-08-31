@@ -1,0 +1,2 @@
+module Admin::GuestMessagesHelper
+end

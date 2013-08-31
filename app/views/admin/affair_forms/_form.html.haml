@@ -1,0 +1,25 @@
+-@all_audit_group = Group.includes(:permissions).where(permissions:{id:7}).to_a
+-@audit_group = @affair_form.audit_process.map{|x| Group.find x} if @affair_form.audit_process
+-@audit_group = [] unless @audit_group
+=form_for [:admin,@affair_form] do |f|
+	%p
+		=f.label :title,"申请表头"
+		=f.text_field :title
+	%p
+		=f.label :form,"申请表"
+		=f.text_area :form
+	.audit-process-contro
+		=label_tag "exist-group","可审核组"
+		%select{id:"exist-group",multiple:"multiple"}
+			-(@all_audit_group-@audit_group).each do |group|
+				%option{value:"#{group.id}"}
+					=group.name
+		%button.add >>
+		%button.remove <<
+		=label_tag "affair_form_audit_process","该表单审核组"
+		%select{id:"affair_form_audit_process",name:"affair_form[audit_process][]",multiple:"multiple"}
+			-@audit_group.each do |group|
+				%option{value:"#{group.id}"}
+					=group.name
+	%p
+		=f.submit

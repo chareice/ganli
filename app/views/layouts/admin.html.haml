@@ -1,0 +1,16 @@
+!!!
+%html{:lang=>"zh_cn"}
+	%head	
+		%meta{:charset => "utf-8"}
+		= stylesheet_link_tag "admin/base.css"
+		= stylesheet_link_tag controller_path
+		= javascript_include_tag "vendor/custom.modernizr"
+		= yield :stylesheet
+		%title 甘李后台管理
+	%body.layout
+		%aside#main-aside
+			= render "layouts/admin/menu"
+		%section#main-admin-panel
+			= yield
+		= javascript_include_tag "admin/base.js"
+		= yield :javascript

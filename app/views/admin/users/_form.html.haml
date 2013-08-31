@@ -1,0 +1,15 @@
+=form_for [:admin,@user] do |f|
+	%p
+		=f.label :name,"姓名"
+		=f.text_field :name
+	%p
+		=f.label :email
+		=f.text_field :email
+	%p
+		=f.label :group,"用户组"
+		-if @user.id
+			=collection_select :user,:group,Group.all,:id,:name,{selected: @user.group.id}
+		-else
+			=collection_select :user,:group,Group.all,:id,:name
+	%p
+		=f.submit "修改用户"

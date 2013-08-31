@@ -1,0 +1,9 @@
+%h2=@topic.title
+%p=@topic.content
+-if @replies.empty?
+	"还没有人回复"
+-else
+	=render partial: "/bbs/replies/reply",collection:@replies
+=form_for Reply.new,url: bbs_topic_replies_path(@topic) do |f|
+	=f.text_area :content
+	=f.submit "回复主题"

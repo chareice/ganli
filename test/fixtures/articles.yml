@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id                :integer          not null, primary key
+#  title             :string(255)
+#  content           :text(16777215)
+#  classification_id :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  classification_id: 1
+
+two:
+  title: MyString
+  content: MyText
+  classification_id: 1

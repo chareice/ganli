@@ -1,0 +1,11 @@
+=link_to "新增导航",new_admin_navigation_path
+%ul
+	-@top_navs.each do |top_nav|
+		%li
+			=top_nav.name
+			=link_to "修改",edit_admin_navigation_path(top_nav)
+			%ul
+				-top_nav.subs.each do |nav|
+					%li
+						=nav.name
+						=link_to "修改",edit_admin_navigation_path(nav)

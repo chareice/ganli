@@ -1,0 +1,4 @@
+-unless Lunch.scheduled? current_user
+	=button_to Lunch.lunch_date.strftime("预定%Y-%m-%d的午餐"),admin_lunches_path
+-else
+	=Lunch.lunch_date.strftime("已经预订了%Y-%m-%d的午餐")

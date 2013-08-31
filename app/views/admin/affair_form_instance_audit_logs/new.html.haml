@@ -1,0 +1,16 @@
+%h4
+	=@instance.title
+=@instance.form.html_safe
+=form_for [:admin,@log] do |f|
+	%input{type:"hidden",value:@instance.id,name:"instance"}
+	%p
+		=f.label :status,"审核结果"
+		=f.radio_button :status,"0"
+		通过
+		=f.radio_button :status,"1"
+		拒绝
+	%p
+		=f.label :remark,"审核信息"
+		=f.text_area :remark
+	%p
+		=f.submit

@@ -1,0 +1,40 @@
+@import 'pure/menus';
+@import 'compass/reset';
+@import 'compass/utilities';
+@import 'foundation';
+$admin_menu_width:200px;
+
+$table-bg: #000;
+$table-border-style: solid;
+$table-border-size: 2px;
+$table-border-color: #ddd;
+
+table{
+    td{
+        border: 1px #ccc solid;
+    }
+}
+.clearfix{
+    @include clearfix;
+}
+.layout{
+    padding-left: $admin_menu_width;
+}
+#main-aside{
+	width: $admin_menu_width;
+    bottom: 0px;
+    overflow-y:auto;
+    overflow-x: hidden;
+    margin-left: -$admin_menu_width;
+    position:fixed;
+    top: 0;
+}
+#admin_menu{
+    color: #fff;
+}
+#main-admin-panel{
+    padding: 0 20px;
+}
+.pure-menu-selected {
+    background: #ccc;
+}

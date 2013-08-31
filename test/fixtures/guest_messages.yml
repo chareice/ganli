@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: guest_messages
+#
+#  id         :integer          not null, primary key
+#  status     :integer
+#  nickname   :string(255)
+#  content    :text
+#  ip         :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  status: 1
+  nickname: MyString
+  content: MyText
+  ip: MyString
+
+two:
+  status: 1
+  nickname: MyString
+  content: MyText
+  ip: MyString

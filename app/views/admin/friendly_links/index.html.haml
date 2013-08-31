@@ -1,0 +1,18 @@
+=link_to "新增友情链接",action: :new
+-if @friendly_links.empty?
+	%p
+		还没有友情链接
+-else
+	%table
+		%tr
+			%th
+				ID
+			%th
+				名称
+			%th
+				链接地址
+			%th
+				排序
+			%th
+				操作
+		=render partial: :friendly_link,collection: @friendly_links

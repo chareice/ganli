@@ -1,0 +1,3 @@
+=link_to "创建新表单",action: :new
+-@affair_forms.each do |affair_form|
+	=link_to affair_form.title,edit_admin_affair_form_path(affair_form)

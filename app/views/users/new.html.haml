@@ -1,0 +1,10 @@
+=form_for @user do |f|
+	%p
+		=f.label :email
+		=f.email_field :email
+	%p
+		=f.label :name,"姓名"
+		=f.text_field :name
+	%p
+		=f.label :password,"密码"
+		=f.password_field :password

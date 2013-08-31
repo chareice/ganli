@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: affair_forms
+#
+#  id            :integer          not null, primary key
+#  title         :string(255)
+#  form          :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#  audit_process :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  form: MyText
+
+two:
+  title: MyString
+  form: MyText

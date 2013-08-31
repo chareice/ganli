@@ -1,0 +1,21 @@
+%ul{id:"admin_menu"}
+	-AdminMenu.all.each do |menu|
+		-unless (menu.permissions & current_user.group.permissions).empty?
+			%li{class: "pure-menu pure-menu-open"}
+				%span{class: "pure-menu-heading"}=menu.name
+				%ul
+					-menu.permissions.each do |permission|
+						-if current_user.is_allow_permission permission
+							-menu_permission = AdminMenuPermission.where(admin_menu_id: menu,permission_id: permission).take
+							-link_name = permission.name
+							-if menu_permission.url
+								-link_url = "#{menu_permission.url}"
+							-else
+								-link = permission.menu_link
+								-link_url = {controller: link[0],action: link[1]}
+							-if current_page? link_url
+								%li{class: "pure-menu-selected "}
+									=link_to link_name,"#"
+							-else
+								%li
+									=link_to link_name,link_url

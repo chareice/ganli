@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: lunches
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  teacher    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2013-08-26
+  teacher: 1
+
+two:
+  date: 2013-08-26
+  teacher: 1

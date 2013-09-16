@@ -17,8 +17,8 @@ class Admin::ArticlesController < Admin::BaseController
 		article.flag = params[:article][:flag]
 		article.author = current_user
 		if params[:article][:thumb]
-			path = Document.save_file params[:article][:thumb],"app/assets/images/article"
-			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+			path = Document.save_file(params[:article][:thumb],"public/assets/article").gsub(Rails.root.to_s,"")
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("public/assets/",""))
 			article.thumb = asset_path
 		end
 
@@ -46,7 +46,7 @@ class Admin::ArticlesController < Admin::BaseController
 		end
 
 		if params[:article][:thumb]
-			path = Document.save_file params[:article][:thumb],"app/assets/images/article"
+			path = Document.save_file(params[:article][:thumb],"app/assets/images/article").gsub(Rails.root.to_s,"")
 			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
 			@article.thumb = asset_path
 		end

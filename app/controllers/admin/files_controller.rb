@@ -2,8 +2,8 @@ class Admin::FilesController < Admin::BaseController
 	skip_before_filter :verify_authenticity_token,:authenticate
 
 	def imageup
-		path = Document.save_file params[:imgFile],"app/assets/images/article"
-		asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+		path = Document.save_file(params[:imgFile],"public/assets/article").gsub(Rails.root.to_s,"")
+		asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("public/assets/",""))
 		render json: {url:asset_path,error: 0}
 	end
 

@@ -20,14 +20,14 @@ Ganli::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -77,4 +77,14 @@ Ganli::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.cache_store = [:dalli_store,"127.0.0.1", {:namespace => "ganli", :compression => true}]
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.live.com",
+    :port                 => 587,
+    :user_name            => 'chareice@live.com',
+    :password             =>  'aa362325',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
 end

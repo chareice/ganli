@@ -22,7 +22,7 @@ class Document < ActiveRecord::Base
 		path = File.join file_dir,filename
 		FileUtils.mkdir_p(file_dir) unless File.exists? file_dir
 
-		cope_file(upload_file.tempfile,path).gsub(Rails.root.to_s,"")
+		cope_file(upload_file.tempfile,path)
 	end
 
 	def self.cope_file(o,t)

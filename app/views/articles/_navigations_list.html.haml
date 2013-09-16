@@ -1,0 +1,10 @@
+-if @classification
+	-top_nav = @classification.navigation.tops_nav
+	.classifications-list-c
+		.header
+			%span=top_nav.name
+		%ul
+			-top_nav.subs.each do |nav|
+				%li
+					=link_to nav.name,nav.link_url
+	

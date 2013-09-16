@@ -1,5 +1,9 @@
 .primary-nav
-	%ul
+	%ul.top_navs
 		-Navigation.top_nav.each do |nav|
-			%li
+			%li.top_nav{class: ("current" if request.env['PATH_INFO'] == nav.link_url )}
 				=link_to nav.name,nav.link_url
+				-unless nav.subs.empty?
+					%ul.sub_navs
+						-nav.subs.each do |n|
+							%li.sub_nav=link_to n.name,n.link_url

@@ -17,19 +17,21 @@ module PagesHelper
 		a = action_name
 
 		if c == 'articles'
-			s << " << #{link_to "新闻公告",articles_path}".html_safe
+			top_nav = @classification.navigation.tops_nav
+
+			s << " >> #{link_to top_nav.name,top_nav.link_url}".html_safe
 			if a == 'classification'
-				s << " << #{link_to classification_name(params[:id]),classification_path(params[:id])}".html_safe
+				s << " >> #{link_to classification_name(params[:id]),classification_path(params[:id])}".html_safe
 			elsif a == 'show'
 				classification_id = @article.classification.id
-				s << " << #{link_to classification_name(classification_id),classification_path(classification_id)} << 正文".html_safe
+				s << " >> #{link_to classification_name(classification_id),classification_path(classification_id)} >> 正文".html_safe
 			end
 		elsif c == 'pages'
 			if a == 'show'
 				if @page.navigation.is_top_nav?
-					s << " << #{@page.navigation.name}"
+					s << " >> #{@page.navigation.name}"
 				else
-					s << "<< #{link_to @page.navigation.nav.name,page_path(@page.navigation.nav.page)} << #{@page.navigation.name}".html_safe
+					s << " >> #{link_to @page.navigation.nav.name,page_path(@page.navigation.nav.page)} >> #{@page.navigation.name}".html_safe
 				end
 			end
 		end

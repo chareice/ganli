@@ -20,6 +20,13 @@ class Admin::PagesController < Admin::BaseController
 	end
 
 	def update
+		page = Page.find params[:id]
+
+		page.title = params[:page][:title]
+		page.content = params[:page][:content]
+		page.save
+
+		redirect_to edit_admin_page_path(page),flash:{notice: "修改成功"}
 	end
 
 	private

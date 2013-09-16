@@ -21,11 +21,13 @@ class Admin::NavigationsController < Admin::BaseController
 		nav = Navigation.find params[:id]
 		nav.name = params[:navigation][:name]
 		nav.url = params[:navigation][:url]
-		nav.nav_id = params[:navigation][:nav_id]
+		if params[:navigation][:nav_id]
+			nav.nav_id = params[:navigation][:nav_id]
+		end
 		nav.rank = params[:navigation][:rank]
 
 		nav.save
-		redirect_to edit_admin_navigation_path(nav),flash:{notice: "修改成功"}
+		redirect_to admin_navigations_path,flash:{notice: "修改成功"}
 	end
 
 	def destroy

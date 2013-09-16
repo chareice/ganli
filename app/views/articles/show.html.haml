@@ -1,6 +1,7 @@
 .show-page.main-page
   .left-c
-    =render 'classifications_list'
+    -#=render 'classifications_list'
+    =render 'navigations_list'
     =render partial: '/pages/ganli_box_articles',locals:{classification: @article.classification.id}
   .right-c
     .row.article

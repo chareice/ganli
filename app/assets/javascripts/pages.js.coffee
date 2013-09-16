@@ -1,6 +1,11 @@
 $(".go_register").click ->
 	location.href = '/register'
 	return false
+$(".primary-nav .top_nav").hover(
+		(e)-> $(this).addClass("active")
+		(e)-> $(this).removeClass("active")
+	)
+
 $(".image-show-header ul li:first").addClass("active")
 $(".image-show-article-c:first").addClass("active")
 $(".image-show-header ul li").hover (e)->

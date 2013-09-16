@@ -42,7 +42,11 @@ class Navigation < ActiveRecord::Base
 				"#"
 			end
 		else
-			url
+			if url =~ /[0-9]/
+				Rails.application.routes.url_helpers.classification_path(url)
+			else
+				url
+			end
 		end
 	end
 =begin

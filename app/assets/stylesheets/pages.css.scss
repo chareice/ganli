@@ -1,5 +1,4 @@
 @import 'compass/reset';
-@import 'compass/utilities';
 @import 'pagination';
 
 $full-width: 1005px;
@@ -8,6 +7,21 @@ $asset-prefix: "style";
 @mixin center{
 	width: $full-width;
 	margin: 0 auto;
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
 }
 @function image($file){
 	@return url(#{$asset-prefix}/#{$file});
@@ -161,10 +175,19 @@ $asset-prefix: "style";
 			background: image("header.jpg"); 
 		}
 		.primary-nav{
-			ul{
+			@include clearfix;
+			.top_navs{
 				@include clearfix;
 				background:image("top-nav.jpg");
-				li{
+				z-index: 999;
+				.active{
+					.sub_navs{
+						display: block !important;
+					}
+				}
+				.top_nav{
+					z-index: 999;
+					position: relative;
 					width: 100.5px;
 					height: 36px;
 					line-height: 36px;
@@ -180,7 +203,32 @@ $asset-prefix: "style";
 						color: #fff;
 						&:hover{
 							text-decoration: none;
-							color: #feab21;
+							color: #147954;
+						}
+					}
+					.sub_navs{
+						display: none;
+						position: absolute;
+						width: 100%;
+						margin: 0 auto;
+						z-index: 999;
+						background: #21ae00;
+						top: 36px;
+						left: 0px;
+						_left:1px; 
+/*						left: 1.5px;
+						_left:1px; 
+ 						border: 1px #409e01 solid;
+						border-top: none;
+						border-bottom: none; */
+						.sub_nav{
+							border-bottom: 1px #409e01 solid;
+							a{
+								color: #fff;
+								&:hover{
+									color:#147954;
+								}
+							}
 						}
 					}
 				}
@@ -234,10 +282,24 @@ $asset-prefix: "style";
 					cursor: pointer;
 				}
 			}
-
+			.flash-c{
+				float: left;
+				border: #26b100 solid 1px;
+				width: 236px;
+				margin-bottom: 10px;
+				#main-flash{
+					margin: 4px auto;
+					img{
+						width: 230px;
+						height: 210px;
+					}
+				}
+			}
 			.left-navs-c{
+				clear: both;
 				width: 238px;
 				padding-bottom: 15px;
+				margin-bottom: 10px;
 				background: image("left-nav-footer-bg.jpg") bottom no-repeat;
 				.header{
 					height: 18px;
@@ -250,7 +312,6 @@ $asset-prefix: "style";
 						height: 59px;
 						width: 236px;
 						border-bottom: 1px dashed #61ab32;
-						
 						@include clearfix;
 						figure{
 							margin-top: 5px;
@@ -283,16 +344,6 @@ $asset-prefix: "style";
 			}
 			float: right;
 			width: 750px;
-			.flash-c{
-				float: left;
-				width: 311px;
-				height: 217px;
-				border: #26b100 solid 1px;
-				#main-flash{
-					margin: 0 auto;
-					margin-top: 8px;
-				}
-			}
 			.news-2{
 				float: right;
 				width: 425px;
@@ -307,9 +358,9 @@ $asset-prefix: "style";
 			}
 			.news-1{
 				float: left;
-				width: 241px;
-				height: 220px;
-				background: image("news-block.jpg");
+				width: 365px;
+				height: 222px;
+				background: image("news-1-bg.jpg");
 				margin-right: 9px;
 				a{
 					color: #666;

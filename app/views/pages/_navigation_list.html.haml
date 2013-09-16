@@ -6,4 +6,5 @@
     -subs = top_nav.subs.to_a
     -lists = subs.insert(0,top_nav)
     -lists.each do |nav|
-      %li=link_to nav.name,nav.link_url 
+      %li
+        =link_to nav.name,nav.link_url 

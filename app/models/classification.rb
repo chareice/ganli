@@ -10,4 +10,6 @@
 
 class Classification < ActiveRecord::Base
 	has_many :article,dependent: :destroy
+
+	has_one :navigation,foreign_key: "url"
 end

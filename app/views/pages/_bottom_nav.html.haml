@@ -1,0 +1,10 @@
+.bottom_nav_c
+  .bottom_nav
+    %ul.top_navs
+      -top_navs = Navigation.top_nav
+      -top_navs[1..top_navs.count].each do |top_nav|
+        %li.top_nav
+          .header=link_to "【#{top_nav.name}】",top_nav.link_url
+          %ul.sub_navs
+            -top_nav.subs.each do |sub|
+              %li.sub_nav=link_to sub.name,sub.link_url

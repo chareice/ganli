@@ -4,5 +4,11 @@
     %meta{:charset => "utf-8"}
     = stylesheet_link_tag "bbs/bbs.css"
     %title 甘李论坛
+    = yield :stylesheet
   %body
+    =render "/layouts/message"
+    .header-menu
+      =render '/bbs/header_menu'
     =yield
+    = javascript_include_tag "bbs/bbs.js"
+    = yield :javascript

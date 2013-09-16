@@ -1,4 +1,5 @@
-=link_to "新增友情链接",action: :new
+-content_for :actions_button do
+	=link_to "新增友情链接",{action: :new},class: "tiny secondary button"
 -if @friendly_links.empty?
 	%p
 		还没有友情链接

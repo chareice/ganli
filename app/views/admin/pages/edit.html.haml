@@ -1,0 +1,13 @@
+=render partial: "/admin/ueditor/admin",locals:{ueditor_id: "page_content"}
+=form_for [:admin,@page] do |f|
+	%p
+		=f.label :navigation_id,"所属页面"
+		=link_to @page.navigation.name,edit_admin_navigation_path(@page.navigation)
+	%p
+		=f.label :title,"页面标题"
+		=f.text_field :title
+	%p
+		=f.label :content,"页面内容"
+		=f.text_area :content
+	%p
+		=button_tag "创建页面"

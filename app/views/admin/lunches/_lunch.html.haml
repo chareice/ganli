@@ -1,1 +1,5 @@
-=lunch.teacher.name
+%tr
+	%td
+		=lunch.teacher.name
+	%td
+		=lunch.created_at.localtime.to_s(:db)

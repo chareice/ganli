@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 	def index
+		@row_one_news = Article.public.limit(8)
 	end
 
 	def new
@@ -7,7 +8,9 @@ class PagesController < ApplicationController
 	end
 
 	def show
+		@page = Page.find params[:id]
 	end
+
 	def create
 		@page = Page.new
 		@page.name = params['page']['name']

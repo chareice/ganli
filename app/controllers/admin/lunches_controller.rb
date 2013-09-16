@@ -2,6 +2,11 @@ class Admin::LunchesController < Admin::BaseController
 	def index
 		@query_date = params[:date] || Lunch.lunch_date.to_date
 		@lunches = Lunch.where(date:@query_date)
+
+		respond_to do |format|
+			format.html
+			format.xls
+		end
 	end
 
 	def new

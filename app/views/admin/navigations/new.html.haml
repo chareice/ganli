@@ -1,1 +1,15 @@
-=render 'form'
+=form_for [:admin,@nav] do |f|
+	%p
+		=f.label :name,"导航名称"
+		=f.text_field :name
+	%p
+		=f.label :url,"链接地址"
+		=f.text_field :url
+	%p
+		=f.label :nav_id,"所属分类"
+		=collection_select(:navigation, :nav_id, Navigation.top_nav, :id, :name,f.object.nav ? {prompt: "一级导航",selected: f.object.nav.id}:{prompt: "一级导航"})
+	%p
+		=f.label :rank,"排序"
+		=f.text_field :rank
+	%p
+		=f.submit

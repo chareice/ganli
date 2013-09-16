@@ -45,6 +45,9 @@ class Admin::GuestMessagesController < Admin::BaseController
 	end
 
 	def destroy
-		
+		@guest_message = GuestMessage.find params[:id]
+		@guest_message.destroy
+
+		redirect_to admin_guest_messages_path,flash: {notice: "删除成功"}
 	end
 end

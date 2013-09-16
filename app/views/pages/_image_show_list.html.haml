@@ -1,0 +1,7 @@
+%div{id: "image-show-#{classification}",class: "image-show-article-c"}
+  -articles = get_classification_articles(classification)
+  -articles.each do |article|
+    .article
+      %figure
+        =link_to image_tag(article.thumb),article_path(article),target: "_blank"
+        %figcaption=link_to article.title,article_path(article),target: "_blank"

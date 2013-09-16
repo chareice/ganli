@@ -8,5 +8,5 @@
 	%td
 		=friendly_link.rank
 	%td
-		=link_to "<button>修改</button>".html_safe,edit_admin_friendly_link_path(friendly_link)
-		=button_to "删除",{action: "destroy",:id=>friendly_link},method: :delete,data:{confirm:"确定删除 #{friendly_link.name} ?"},class: "button-c"
+		=link_to "<button class='tiny button secondary'>修改</button>".html_safe,edit_admin_friendly_link_path(friendly_link)
+		=button_to "删除",{action: "destroy",:id=>friendly_link},method: :delete,data:{confirm:"确定删除 #{friendly_link.name} ?"},class: "tiny button alert"

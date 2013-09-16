@@ -1,0 +1,16 @@
+.article-list-page.main-page
+  .left-c
+    =render 'classifications_list'
+    =render '/pages/left_navs'
+  .right-c
+    .row
+      .location=location
+      .article-list-c
+        .header
+        .article-list
+          -if @articles.empty?
+            该分类下没有文章
+          -else
+            =render partial: "article",collection: @articles
+            =will_paginate @articles
+        .footer

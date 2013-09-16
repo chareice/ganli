@@ -1,20 +1,20 @@
+=render partial: "/admin/delete_button",locals: {name: "删除本次申请"}
 %h4
 	=@instance.title
 =@instance.form.html_safe
 %p="审核状态: " << @instance.current_status_to_s
-%h6 审核日志
 -unless @instance.logs.empty?
 	%table
+		%caption
+			审核日志
 		%tr
 			%td 审核人
 			%td 审核时间
 			%td 审核结果
 			%td 审核备注
-		%tr
-			-@instance.logs.each do |log|
+		-@instance.logs.each do |log|
+			%tr
 				%td=User.find(log.approver).name
 				%td=log.created_at.to_date
 				%td=(log.status == 0) ? "通过" : "不通过"
 				%td=log.remark
-%p
-	=button_to "删除本次申请",{action: :destroy},method: :delete

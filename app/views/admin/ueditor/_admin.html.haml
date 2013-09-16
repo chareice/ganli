@@ -1,8 +1,11 @@
--content_for :stylesheet do
-	= stylesheet_link_tag "ueditor/themes/default/css/ueditor.css"
+-# -content_for :stylesheet do
+-# 	= stylesheet_link_tag "ueditor/themes/default/css/ueditor.css"
+-# -content_for :javascript do
+-# 	= javascript_include_tag "ueditor/ueditor.config.js"
+-# 	= javascript_include_tag "ueditor/ueditor.all.min.js"
+-# 	%script
+-# 		$(document).ready(function(){var editor = new baidu.editor.ui.Editor();editor.render("#{ueditor_id}");editor.setHeight(362);})
 -content_for :javascript do
-	= javascript_include_tag "ueditor/ueditor.config.js"
-	= javascript_include_tag "ueditor/ueditor.all.min.js"
+	= javascript_include_tag "/assets/kindeditor/kindeditor.js"
 	%script
-		var editor = new baidu.editor.ui.Editor();
-		editor.render("#{ueditor_id}");
+		KindEditor.ready(function(K) {window.editor = K.create('textarea');});

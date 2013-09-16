@@ -1,0 +1,8 @@
+.classifications-list-c
+  .header
+    %span 文章分类
+  %ul
+    -classifications = Classification.all
+    -classifications.each do |classification|
+      %li
+        =link_to classification.name,classification_path(classification)

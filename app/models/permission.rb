@@ -23,4 +23,5 @@ class Permission < ActiveRecord::Base
 			end
 		end
 	end
+
 end

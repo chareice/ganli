@@ -1,16 +1,31 @@
 %h4
 	=@instance.title
 =@instance.form.html_safe
+-unless @instance.logs.empty?
+	%table
+		%caption
+			审核日志
+		%tr
+			%td 审核人
+			%td 审核时间
+			%td 审核结果
+			%td 审核备注
+		-@instance.logs.each do |log|
+			%tr
+				%td=User.find(log.approver).name
+				%td=log.created_at.to_date
+				%td=(log.status == 0) ? "通过" : "不通过"
+				%td=log.remark
 =form_for [:admin,@log] do |f|
 	%input{type:"hidden",value:@instance.id,name:"instance"}
 	%p
 		=f.label :status,"审核结果"
-		=f.radio_button :status,"0"
+		=f.radio_button :status,"0",checked: true
 		通过
 		=f.radio_button :status,"1"
 		拒绝
 	%p
 		=f.label :remark,"审核信息"
-		=f.text_area :remark
+		=f.text_field :remark
 	%p
-		=f.submit
+		=f.submit "提交审核结果"

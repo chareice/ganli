@@ -1,0 +1,10 @@
+-if flash[:error]
+	.notice-message.alert-box.small.alert
+		%p.error=flash[:error]
+		%a{href: "#",class: "close"}
+			&times;
+-if flash[:notice]
+	.notice-message.alert-box.small.success
+		%p.notice=flash[:notice]
+		%a{href: "#",class: "close"}
+			&times;

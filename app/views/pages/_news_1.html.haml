@@ -1,0 +1,7 @@
+-news = get_classification_articles(classification)
+.news-list-c
+  .list-header
+    %span=list_header(classification)
+    .more=link_to "更多",classification_path(classification),target: "_blank"
+  %ul{class: "news-list"}
+    =render partial: "news",collection: news,locals:{truncate: 15}

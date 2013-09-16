@@ -1,3 +1,5 @@
+-content_for :actions_button do
+	=link_to "导出xls格式",admin_lunches_path(format: :xls,date: params[:date]),class: "success tiny button"
 =form_tag admin_lunches_path,method: :get do
 	按日期
 	=text_field_tag 'date',@query_date
@@ -6,4 +8,11 @@
 	="日期 #{@query_date}"
 %p
 	="订餐人数 #{@lunches.size}"
-=render(partial: "lunch",collection: @lunches) unless @lunches.empty?
+-unless @lunches.empty?
+	%table
+		%tr
+			%td
+				姓名
+			%td
+				订餐时间
+		=render(partial: "lunch",collection: @lunches)

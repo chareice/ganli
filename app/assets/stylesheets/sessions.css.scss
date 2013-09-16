@@ -1,3 +1,63 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'compass/reset';
+.ganli-login-page{
+	.close{
+		display: none;
+	}
+	.header-c{
+		height: 99px;
+		background: #0f5e02;
+		.header{
+			height: 99px;
+			width: 923px;
+			margin: 0 auto;
+			background: url(/assets/style/admin-login-header-welcome.jpg);
+		}
+	}
+	.body-c{
+		height:540px;
+		background: url(/assets/style/admin-login-bg.jpg);
+		.body{
+			position: relative;
+			height: 540px;
+			width: 923px;
+			margin: 0 auto;
+			background: url(/assets/style/admin-login-form.jpg);
+			.alert{
+				position: absolute;
+				background: #ccc;
+				top: 90px;
+				left: 365px;
+			}
+			#email{
+				width: 228px;
+				height: 33px;
+				position: absolute;
+				left: 461px;
+				top: 232px;
+			}
+			#password{
+				width: 228px;
+				height: 33px;
+				position: absolute;
+				left: 461px;
+				top: 282px;
+			}
+			button{
+				background: url(/assets/style/admin-login-button-bg.jpg);
+				height: 40px;
+				width: 135px;
+				border: none;
+				font-size: 14px;
+				color: #666;
+				position: absolute;
+				cursor: pointer;
+				left: 490px;
+				top: 340px;
+			}
+		}
+	}
+	.footer-c{
+		height: 99px;
+		background: #0f5e02;
+	}
+}

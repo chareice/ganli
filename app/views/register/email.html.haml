@@ -1,0 +1,9 @@
+.register
+	=form_tag email_validate_path,class: "get_validate_form" do
+		%p
+			=label_tag :email,"请输入您的邮箱号码"
+			=email_field_tag :email
+		%p
+			=render "/captcha/captcha"
+		%p
+			=submit_tag "提交",disable_with: "处理中...请勿关闭页面！"

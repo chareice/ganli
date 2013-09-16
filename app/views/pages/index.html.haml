@@ -1,1 +1,25 @@
-%strong hello world
+.main-page
+  .left-c
+    -unless current_user
+      %div{id:"login-c"}
+        =render 'primary_login_form'
+    -else
+      =render 'welcome'
+    =render 'left_navs'
+  .right-c
+    .row
+      .flash-c
+        =render 'main_flash'
+      .news-2
+        =render partial: 'news_2'
+    .row.news-1-c
+      .news-1
+        =render partial: 'news_1',locals:{classification: 1}
+      .news-1
+        =render partial: 'news_1',locals:{classification: 2}
+      .news-1
+    .row
+      .image-show-c
+        =render partial: 'image_show',locals:{classifications:[3,4]}
+    .row
+      =render 'bottom_nav'

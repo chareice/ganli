@@ -1,4 +1,5 @@
-=link_to "添加留言",action: :new
+-content_for :actions_button do
+	=link_to "添加留言",{action: :new},class: "tiny secondary button"
 %p
 	留言审核
 -if @audit_guest_messages.empty?
@@ -6,29 +7,33 @@
 -else
 	%table
 		%tr
-			%th
+			%td
 				ID
-			%th
+			%td
 				昵称
-			%th
+			%td
 				留言
-			%th
+			%td
+				发布时间
+			%td
 				ip
-			%th
+			%td
 				操作
 		=render partial: "audit_list",collection: @audit_guest_messages,as: :audit_guest_message
 %p
 	留言列表
 %table
 	%tr
-		%th
+		%td
 			ID
-		%th
+		%td
 			昵称
-		%th
+		%td
 			留言
-		%th
+		%td
+			发布时间
+		%td
 			ip
-		%th
+		%td
 			操作
 	=render partial: "guest_message",collection: @guest_messages

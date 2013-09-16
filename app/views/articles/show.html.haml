@@ -1,0 +1,15 @@
+.show-page.main-page
+  .left-c
+    =render 'classifications_list'
+    =render partial: '/pages/ganli_box_articles',locals:{classification: @article.classification.id}
+  .right-c
+    .row.article
+      .location=location
+      .header
+        .title=@article.title
+        .infos
+          %span{class: "created_time"}
+            ="发布时间：#{@article.created_at.localtime.to_s(:db)}"
+          %span{class: "author"}
+            ="发布人：#{@article.author.name}"
+      .content=@article.content.html_safe

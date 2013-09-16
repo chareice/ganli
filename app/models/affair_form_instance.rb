@@ -17,7 +17,7 @@ class AffairFormInstance < ActiveRecord::Base
 	serialize :audit_process
 	belongs_to :affair_form
 	belongs_to :proposer,foreign_key:"proposer",class_name:"User"
-	has_many :logs,foreign_key: "instance_id",class_name:"AffairFormInstanceAuditLog"
+	has_many :logs,foreign_key: "instance_id",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
 
 	scope :audit_by_group,->(group){
 		where("audit_process like ? AND status = ?","%'#{group.id}'%",0).select{|instance|

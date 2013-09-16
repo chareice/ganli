@@ -3,14 +3,25 @@
 	%head	
 		%meta{:charset => "utf-8"}
 		= stylesheet_link_tag "admin/base.css"
-		= stylesheet_link_tag controller_path
+		-unless controller_path == 'admin/admin'
+			= stylesheet_link_tag controller_path
 		= javascript_include_tag "vendor/custom.modernizr"
 		= yield :stylesheet
+		= csrf_meta_tag
+		
+		/[if lt IE 9]
+			= javascript_include_tag "html5shiv/dist/html5shiv.js"
 		%title 甘李后台管理
 	%body.layout
 		%aside#main-aside
 			= render "layouts/admin/menu"
 		%section#main-admin-panel
-			= yield
+			-unless controller_path == 'admin/admin'
+				= render "/admin/permission_header"
+			.main-admin-c
+				= render "/layouts/message"
+				= yield
 		= javascript_include_tag "admin/base.js"
+		-unless controller_path == 'admin/admin'
+			= javascript_include_tag controller_path
 		= yield :javascript

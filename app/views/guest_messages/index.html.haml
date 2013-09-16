@@ -1,0 +1,8 @@
+.guest-message-page
+  %table
+    %tr
+      %td 昵称
+      %td 留言
+      %td ip
+    =render partial:'guest_message',collection: @guest_messages
+    =link_to "我要留言",new_guest_message_path

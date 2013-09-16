@@ -1,2 +1,3 @@
-=link_to "发表帖子",new_bbs_topic_path
-=render partial: "topic",collection: @topics
+.topices
+	=render partial: "topic",collection: @topics
+	=will_paginate @topics

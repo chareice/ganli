@@ -1,4 +1,5 @@
-=link_to "新增导航",new_admin_navigation_path
+-content_for :actions_button do
+	=link_to "新增导航",new_admin_navigation_path,class: "tiny secondary button"
 %ul
 	-@top_navs.each do |top_nav|
 		%li

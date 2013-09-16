@@ -22,9 +22,9 @@
 =form_for [:admin,@document] do |f|
 	%p
 		=f.label :status,"审核结果"
-		=f.radio_button :status,"1"
+		=f.radio_button :status,"1",checked: true
 		通过
 		=f.radio_button :status,"2"
 		拒绝
 	%p
-		=f.submit
+		=f.submit "提交审核结果"

@@ -1,1 +1,19 @@
-=render 'form'
+=render partial: '/admin/delete_button',locals:{name: "删除该用户",confirm:"确定删除用户#{@user.name}？"}
+=form_for [:admin,@user] do |f|
+	%p
+		=f.label :name,"姓名"
+		=f.text_field :name
+	%p
+		=f.label :email
+		=f.text_field :email
+	%p
+		=f.label :group,"用户组"
+		-if @user.id
+			=collection_select :user,:group,Group.all,:id,:name,{selected: @user.group.id}
+		-else
+			=collection_select :user,:group,Group.all,:id,:name
+	%p
+		=f.label :password,"重置用户密码(留空则不修改用户密码)"
+		=f.password_field :password,{:autocomplete =>"off"}
+	%p
+		=f.submit

@@ -1,0 +1,5 @@
+%li{class: 'news'}
+  .title
+    =link_to truncate_u(news.title,truncate),article_path(news)
+  -# -if defined? time
+  -#   .time=news.created_at.localtime.strftime("%m-%d")

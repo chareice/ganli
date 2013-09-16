@@ -1,0 +1,12 @@
+.main-page
+  .left-c
+    =render 'navigation_list'
+    =render partial: 'ganli_box_articles',locals:{classification: 2}
+  .right-c
+    .row.show-page
+      .location=location
+      .page
+        %h2.header=@page.title
+        .content=@page.content.html_safe
+    .row
+      =render 'bottom_nav'

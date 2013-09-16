@@ -1,6 +1,9 @@
 module SessionsHelper
 	def sign_in(user)
 		session[:userid] = user.id
+		user.lastlogin = Time.now
+		user.save
+		
 		self.current_user = user
 	end
 
@@ -10,5 +13,13 @@ module SessionsHelper
 
 	def current_user
 		@current_user ||= User.find_by id:session[:userid]
+	end
+
+	def sign_out
+		session[:userid] = nil
+	end
+
+	def request_admin?
+		controller.class.name.split("::").first=="Admin"
 	end
 end

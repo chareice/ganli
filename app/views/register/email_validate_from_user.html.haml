@@ -1,0 +1,15 @@
+.register
+	=form_for @user,html:{class: "validate_form"} do |f|
+		%p
+			=f.label :name,"姓名"
+			=f.text_field :name
+		%p
+			=f.label :password,"密码"
+			=f.password_field :password
+		%p
+			=f.label :password_confirmation ,"确认密码"
+			=f.password_field :password_confirmation 
+		%p
+			=render "/captcha/captcha"
+		%p
+			=f.submit "提交",disable_with: "提交中"

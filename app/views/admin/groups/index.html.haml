@@ -1,4 +1,5 @@
-=link_to "创建新用户组",action: :new
+-content_for :actions_button do
+	=link_to "创建新用户组",{action: :new},class: "tiny secondary button"
 %table
 	%thead
 		%tr
@@ -6,6 +7,10 @@
 				用户组ID
 			%td
 				用户组名称
+			%td
+				添加时间
+			%td
+				修改时间
 			%td
 				操作
 	%tbody
@@ -15,5 +20,9 @@
 					=group.id
 				%td
 					=group.name
+				%td
+					=group.created_at.localtime.to_s(:db)
+				%td
+					=group.updated_at.localtime.to_s(:db)
 				%td
 					=link_to "修改",edit_admin_group_path(group)

@@ -1,0 +1,22 @@
+-content_for :actions_button do
+	=link_to "新增分类",new_admin_classification_path,class: "secondary tiny button"
+%table
+	%tr
+		%td
+			ID
+		%td
+			分类名称
+		%td
+			缩略图大小
+		%td
+			操作
+	-@classifications.each do |classification|
+		%tr
+			%td
+				=classification.id
+			%td
+				=classification.name
+			%td
+				=classification.thumb_size
+			%td
+				=link_to "修改",edit_admin_classification_path(classification)

@@ -1,1 +1,19 @@
-=render 'form'
+-if @nav.is_top_nav?
+	=render partial: '/admin/delete_button',locals:{name: "删除导航",confirm: "确定删除？该分类的页面也将同时被删除。该分类下所有子导航也将一同被删除。"}
+-else
+	=render partial: '/admin/delete_button',locals:{name: "删除导航",confirm:"确定删除？该分类的页面也将同时被删除。"}
+=form_for [:admin,@nav] do |f|
+	%p
+		=f.label :name,"导航名称"
+		=f.text_field :name
+	%p
+		=f.label :url,"链接地址"
+		=f.text_field :url
+	%p
+		所属导航
+		=@nav.tops_nav.name
+	%p
+		=f.label :rank,"排序"
+		=f.text_field :rank
+	%p
+		=f.submit

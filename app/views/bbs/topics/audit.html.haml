@@ -1,0 +1,26 @@
+%center
+	%table
+		%tr
+			%td
+				ID
+			%td
+				标题
+			%td
+				发布时间
+			%td
+				发布人
+			%td
+				操作
+		-@topics.each do |topic|
+			%tr
+				%td
+					=topic.id
+				%td
+					=link_to topic.title,show_content_bbs_topic_path(topic),:onclick=>"window.open(this.href,'show_content', 'height=600, width=600');return false;"
+				%td
+					=topic.created_at.localtime.to_s(:db)
+				%td
+					=topic.user.name
+				%td
+					=button_to "通过",change_status_bbs_topic_path(topic,status:"public")
+					=button_to "删除",bbs_topic_path(topic),method: :delete,data:{confirm: "确定删除#{topic.title}?"}

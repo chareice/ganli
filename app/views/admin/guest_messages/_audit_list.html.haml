@@ -6,7 +6,9 @@
 	%td
 		=audit_guest_message.content
 	%td
+		=audit_guest_message.created_at.localtime.to_s(:db)
+	%td
 		=audit_guest_message.ip
 	%td
-		=link_to "<button>审核</button>".html_safe,edit_admin_guest_message_path(audit_guest_message)
-		=button_to "删除",{action: "destroy",:id=>audit_guest_message},method: :delete,data:{confirm:"确定删除 #{audit_guest_message.nickname} ?"},class: "button-c"
+		=link_to "<button class='tiny success button'>审核</button>".html_safe,edit_admin_guest_message_path(audit_guest_message)
+		=button_to "删除",{action: "destroy",:id=>audit_guest_message},method: :delete,data:{confirm:"确定删除 #{audit_guest_message.nickname} 的留言?"},class: "button tiny alert"

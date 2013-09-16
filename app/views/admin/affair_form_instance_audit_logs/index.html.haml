@@ -1,2 +1,5 @@
--@instances.each do |instance|
-	=link_to instance.title,action: :new,instance: instance.id
+-if @instances.empty?
+	没有需要审核的内务表单申请
+-else
+	-@instances.each do |instance|
+		=link_to instance.title,action: :new,instance: instance.id

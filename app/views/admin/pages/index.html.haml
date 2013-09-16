@@ -1,1 +1,21 @@
-=link_to "新增页面",new_admin_page_path
+-content_for :actions_button do
+	=link_to "新增页面",new_admin_page_path,class: "tiny secondary button"
+%table
+	%tr
+		%td
+			页面标题
+		%td
+			页面所属导航
+		%td
+			添加时间
+		%td
+			修改时间
+		%td
+			操作
+	-@pages.each do |page|
+		%tr	
+			%td=page.title
+			%td=page.navigation.name
+			%td=page.created_at.localtime.to_s(:db)
+			%td=page.updated_at.localtime.to_s(:db)
+			%td=link_to "修改",edit_admin_page_path(page)

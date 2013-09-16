@@ -9,4 +9,4 @@
 				=label_tag "group_permissions_#{permission.id}",permission.name,title: permission.describe
 				=check_box_tag 'group[permission][]',permission.id,(checked = true if f.object.permissions.include?(permission)),id: "group_permissions_#{permission.id}"
 	%p
-		=f.submit "修改"
+		=f.submit

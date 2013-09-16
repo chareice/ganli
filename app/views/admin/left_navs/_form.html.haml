@@ -1,0 +1,24 @@
+-if action_name == 'edit'
+	=render partial: '/admin/delete_button',locals: {name: "删除左侧栏目"}
+=form_for [:admin,@left_nav] do |f|
+	%p
+		=f.label :name,"栏目名称"
+		=f.text_field :name
+	%div{class: "left_nav_thumb"}
+		=f.label :thumb,"缩略图"
+		=f.file_field :thumb
+		.thumb
+			-if @left_nav.thumb
+				=image_tag(@left_nav.thumb)
+				%input{type:"hidden",value:0,id:"clear-thumb",name:"left_nav[clear_thumb]"}
+				%p
+					%button{id:"clear-thumb-button",class: "tiny"}
+						删除缩略图
+	%p
+		=f.label :url,"链接地址"
+		=f.text_field :url
+	%p
+		=f.label :rank,"排序"
+		=f.text_field :rank
+	%p
+		=f.submit disable_with: "提交中..."

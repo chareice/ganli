@@ -1,0 +1,12 @@
+=form_for @user,html:{class: "reset-password"} do |f|
+	%p
+		%label{for:'user_old_password'} 原密码
+		%input{type:'password',name: 'user[old_password]',id: "user_old_password"}
+	%p
+		=f.label :password,"新密码"
+		=f.password_field :password
+	%p
+		%label{for:'re_password'} 确认新密码
+		%input{type:'password',name: 'user[re_password]',id: "re_password"}
+	%p
+		=f.submit "确认",disable_with: "提交中..."

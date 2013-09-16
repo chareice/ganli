@@ -1,0 +1,39 @@
+%input{type: "hidden",id: "csrf_token",value: form_authenticity_token}
+-if @users.empty?
+	没有待审核的用户
+-else
+	-groups = Group.all
+	%table{class: "audit_users"}
+		%thead
+			%tr
+				%td
+					用户ID
+				%td
+					姓名
+				%td
+					Email
+				%td
+					用户组
+				%td
+					操作
+		%tbody
+			-@users.each do |user|
+				%tr{"data-user-id" => user.id}
+					%td
+						=user.id
+					%td
+						=user.name
+					%td
+						=user.email
+					%td
+						%select
+							%option{value: 0}
+								请分配用户组
+							-groups.each do |group|
+								%option{value: group.id}
+									=group.name
+					%td
+						%a{href: audit_pass_admin_user_path(user),class: "user_pass"}
+							通过
+						%a{href: admin_user_path(user,format: :text),class: "user_delete"}
+							删除				

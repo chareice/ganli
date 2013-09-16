@@ -12,21 +12,47 @@
 #
 
 class Navigation < ActiveRecord::Base
-	has_many :subs,class_name:"Navigation",foreign_key: "nav_id"
+	has_many :subs,class_name:"Navigation",foreign_key: "nav_id",dependent: :destroy
 	belongs_to :nav,class_name:"Navigation"
-	has_one :page
+	has_one :page,dependent: :destroy
+	
+	default_scope order: :rank
 
+	scope :top_nav,->{
+		where(nav_id: nil).order(:rank)
+	}
+
+	scope :no_page,->{
+		where(url:"").order(:rank).select{|navigation| !navigation.page}
+	}
+
+	def tops_nav
+		unless nav
+			self
+		else
+			nav.tops_nav
+		end
+	end
+
+	def link_url
+		if url.empty?
+			if page
+				page
+			else
+				"#"
+			end
+		else
+			url
+		end
+	end
+=begin
 	def self.top_nav
 		all.select do |nav|
 			nav.is_top_nav?
 		end
 	end
+=end
 
-	def self.no_page
-		all.select do |nav|
-			!nav.page && nav.url.empty?
-		end
-	end
 
 	def is_top_nav?
 		!nav_id

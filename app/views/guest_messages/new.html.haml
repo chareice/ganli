@@ -1,0 +1,12 @@
+.guest-message-page
+	=form_for @guest_message do |f|
+		%p
+			=f.label :nickname,"昵称"
+			=f.text_field :nickname
+		%p
+			=f.label :content,"留言"
+			=f.text_area :content
+		%p.captcha
+			=render "/captcha/captcha"
+		%p
+			=f.submit "提交",disable_with: "提交中..."

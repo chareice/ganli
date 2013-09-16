@@ -1,0 +1,10 @@
+-if defined? name
+	-name = name
+-else
+	-name = "删除"
+-if defined? confirm
+	-confirm = confirm
+-else
+	-confirm = "确认删除？"
+-content_for :actions_button do
+	=link_to name,{action: :destroy},class: "alert small button",method: "delete",data:{confirm: confirm}

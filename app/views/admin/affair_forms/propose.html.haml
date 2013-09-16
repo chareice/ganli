@@ -1,5 +1,22 @@
 -unless @instances.empty?
-	-@instances.each do |instance|
-		=link_to instance.title, admin_affair_form_instance_path(instance)
+	%table
+		%tr
+			%td
+				ID
+			%td
+				申请表标题
+			%td
+				申请时间
+			%td
+				申请人
+			%td
+				状态
+		-@instances.each do |instance|
+			%tr
+				%td=instance.id
+				%td=link_to instance.title,admin_affair_form_instance_path(instance)
+				%td=instance.created_at.localtime.to_s(:db)
+				%td=instance.proposer.name
+				%td=instance.current_status_to_s
 -else
 	你还没有提交过内务申请

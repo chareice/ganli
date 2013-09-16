@@ -1,3 +1,4 @@
-=link_to "创建新表单",action: :new
+-content_for :actions_button do
+	=link_to "创建新表单",{action: :new},class: "tiny secondary button"
 -@affair_forms.each do |affair_form|
-	=link_to affair_form.title,edit_admin_affair_form_path(affair_form)
+	=link_to affair_form.title,edit_admin_affair_form_path(affair_form),class: "small success button"

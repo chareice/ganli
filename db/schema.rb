@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130829080536) do
+ActiveRecord::Schema.define(version: 20130914085857) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -64,6 +64,9 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "status",                             default: 0
+    t.string   "thumb"
+    t.string   "flag"
+    t.integer  "author"
   end
 
   create_table "classfiys", force: true do |t|
@@ -77,6 +80,7 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "thumb_size"
   end
 
   create_table "documents", force: true do |t|
@@ -114,6 +118,15 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.string   "nickname"
     t.text     "content"
     t.string   "ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "left_navs", force: true do |t|
+    t.string   "name"
+    t.string   "thumb"
+    t.string   "url"
+    t.integer  "rank",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -162,6 +175,7 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",     default: 0
   end
 
   create_table "topics", force: true do |t|
@@ -170,6 +184,7 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",     default: 0
   end
 
   create_table "users", force: true do |t|
@@ -178,6 +193,8 @@ ActiveRecord::Schema.define(version: 20130829080536) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "status",     default: 0
+    t.datetime "lastlogin"
   end
 
   create_table "users_groups", force: true do |t|

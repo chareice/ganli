@@ -19,3 +19,7 @@
 							-else
 								%li
 									=link_to link_name,link_url
+	%li
+		.user-logout
+			=button_to "退出","/logout",method: :delete
+

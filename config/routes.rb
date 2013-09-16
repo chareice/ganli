@@ -1,23 +1,41 @@
 Ganli::Application.routes.draw do
+  captcha_route
   get "/admin" ,to: "admin/admin#index"
   root "pages#index"
 
-  get "/register",to: "users#new"
-  resources :users,only:[:create]
+  resources :users,only:[:create,:edit,:update]
   resources :sessions, only: [:create, :destroy]
+  resources :pages,only:[:show]
+  resources :articles,only:[:index,:show] do  
+  end
+  resources :guest_messages,only:[:create,:new,:index]
+  get "/classification/:id",to: "articles#classification",as: "classification"
+ 
+  scope '/register' do
+    get "/",to: "register#email",as: "register"
+    post "/email_validate",to: "register#email_validate"
+    get "/user_validate",to: "register#email_validate_from_user"
+  end
 
   namespace 'admin' do
     root "admin#index"
     resources :articles do
 
     end
-    resources :classifications,only: [:index,:new,:create]
+    resources :classifications
     resources :navigations
     resources :pages
     resources :admin_menus,only: [:index,:new,:create]
     resources :permissions
     resources :groups
-    resources :users
+    resources :users do
+      collection do
+        get 'audit'
+      end
+      member do
+        post 'audit_pass'
+      end
+    end
     resources :affair_form_instance_audit_logs,only:[:index,:new,:create]
     resources :affair_forms do
       collection do
@@ -26,7 +44,14 @@ Ganli::Application.routes.draw do
       end
       resources :affair_form_instances
     end
-    resources :affair_form_instances,only:[:show,:destroy]
+    resources :affair_form_instances,only:[:show,:destroy] do
+      collection do
+        get 'list'
+      end
+      member do
+        get 'admin_view'
+      end
+    end
     resources :documents do
       collection do
         get 'audit'
@@ -39,16 +64,44 @@ Ganli::Application.routes.draw do
     resources :friendly_links
     resources :lunches
     resources :guest_messages
+    resources :left_navs
+
+    post 'files/imageup',to: 'files#imageup'
+    post 'files/imagemanger',to: 'files#imagemanger'
+    get 'files/thumb/:imagename',to: 'files#thumb'
+
   end
 
   get '/bbs',to: 'bbs/topics#index'
   
   namespace 'bbs' do
+    resources :replies,only:[:destroy] do
+      member do
+        post 'change_status'
+      end
+    end
+
     resources :topics do
-      resources :replies
+      collection do
+        get 'audit'
+        get 'replies_audit'
+      end
+      member do
+        get 'show_content'
+        get 'show_reply_content'
+        post 'change_status'
+      end
+      resources :replies do
+        collection do
+          get 'audit'
+        end
+        member do
+          post 'change_status'
+        end
+      end
     end
   end
-  
+
   get '/login',to:'sessions#new'
   match '/logout',to:'sessions#destroy',via: :delete
 end

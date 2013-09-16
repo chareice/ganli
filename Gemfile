@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -31,6 +31,13 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 
 gem 'mysql2'
+
+gem 'dalli'
+gem 'easy_captcha'
+gem 'rmagick'
+gem 'will_paginate'
+gem 'cells'
+gem 'settingslogic'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

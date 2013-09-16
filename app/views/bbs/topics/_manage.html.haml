@@ -1,0 +1,6 @@
+.manage
+	=button_to "删除",bbs_topic_path(topic),method: :delete,data: {confirm: "确定删除？#{topic.title}"}
+	-if topic.hidden?
+		=button_to "显示", change_status_bbs_topic_path(topic,status:"public")
+	-else topic.public?
+		=button_to "隐藏", change_status_bbs_topic_path(topic,status:"hidden")

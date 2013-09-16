@@ -1,9 +1,13 @@
-=form_for [:bbs,@topic] do |f|
-	%p
-		=f.label :title,"标题"
-		=f.text_field :title
-	%p
-		=f.label :content,"内容"
-		=f.text_area :content
-	%p
-		=f.submit
+=render '/admin/ueditor/no_toolbar'
+.new-topic-page
+	=form_for [:bbs,@topic] do |f|
+		%p
+			=f.label :title,"标题"
+			=f.text_field :title
+		%p
+			=f.label :content,"内容"
+			=f.text_area :content
+		%p
+			=render '/captcha/captcha'
+		%p
+			=f.submit "创建帖子",:disable_with => "提交中..."

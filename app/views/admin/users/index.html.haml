@@ -1,4 +1,5 @@
-=link_to "新增用户",action: :new
+-content_for :actions_button do
+	=link_to "新增用户",{action: :new},class: "tiny secondary button"
 %table
 	%thead
 		%tr
@@ -10,6 +11,8 @@
 				Email
 			%td
 				用户组
+			%td
+				上次登陆时间
 			%td
 				操作
 	%tbody
@@ -23,5 +26,7 @@
 					=user.email
 				%td
 					=user.group.name
+				%td
+					=user.lastlogin.localtime.to_s(:db)
 				%td
 					=link_to "修改",edit_admin_user_path(user)

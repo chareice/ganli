@@ -1,6 +1,14 @@
 class Admin::AffairFormInstancesController < Admin::BaseController
 	def index
-	
+
+	end
+
+	def list
+		@instances = AffairFormInstance.all
+	end
+
+	def admin_view
+		@instance = AffairFormInstance.find params[:id]
 	end
 
 	def show

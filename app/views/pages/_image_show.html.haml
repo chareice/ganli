@@ -1,0 +1,8 @@
+.image-show-header
+  %ul
+    -classifications.each do |classification|
+      %li{"data-classification-id" => classification}
+        =link_to classification_name(classification),classification_path(classification)
+.image-show
+  -classifications.each do |classification|
+    =render partial: 'image_show_list',locals:{classification: classification}

@@ -1,0 +1,12 @@
+%tr
+	%td=article.id
+	%td
+		=link_to truncate_u(article.title),edit_admin_article_path(article)
+		-if article.flag=='f'
+			=content_tag(:strong,"幻灯")
+	%td=article.created_at.localtime.to_s(:db)
+	%td=article.updated_at.localtime.to_s(:db)
+	%td=article.classification.name
+	%td=article_status_to_s(article)
+	%td=article.author.name
+	%td=link_to "修改",action: :edit,id: article

@@ -1,2 +1,5 @@
--@documents.each do |document|
-	=link_to document.name,edit_admin_document_path(document)
+-if @documents.empty?
+	没有需要审核的教育资源
+-else
+	-@documents.each do |document|
+		=link_to document.name,edit_admin_document_path(document)

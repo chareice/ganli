@@ -1,0 +1,8 @@
+-content_for :javascript do
+  =javascript_include_tag "kinslide.js"
+  %script
+    $("#main-flash").KinSlideshow({isHasTitleBar:false,titleFont:{TitleFont_size:12,TitleFont_color:"#FFFFFF",TitleFont_family:"Verdana",TitleFont_weight:"bold"}});
+-flash_news = Article.public.flash
+%div{id: "main-flash"}
+  -flash_news.each do |article|
+    =link_to image_tag(article.thumb,alt: article.title.truncate(20)),article_path(article),target: "_blank"

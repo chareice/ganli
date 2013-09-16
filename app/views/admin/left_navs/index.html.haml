@@ -1,0 +1,25 @@
+-content_for :actions_button do
+	=link_to "新增栏目",{action: :new},class: "tiny secondary button"
+-if @left_navs.empty?
+	没有栏目请添加
+-else
+	%table
+		%tr
+			%td
+				ID
+			%td
+				名称
+			%td
+				链接地址
+			%td
+				操作
+		-@left_navs.each do |left_nav|
+			%tr
+				%td
+					=left_nav.id
+				%td
+					=left_nav.name
+				%td
+					=left_nav.url
+				%td
+					=link_to "修改",action: :edit,id:left_nav

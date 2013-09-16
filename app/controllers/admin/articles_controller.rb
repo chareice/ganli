@@ -1,9 +1,9 @@
 class Admin::ArticlesController < Admin::BaseController
 	def index
 		if params[:classification].to_i > 0
-			@articles = Article.find_by_classification params[:classification]
+			@articles = Article.find_by_classification(params[:classification]).paginate(:page=>params[:page],per_page: 10)
 		else
-			@articles = Article.all
+			@articles = Article.all.paginate(:page=>params[:page],per_page: 10)
 		end
 	end
 
@@ -12,9 +12,21 @@ class Admin::ArticlesController < Admin::BaseController
 	end
 	
 	def create
-		article = Article.create article_params
+		article = Article.new article_params
+		article.status = params[:article][:status]
+		article.flag = params[:article][:flag]
+		article.author = current_user
+		if params[:article][:thumb]
+			path = Document.save_file params[:article][:thumb],"app/assets/images/article"
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+			article.thumb = asset_path
+		end
 
-		redirect_to action: :edit,id: article
+		if article.save
+			redirect_to edit_admin_article_path(article),flash:{notice: "添加成功"}
+		else
+			redirect_to new_admin_article_path,flash: {error: article.errors.full_messages.join(",")}
+		end
 	end
 
 	def edit
@@ -26,9 +38,25 @@ class Admin::ArticlesController < Admin::BaseController
 		@article.title = params[:article][:title]
 		@article.content = params[:article][:content]
 		@article.classification_id = params[:article][:classification_id]
-		@article.save
+		@article.status = params[:article][:status]
+		@article.flag = params[:article][:flag]
 
-		redirect_to action: :index
+		if params[:article][:clear_thumb] == "1"
+			@article.thumb = nil
+		end
+
+		if params[:article][:thumb]
+			path = Document.save_file params[:article][:thumb],"app/assets/images/article"
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+			@article.thumb = asset_path
+		end
+
+		@article.save
+		if @article.save
+			redirect_to edit_admin_article_path(@article),flash:{notice: "修改成功"}
+		else
+			redirect_to edit_admin_article_path(@article),flash: {error: @article.errors.full_messages.join(",")}
+		end
 	end
 
 	def destroy

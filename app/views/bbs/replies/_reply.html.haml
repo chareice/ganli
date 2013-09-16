@@ -1,2 +1,13 @@
-%p
-	=reply.content
+.reply
+	.reply_content
+		=reply.user.name + ":"
+		=reply.content
+	-if is_admin?
+		.manage
+			=button_to "删除",bbs_reply_path(reply),method: :delete,data: {confirm: "确定删除？"}
+			-if reply.hidden?
+				=button_to "显示", change_status_bbs_reply_path(reply,status:"public")
+			-else reply.public?
+				=button_to "隐藏", change_status_bbs_reply_path(reply,status:"hidden")
+	.reply_time
+		=reply.created_at.localtime.to_s(:db)

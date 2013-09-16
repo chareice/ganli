@@ -48,4 +48,11 @@ class Admin::DocumentsController < Admin::BaseController
 		@document  = Document.find params[:id]
 		send_file(@document.path)
 	end
+
+	def destroy
+		@document  = Document.find params[:id]
+		@document.destroy
+
+		redirect_to admin_documents_path,flash:{notice: "删除成功"}
+	end
 end

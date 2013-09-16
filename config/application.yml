@@ -1,0 +1,11 @@
+defaults: &defaults
+  site_name: "甘李学校官方网站"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

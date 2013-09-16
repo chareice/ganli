@@ -1,9 +1,15 @@
-%h2=@topic.title
-%p=@topic.content
--if @replies.empty?
-	"还没有人回复"
--else
-	=render partial: "/bbs/replies/reply",collection:@replies
-=form_for Reply.new,url: bbs_topic_replies_path(@topic) do |f|
-	=f.text_area :content
-	=f.submit "回复主题"
+.topic_show
+	.topic
+		.infos
+			.title
+				=@topic.title
+			.auth
+				="由#{@topic.user.name}发布于#{@topic.created_at.localtime.to_s(:db)}"
+			=@topic.content.html_safe
+	.replies
+		=render partial: "/bbs/replies/reply",collection:@replies
+		=form_for Reply.new,url: bbs_topic_replies_path(@topic) do |f|
+			%p
+				=f.text_area :content
+			%p
+				=f.submit "回复主题",disable_with: "提交中..."

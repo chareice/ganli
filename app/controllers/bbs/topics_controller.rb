@@ -1,24 +1,92 @@
 class Bbs::TopicsController < Bbs::BbsController
+	include Bbs::BbsHelper
+
+	before_action :authenticate,only: [:show_content,:change_status,:replies_audit,:show_reply_content]
+	
 	def index
-		@topics = Topic.all
+		if is_admin?
+			@topics = Topic.public_and_hidden.paginate(:page=>params[:page],:per_page => 10).order("created_at DESC")
+		else
+			@topics = Topic.public.paginate(:page=>params[:page],:per_page => 10).order("created_at DESC")
+		end
+	end
+
+	def audit
+		@topics = Topic.wait_audit
+	end
+
+	def replies_audit
+		@replies = Reply.wait_audit
 	end
 
 	def show
 		@topic = Topic.find params[:id]
-		@replies = @topic.replies
+		if (@topic.hidden? || @topic.wait_audit?) && !is_admin?
+			access_forbidden
+		end
+		if is_admin?
+			@replies = @topic.replies.public_and_hidden
+		else
+			@replies = @topic.replies.public
+		end
 	end
+
+	def show_content
+		render text: Topic.find(params[:id]).content
+	end
+
+	def show_reply_content
+		render text: Reply.find(params[:id]).content
+	end
+
 	def new
 		@topic = Topic.new
 	end
 
 	def create
+		unless captcha_valid? params[:captcha]
+			redirect_to new_bbs_topic_path,flash: {error: "验证码输入错误"} and return
+		end
+
 		@topic = Topic.new
 		@topic.title = params[:topic][:title]
 		@topic.content = params[:topic][:content]
+
 		@topic.user = current_user
+		
+		if is_trusted_user? @topic.user
+			@topic.set_trusted
+		end
+
+		if @topic.save
+			if @topic.wait_audit?
+				redirect_to bbs_topics_path,flash: {notice: "发布成功，等待管理员审核"}
+			else
+				redirect_to bbs_topic_path(@topic)
+			end
+		else
+			redirect_to new_bbs_topic_path,flash: {error: @topic.errors.full_messages.join(",")}
+		end
+	end
+
+	def change_status
+		@topic = Topic.find params[:id]
+		case params[:status]
+		when "public"
+			@topic.set_public
+		when "hidden"
+			@topic.set_hidden
+		end
 		@topic.save
 
-		redirect_to action: :index
+		redirect_to :back,flash: {notice: "设置成功"}
+	end
+	
+	def destroy
+		@topic = Topic.find params[:id]
+		@topic.destroy
+
+		redirect_to :back,flash: {notice: "删除成功"}
 	end
 
 	private

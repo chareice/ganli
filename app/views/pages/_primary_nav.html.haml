@@ -1,0 +1,5 @@
+.primary-nav
+	%ul
+		-Navigation.top_nav.each do |nav|
+			%li
+				=link_to nav.name,nav.link_url

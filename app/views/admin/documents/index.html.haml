@@ -9,6 +9,9 @@
 				上传时间
 			%td
 				文件地址
+			-if current_user.has_permission?(Permission.find(23))
+				%td
+					操作
 	%tbody
 		-@documents.each do |document|
 			%tr
@@ -17,6 +20,9 @@
 				%td
 					=document.uploader.name
 				%td
-					=document.created_at
+					=document.created_at.localtime.to_s(:db)
 				%td
 					=link_to document.path,download_admin_document_path(document)
+				-if current_user.has_permission?(Permission.find(23))
+					%td
+						=link_to "删除",admin_document_path(document),class: "alert tiny button",method: "delete",data:{confirm: "确定删除？"}

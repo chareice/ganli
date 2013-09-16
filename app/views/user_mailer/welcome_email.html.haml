@@ -1,0 +1,5 @@
+-validate_link = "http://#{@email_params[:host]}#{user_validate_path(email: @email_params[:email],ac: @email_params[:ac])}"
+%h2
+	="请点击以下链接验证您的邮箱,请在一小时之内完成验证。"
+%p
+	=link_to validate_link,validate_link

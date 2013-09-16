@@ -1,3 +1,8 @@
-.topic
-	.title
-		=link_to topic.title,bbs_topic_path(topic)
+.topic-c
+	.topic
+		.title{class: ("hidden" if topic.hidden?)}
+			=link_to topic.title,bbs_topic_path(topic)
+			-if is_admin?
+				=render partial: 'manage',locals: {topic: topic}
+		.infos
+			="由#{topic.user.name}发布于#{topic.created_at.localtime.to_s(:db)}"

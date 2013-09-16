@@ -1,10 +1,18 @@
-=form_tag sessions_path,class:"pure-form pure-form-stacked" do
-	%p
-		=label_tag :email
-		=text_field_tag :email
-	%p
-		=label_tag :password
-		=password_field_tag :password
-	%p
-		%button{type:"submit",class:"pure-button pure-button-primary"}
-			Login
+!!!
+%html{:lang=>"zh"}
+  %head
+    %title 甘李管理后台登陆
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag controller_path, :media => "all"
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv/dist/html5shiv.js"
+  %body
+    %div{class:"ganli-login-page"}
+      .header-c
+        .header
+      .body-c
+        .body
+          =render "/layouts/message"
+          =render 'login_form'
+      .footer-c
+    = javascript_include_tag controller_path

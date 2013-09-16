@@ -2,4 +2,226 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "compass/reset";
-@import "compass/utilities"
+@import "foundation";
+a{
+  color: #666;
+}
+body{
+  background: url(/assets/style/bbs_bg.png);
+}
+.pagination {
+  float: right;
+  margin-top: 10px;
+  background: white;
+  cursor: default;
+  /* self-clearing method: */
+  a, span, em {
+    padding: 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+  .disabled {
+    color: #999999;
+    border: 1px solid #dddddd;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+  a {
+    text-decoration: none;
+    color: #105cb6;
+    border: 1px solid #9aafe5;
+    &:hover, &:focus {
+      color: #000033;
+      border-color: #000033;
+    }
+  }
+  .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center;
+    b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em;
+    }
+  }
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+* {
+  html .pagination {
+    height: 1%;
+  }
+  &:first-child + html .pagination {
+    overflow: hidden;
+  }
+}
+a{
+  text-decoration: none;
+}
+.center{
+  margin: 0 auto;
+  width: 600px;
+}
+.topices{
+  width: 650px;
+  border-radius: 5px;
+  margin: 0 auto;
+  .topic-c{
+    .topic{
+      background: #FFF;
+      border-bottom: 1px dashed #DDD;
+      padding: 2px 0;
+      vertical-align: top;
+      padding: 10px;
+      .title{
+        .manage{
+          float: right;
+          .button_to{
+            float: left;
+          }
+        }
+        font-size: 14px;
+        margin-top: 2px;
+        margin-bottom: 12px;
+        a{
+          color: #666;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      .hidden{
+        a{
+          color:#ccc;
+        }
+      }
+      .infos{
+        font-size: 12px;
+        margin-bottom: 2px;
+        color: #BBB;
+      }
+    }
+  }
+  
+}
+.topic_show{
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 10px;
+  .topic{
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 10px;
+    .infos{
+      position: relative;
+      margin-bottom: 10px;
+      margin-right: 56px;
+      margin: 0 -10px;
+      padding: 0 10px 5px 10px;
+      .title{
+        font-size: 22px;
+        color: #333;
+        text-align: left;
+        line-height: 100%;
+        margin-bottom: 8px;
+        a{
+          color: #666;
+        }
+      }
+      .auth{
+        font-size: 12px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: dashed 1px #ccc;
+        color: #ccc;
+      }
+    }
+    .content{
+
+    }
+  }
+  
+  .replies{
+    .reply{
+      border-bottom: 1px solid #DDD;
+      padding: 8px 10px;
+      background: #FFF;
+      .reply_content{
+        line-height: 20px;
+      }
+      .manage{
+        float: right;
+        .button_to{
+          float: left;
+        }
+      }
+      .reply_time{
+        color: #ccc;
+        margin-top: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.header-menu{
+  width: 650px;
+  margin: 10px auto;
+  height: 36px;
+  padding-left: 10px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  line-height: 36px;
+  background: url(/assets/style/tbg.gif);
+}
+.new_topic{
+    width: 610px;
+    margin:0 auto;
+    p{
+      padding: 10px 0;
+      &.captcha{
+        label{
+          line-height: 75px;
+        }
+      }
+      textarea{
+        width: 630px;
+        height: 350px;
+      }
+      label{
+        width: 105px;
+        display: block;
+        float: left;
+        line-height: 25px;
+      }
+    }
+}
+.alert-box{
+  width: 650px;
+  margin: 0 auto;
+  height: 40px;
+}
+.new-topic-page{
+  padding: 10px;
+  background: #fff;
+  width: 650px;
+  margin: 0 auto;
+  textarea{
+    width: 610px !important;
+  }
+}

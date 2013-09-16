@@ -6,6 +6,8 @@
 	%td
 		=guest_message.content
 	%td
+		=guest_message.created_at.localtime.to_s(:db)
+	%td
 		=guest_message.ip
 	%td
-		=button_to "删除",{action: "destroy",:id=>guest_message},method: :delete,data:{confirm:"确定删除 #{guest_message.nickname} ?"},class: "button-c"
+		=button_to "删除",{action: "destroy",:id=>guest_message},method: :delete,data:{confirm:"确定删除 #{guest_message.nickname} 的留言?"},class: "alert tiny button"

@@ -1,0 +1,6 @@
+=link_to "返回首页",root_path
+=link_to "帖子列表",bbs_path
+=link_to "发表帖子",new_bbs_topic_path
+-if is_admin?
+	=link_to "审核帖子",audit_bbs_topics_path
+	=link_to "审核回复",replies_audit_bbs_topics_path

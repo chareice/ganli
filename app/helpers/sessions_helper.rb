@@ -1,7 +1,9 @@
 module SessionsHelper
 	def sign_in(user)
 		session[:userid] = user.id
-		user.lastlogin = Time.now
+
+		user.lastlogin = user.updated_at
+		user.updated_at = Time.now
 		user.save
 		
 		self.current_user = user

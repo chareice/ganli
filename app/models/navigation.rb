@@ -42,7 +42,7 @@ class Navigation < ActiveRecord::Base
 				"#"
 			end
 		else
-			if url =~ /[0-9]/
+			if url =~ /^[1-9]\d{0,2}$/
 				Rails.application.routes.url_helpers.classification_path(url)
 			else
 				url

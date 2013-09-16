@@ -60,6 +60,7 @@ class User < ActiveRecord::Base
 		require 'digest/md5'
 		self.password.eql?(Digest::MD5.hexdigest(che_password))
 	end
+	
 	private
 	def encryptionPassword
 		require 'digest/md5'

@@ -1,0 +1,1 @@
+!function(){/jquery\=min/.test(window.location.search)&&(jQuery.noConflict(!0),document.write(unescape("%3Cscript%20src%3D%27../dist/jquery.min.js%27%3E%3C/script%3E")))}();

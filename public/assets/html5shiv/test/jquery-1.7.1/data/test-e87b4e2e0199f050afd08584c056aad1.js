@@ -1,0 +1,1 @@
+var foobar="bar";jQuery("#ap").html("bar"),ok(!0,"test.js executed");

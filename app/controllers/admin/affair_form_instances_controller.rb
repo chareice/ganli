@@ -4,7 +4,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 	end
 
 	def list
-		@instances = AffairFormInstance.all
+		@instances = AffairFormInstance.all.paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def admin_view
@@ -36,6 +36,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 		@affair_form_instance.proposer = current_user
 
 		@affair_form_instance.save
+		flash[:notice] = "申请成功 等待审核"
 		redirect_to action: :apply,controller: :affair_forms
 	end
 

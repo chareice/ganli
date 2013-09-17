@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: left_navs
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  thumb      :string(255)
+#  url        :string(255)
+#  rank       :integer          default(0)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:

@@ -1,0 +1,10 @@
+%tr
+	%td
+		=friendly_link_classification.id
+	%td
+		=friendly_link_classification.name
+	%td
+		=friendly_link_classification.rank
+	%td
+		=link_to "<button class='tiny button secondary'>修改</button>".html_safe,edit_admin_friendly_link_classification_path(friendly_link_classification)
+		=button_to "删除",{action: "destroy",:id=>friendly_link_classification},method: :delete,data:{confirm:"确定删除 #{friendly_link_classification.name} ?"},class: "tiny button alert"

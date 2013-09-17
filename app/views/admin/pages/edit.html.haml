@@ -1,3 +1,4 @@
+=render partial: '/admin/delete_button',locals: {name: "删除页面"}
 =render partial: "/admin/ueditor/admin",locals:{ueditor_id: "page_content"}
 =form_for [:admin,@page] do |f|
 	%p
@@ -10,4 +11,4 @@
 		=f.label :content,"页面内容"
 		=f.text_area :content
 	%p
-		=button_tag "创建页面"
+		=f.submit "修改页面",disable_with: '提交中...'

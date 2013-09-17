@@ -62,6 +62,7 @@ Ganli::Application.routes.draw do
       end
     end
     resources :friendly_links
+    resources :friendly_link_classifications
     resources :lunches
     resources :guest_messages
     resources :left_navs

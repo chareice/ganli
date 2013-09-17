@@ -1,8 +1,10 @@
 .friendly_links_c
   .header
     友情链接
-  %ul.links_c
-    -links = FriendlyLink.all
-    -links.each do |link|
-      %li.link
-        =link_to link.name,link.url,:target => "_blank"
+  .friendly-links
+    -flcs = FriendlyLinkClassification.all
+    -flcs.each do |flc|
+      -links = flc.friendly_links
+      %select{class: 'friendly-links-select'}
+        %option{value: ''}=flc.name
+        =options_for_select(links.collect{|link| [link.name,link.url]})

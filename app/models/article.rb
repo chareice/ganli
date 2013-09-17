@@ -9,6 +9,9 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #  status            :integer          default(0)
+#  thumb             :string(255)
+#  flag              :string(255)
+#  author            :integer
 #
 
 class Article < ActiveRecord::Base

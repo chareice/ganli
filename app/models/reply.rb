@@ -8,6 +8,7 @@
 #  content    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  status     :integer          default(0)
 #
 
 class Reply < ActiveRecord::Base

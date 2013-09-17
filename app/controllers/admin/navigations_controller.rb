@@ -8,9 +8,13 @@ class Admin::NavigationsController < Admin::BaseController
 	end
 
 	def create
-		Navigation.create navigation_params
-
-		redirect_to admin_navigations_path,flash: {notice: "添加成功"}
+		nav = Navigation.create navigation_params
+		if nav.valid?
+			redirect_to admin_navigations_path,flash: {notice: "添加成功"}
+		else
+			flash_error nav
+			redirect_to action: :new
+		end
 	end
 
 	def edit
@@ -26,8 +30,12 @@ class Admin::NavigationsController < Admin::BaseController
 		end
 		nav.rank = params[:navigation][:rank]
 
-		nav.save
-		redirect_to admin_navigations_path,flash:{notice: "修改成功"}
+		if nav.save
+			redirect_to admin_navigations_path,flash:{notice: "修改成功"}
+		else
+			flash_error nav
+			redirect_to action: :edit,id: nav
+		end	
 	end
 
 	def destroy

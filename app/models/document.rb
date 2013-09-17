@@ -14,9 +14,13 @@
 class Document < ActiveRecord::Base
 	belongs_to :uploader,class_name: "User",foreign_key: "uploader"
 	
+	validates :name,:path,presence: true
 	default_scope order: "created_at desc"
 	private
 	def self.save_file(upload_file,main_path = "document")
+		unless upload_file
+			return nil
+		end
 		filename = "#{upload_file.original_filename}"
 		file_dir = time_path main_path
 		path = File.join file_dir,filename

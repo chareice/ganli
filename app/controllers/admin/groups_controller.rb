@@ -14,9 +14,14 @@ class Admin::GroupsController < Admin::BaseController
 		if params[:group][:permission]
 			@group.permissions = params[:group][:permission].map{|x| Permission.find x}
 		end
-		@group.save
 
-		redirect_to action: :index
+		if @group.save
+			flash[:notice] = "添加成功"
+ 			redirect_to action: :index
+		else
+			flash[:error] = @group.errors.full_messages.join(',')
+			redirect_to action: :new
+		end
 	end
 
 	def edit
@@ -30,8 +35,21 @@ class Admin::GroupsController < Admin::BaseController
 		if params[:group][:permission]
 			@group.permissions = params[:group][:permission].map{|x| Permission.find x}
 		end
-		@group.save
-		
-		redirect_to action: :index 
+		if @group.save
+			flash[:notice] = "修改成功"
+ 			redirect_to action: :index
+		else
+			flash[:error] = @group.errors.full_messages.join(',')
+			redirect_to action: :edit,id: @group
+		end
+	end
+
+	def destroy
+		@group = Group.find params[:id]
+		@group.destroy
+
+		flash[:notice] = "删除成功"
+
+		redirect_to action: :index
 	end
 end

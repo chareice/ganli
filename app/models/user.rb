@@ -9,6 +9,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  status     :integer          default(0)
+#  lastlogin  :datetime
 #
 
 class User < ActiveRecord::Base
@@ -23,7 +24,6 @@ class User < ActiveRecord::Base
 	has_many :affair_form_instances,foreign_key: "proposer",class_name:"AffairFormInstance",dependent: :destroy
 	has_many :affair_form_instance_logs,foreign_key: "approver",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
 	has_many :documents,foreign_key: "uploader",dependent: :destroy
-	has_many :lunches,foreign_key: "teacher",dependent: :destroy
 	has_many :lunches,foreign_key: "teacher",dependent: :destroy
 	has_many :replies,dependent: :destroy
 	before_create :encryptionPassword

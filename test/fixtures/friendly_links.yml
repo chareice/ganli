@@ -2,12 +2,13 @@
 #
 # Table name: friendly_links
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  url        :string(255)
-#  rank       :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id                              :integer          not null, primary key
+#  name                            :string(255)
+#  url                             :string(255)
+#  rank                            :integer
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  friendly_link_classification_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

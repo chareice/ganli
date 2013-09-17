@@ -16,4 +16,4 @@
 		=f.label :password,"重置用户密码(留空则不修改用户密码)"
 		=f.password_field :password,{:autocomplete =>"off"}
 	%p
-		=f.submit
+		=f.submit,disable_with: '提交中...'

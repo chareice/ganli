@@ -15,4 +15,4 @@
 		-else
 			=collection_select :user,:group,Group.all,:id,:name
 	%p
-		=f.submit
+		=f.submit disable_with: '提交中...'

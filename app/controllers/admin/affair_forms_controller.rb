@@ -8,7 +8,7 @@ class Admin::AffairFormsController < Admin::BaseController
 	end
 
 	def propose
-		@instances = AffairFormInstance.where(proposer:current_user.id)
+		@instances = AffairFormInstance.where(proposer:current_user.id).paginate(:page=>params[:page],per_page: 10)
 	end
 	
 	def new
@@ -18,9 +18,14 @@ class Admin::AffairFormsController < Admin::BaseController
 	def create
 		@affair_form = AffairForm.create affair_from_params
 		@affair_form.audit_process = params[:affair_form][:audit_process]
-		@affair_form.save
 		
-		redirect_to action: :index
+		if @affair_form.save
+			flash[:notice] = "添加成功"
+			redirect_to action: :index
+		else
+			flash[:error] =  @affair_form.errors.full_messages.join(",")
+			redirect_to action: :new
+		end
 	end
 
 	def edit
@@ -31,9 +36,14 @@ class Admin::AffairFormsController < Admin::BaseController
 		@affair_form = AffairForm.find params[:id]
 		@affair_form.update_attributes affair_from_params
 		@affair_form.audit_process = params[:affair_form][:audit_process]
-		@affair_form.save
 
-		redirect_to action: :index
+		if @affair_form.save
+			flash[:notice] = "修改成功"
+			redirect_to action: :edit
+		else
+			flash[:error] =  @affair_form.errors.full_messages.join(",")
+			redirect_to action: :edit,id: @affair_form
+		end
 	end
 
 	def destroy

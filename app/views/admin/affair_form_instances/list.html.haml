@@ -20,3 +20,4 @@
 				%td=instance.created_at.localtime.to_s(:db)
 				%td=instance.proposer.name
 				%td=instance.current_status_to_s
+	=will_paginate @instances

@@ -13,4 +13,6 @@
 class AffairForm < ActiveRecord::Base
 	serialize :audit_process
 	has_many :affair_form_instances
+
+	validates :title,:audit_process,:form,presence: true
 end

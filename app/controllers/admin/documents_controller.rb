@@ -14,9 +14,13 @@ class Admin::DocumentsController < Admin::BaseController
 		@document.uploader = current_user
 		@document.path = Document.save_file params[:document][:path]
 
-		@document.save
-		flash[:notice] = "上传资料成功，等待审核"
-		redirect_to action: :new
+		if @document.save
+			flash[:notice] = "上传资料成功，等待审核"
+			redirect_to action: :new
+		else
+			flash[:error] = @document.errors.full_messages.join(',')
+			redirect_to action: :new
+		end
 	end
 
 	def audit

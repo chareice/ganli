@@ -1,0 +1,18 @@
+-content_for :actions_button do
+	=link_to "新增友情链接分类",{action: :new},class: "tiny secondary button"
+	=link_to "新增友情链接",new_admin_friendly_link_path,class: "tiny secondary button"
+-if @friendly_link_classifications.empty?
+	%p
+		没有友情链接分类
+-else
+	%table
+		%tr
+			%th
+				ID
+			%th
+				分类名称
+			%th
+				排序
+			%th
+				操作
+		=render partial: :friendly_link_classification,collection: @friendly_link_classifications

@@ -12,5 +12,6 @@ class Group < ActiveRecord::Base
 	has_many :users,through: :users_group
 	has_many :users_group
 
+	validates :name,presence: true
 	has_and_belongs_to_many :permissions
 end

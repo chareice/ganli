@@ -1,5 +1,23 @@
 -if @instances.empty?
 	没有需要审核的内务表单申请
 -else
-	-@instances.each do |instance|
-		=link_to instance.title,action: :new,instance: instance.id
+	%table
+		%tr
+			%td
+				ID
+			%td
+				申请表标题
+			%td
+				申请时间
+			%td
+				申请人
+			%td
+				状态
+		-@instances.each do |instance|
+			%tr
+				%td=instance.id
+				%td=link_to instance.title,action: :new,instance: instance.id
+				%td=instance.created_at.localtime.to_s(:db)
+				%td=instance.proposer.name
+				%td=instance.current_status_to_s
+	=will_paginate @instances

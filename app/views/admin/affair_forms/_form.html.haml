@@ -1,4 +1,4 @@
--@all_audit_group = Group.includes(:permissions).where(permissions:{id:7}).to_a
+-@all_audit_group = Group.includes(:permissions).where(permissions:{id:8}).to_a
 -@audit_group = @affair_form.audit_process.map{|x| Group.find x} if @affair_form.audit_process
 -@audit_group = [] unless @audit_group
 =form_for [:admin,@affair_form] do |f|
@@ -22,4 +22,4 @@
 				%option{value:"#{group.id}"}
 					=group.name
 	%p
-		=f.submit
+		=f.submit disable_with: "处理中..."

@@ -11,8 +11,37 @@
       group: "用户组"
       user: "用户"
       navigation: "导航"
-      Classification: "文章分类"
+      document: "教育资源"
+      friendly_link_classification: "友情链接分类"
+      friendly_link: "友情链接"
     attributes:
+      navigation:
+        name: "导航名称"
+      page:
+        title: "页面标题"
+        content: "页面内容"
+      left_nav:
+        name: "栏目名称"
+        thumb: "栏目缩略图"
+        url: "栏目链接地址"
+        rank: "排序"
+      group:
+        name: "用户名"
+      friendly_link_classification:
+        name: "分类名称"
+        rank: "排序"
+      friendly_link:
+        name: "友情链接名称"
+        url: "友情链接地址"
+        rank: "排序"
+        friendly_link_classification: "友情链接分类"
+      affair_form:
+        title: "标题"
+        audit_process: "审核组"
+        form: "申请表"
+      document:
+        name: "资料名称"
+        path: "资料文件"
       topic:
         title: "标题"
         content: "内容"
@@ -26,7 +55,7 @@
       article:
         title: "文章标题"
         content: "文章内容"
-        classification_id: "文章分类"
+        classification: "文章分类"
     errors:
       models:
         topic: "帖子"

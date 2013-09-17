@@ -1,3 +1,5 @@
+-if action_name == 'edit'
+	=render partial: '/admin/delete_button',locals:{name: "删除用户组",confirm:"非常危险！确定删除 #{@group.name}用户组？将会删除改组下的所有用户！"}
 =form_for [:admin,@group] do |f|
 	%p	
 		=f.label :name,"用户组名"
@@ -9,4 +11,4 @@
 				=label_tag "group_permissions_#{permission.id}",permission.name,title: permission.describe
 				=check_box_tag 'group[permission][]',permission.id,(checked = true if f.object.permissions.include?(permission)),id: "group_permissions_#{permission.id}"
 	%p
-		=f.submit
+		=f.submit disable_with: "提交中..."

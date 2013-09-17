@@ -6,6 +6,8 @@
 	%td
 		=friendly_link.url
 	%td
+		=friendly_link.friendly_link_classification.name
+	%td
 		=friendly_link.rank
 	%td
 		=link_to "<button class='tiny button secondary'>修改</button>".html_safe,edit_admin_friendly_link_path(friendly_link)

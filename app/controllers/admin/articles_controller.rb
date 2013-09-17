@@ -60,8 +60,13 @@ class Admin::ArticlesController < Admin::BaseController
 	end
 
 	def destroy
-		render text: params
+		@article = Article.find params[:id]
+		@article.destroy
+
+		flash_notice
+		redirect_to action: :index
 	end
+
 	private
 	def article_params
 		params.require(:article).permit(:title,:content,:classification_id)

@@ -12,4 +12,6 @@
 
 class Page < ActiveRecord::Base
 	belongs_to :navigation
+
+	validates :title,:content,:navigation,presence:true
 end

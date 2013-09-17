@@ -19,6 +19,7 @@ class AffairFormInstance < ActiveRecord::Base
 	belongs_to :proposer,foreign_key:"proposer",class_name:"User"
 	has_many :logs,foreign_key: "instance_id",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
 
+	default_scope order: "created_at desc"
 	scope :audit_by_group,->(group){
 		where("audit_process like ? AND status = ?","%'#{group.id}'%",0).select{|instance|
 			group.id.to_s == instance.audit_process[instance.logs.size]
@@ -27,7 +28,7 @@ class AffairFormInstance < ActiveRecord::Base
 
 	def current_status_to_s
 		if status == 0
-			"等待" << audit_group_name = Group.find(audit_process[logs.size]).name << "审核"
+			"等待" + audit_group_name = Group.find(audit_process[logs.size]).name + "审核"
 		else
 			if audit_process.size == logs.size
 				"审核通过"

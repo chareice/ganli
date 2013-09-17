@@ -1,6 +1,6 @@
 class Admin::UsersController < Admin::BaseController
 	def index
-		@users = User.where status: 1
+		@users = User.where(status: 1).paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def new

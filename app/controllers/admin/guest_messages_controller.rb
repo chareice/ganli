@@ -16,8 +16,10 @@ class Admin::GuestMessagesController < Admin::BaseController
 
 		if @guest_message.valid?
 			@guest_message.save
+			flash_notice
 			redirect_to action: :index
 		else
+			flash_error @guest_message
 			redirect_to action: :new
 		end
 	end
@@ -40,7 +42,7 @@ class Admin::GuestMessagesController < Admin::BaseController
 			@guest_message.status = 2
 		end
 		@guest_message.save
-
+		flash[:notice] = "审核成功"
 		redirect_to action: :index
 	end
 

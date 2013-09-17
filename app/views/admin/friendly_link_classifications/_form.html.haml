@@ -1,0 +1,9 @@
+=form_for [:admin,@friendly_link_classification] do |f|
+	%p
+		=f.label :name,"名称"
+		=f.text_field :name
+	%p
+		=f.label :rank,"排序"
+		=f.text_field :rank
+	%p
+		=f.submit disable_with: "处理中..."

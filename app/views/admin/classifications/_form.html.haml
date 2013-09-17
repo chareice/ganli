@@ -6,4 +6,4 @@
 		=f.label :thumb_size,"缩略图尺寸(宽度在前，高度在后，宽度高度之间使用空格分隔,留空表示无缩略图)"
 		=f.text_field :thumb_size
 	%p
-		=f.submit "提交"
+		=f.submit "提交",disable_with: '提交中...'

@@ -6,6 +6,7 @@
 #  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  thumb_size :string(255)
 #
 
 class Classification < ActiveRecord::Base

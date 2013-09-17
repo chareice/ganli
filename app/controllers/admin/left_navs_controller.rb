@@ -19,9 +19,13 @@ class Admin::LeftNavsController < Admin::BaseController
 			left_nav.thumb = asset_path
 		end
 
-		left_nav.save
-
-		redirect_to edit_admin_left_nav_path(left_nav),flash:{notice: "添加成功"}
+		if left_nav.save
+			flash_notice
+			redirect_to edit_admin_left_nav_path(left_nav),flash:{notice: "添加成功"}
+		else
+			flash_error(left_nav)
+			redirect_to action: :new
+		end
 	end
 
 	def edit
@@ -39,9 +43,13 @@ class Admin::LeftNavsController < Admin::BaseController
 			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
 			left_nav.thumb = asset_path
 		end
-
-		@left_nav.save
-		redirect_to edit_admin_left_nav_path(@left_nav),flash:{notice: "修改成功"}
+		@left_nav.name = params[:left_nav][:name]
+		if @left_nav.save
+			redirect_to edit_admin_left_nav_path(@left_nav),flash:{notice: "修改成功"}
+		else
+			flash_error @left_nav
+			redirect_to edit_admin_left_nav_path(@left_nav)
+		end
 	end
 
 	def destroy

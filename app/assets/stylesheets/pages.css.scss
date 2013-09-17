@@ -568,11 +568,21 @@ $asset-prefix: "style";
 		border-top: 1px #5a9d27 solid;
 		border-bottom: 1px #5a9d27 solid;
 		padding-top: 8px;
+		padding-bottom: 8px;
 		.header{
 			font-size: 14px;
 			color: #00824c;
-		}		
-		.links_c{
+			float: left;
+			line-height: 25px;
+			margin-right: 10px;
+		}
+		.friendly-links{
+			select{
+				width: 200px;
+				margin-right: 10px;
+			}
+		}	
+		/* .links_c{
 			@include clearfix;
 			width: 950px;
 			margin: 0 auto;
@@ -588,7 +598,7 @@ $asset-prefix: "style";
 				float: left;
 				margin-right: 20px;
 			}
-		}
+		} */
 	}
 	.bottom_nav_c{
 		width: 749px;

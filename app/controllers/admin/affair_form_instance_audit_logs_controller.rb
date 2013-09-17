@@ -1,7 +1,8 @@
 class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 	before_action :audit_permission,only:[:new,:create]
 	def index
-		@instances = AffairFormInstance.audit_by_group current_user.group
+		require 'will_paginate/array'
+		@instances = AffairFormInstance.audit_by_group(current_user.group).paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def show
@@ -26,6 +27,7 @@ class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 			@instance.status = 1
 			@instance.save
 		end
+		flash[:notice] = "审核成功"
 		redirect_to action: :index
 	end
 

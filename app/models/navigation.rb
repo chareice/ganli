@@ -15,7 +15,9 @@ class Navigation < ActiveRecord::Base
 	has_many :subs,class_name:"Navigation",foreign_key: "nav_id",dependent: :destroy
 	belongs_to :nav,class_name:"Navigation"
 	has_one :page,dependent: :destroy
-	
+
+	validates :name,presence: true
+
 	default_scope order: :rank
 
 	scope :top_nav,->{

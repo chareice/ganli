@@ -9,6 +9,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  status     :integer          default(0)
+#  lastlogin  :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

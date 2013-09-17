@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130914085857) do
+ActiveRecord::Schema.define(version: 20130917071707) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -92,12 +92,20 @@ ActiveRecord::Schema.define(version: 20130914085857) do
     t.datetime "updated_at"
   end
 
+  create_table "friendly_link_classifications", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "rank",       default: 0
+  end
+
   create_table "friendly_links", force: true do |t|
     t.string   "name"
     t.string   "url"
     t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "friendly_link_classification_id"
   end
 
   create_table "groups", force: true do |t|
@@ -193,8 +201,9 @@ ActiveRecord::Schema.define(version: 20130914085857) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",     default: 0
+    t.integer  "status",                default: 0
     t.datetime "lastlogin"
+    t.string   "account",    limit: 16
   end
 
   create_table "users_groups", force: true do |t|

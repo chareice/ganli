@@ -1,19 +1,22 @@
 -content_for :actions_button do
 	=link_to "新增友情链接",{action: :new},class: "tiny secondary button"
+	=link_to "新增友情链接分类",new_admin_friendly_link_classification_path,class: "tiny secondary button"
 -if @friendly_links.empty?
 	%p
 		还没有友情链接
 -else
 	%table
 		%tr
-			%th
+			%td
 				ID
-			%th
+			%td
 				名称
-			%th
+			%td
 				链接地址
-			%th
+			%td
+				所属分类
+			%td
 				排序
-			%th
+			%td
 				操作
 		=render partial: :friendly_link,collection: @friendly_links

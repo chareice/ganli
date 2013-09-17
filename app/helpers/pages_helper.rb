@@ -17,9 +17,11 @@ module PagesHelper
 		a = action_name
 
 		if c == 'articles'
-			top_nav = @classification.navigation.tops_nav
-
-			s << " >> #{link_to top_nav.name,top_nav.link_url}".html_safe
+			if @classification.navigation
+				top_nav = @classification.navigation.tops_nav
+	
+				s << " >> #{link_to top_nav.name,top_nav.link_url}".html_safe
+			end
 			if a == 'classification'
 				s << " >> #{link_to classification_name(params[:id]),classification_path(params[:id])}".html_safe
 			elsif a == 'show'

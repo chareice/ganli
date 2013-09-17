@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
 	end
 
 	def create
+		unless captcha_valid? params[:captcha]
+			redirect_to :back,flash: {error: "验证码输入错误"} and return
+		end
+
 		begin
 			user = User.auth(params[:email],params[:password])
 		rescue Exception => e

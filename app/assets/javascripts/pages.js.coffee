@@ -15,3 +15,6 @@ $(".image-show-header ul li").hover (e)->
 	target.addClass("active")
 	image_show = "image-show-#{target.data('classification-id')}"
 	$("##{image_show}").addClass("active")
+$("#captcha-img").click ->
+	$("#captcha-img")[0].src = "/captcha?i=#{(new Date()).valueOf()}"
+	return false

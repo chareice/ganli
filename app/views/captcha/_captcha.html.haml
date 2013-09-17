@@ -1,3 +1,3 @@
-=label_tag :captcha,"输入验证码"
-=text_field_tag :captcha
-=captcha_tag
+=label_tag :captcha,"验证码"
+=text_field_tag :captcha,nil,:autocomplete =>"off"
+=captcha_tag id: 'captcha-img',title: "点击图片刷新验证码"

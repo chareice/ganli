@@ -12,16 +12,25 @@
 		/[if lt IE 9]
 			= javascript_include_tag "html5shiv/dist/html5shiv.js"
 		%title 甘李后台管理
-	%body.layout
-		%aside#main-aside
-			= render "layouts/admin/menu"
-		%section#main-admin-panel
+	%body
+		.layout
+			#admin-header
+				.tips
+					="欢迎您 #{current_user.name}，您的用户组为 #{current_user.group.name} <br/>上次登录时间 #{current_user.lastlogin.localtime.to_s(:db)}".html_safe
+				.header-actions-button-group
+					=link_to '系统首页',admin_path, class:'admin-index'
+					=link_to '修改密码',edit_user_path(current_user),class:'admin-reset-password'
+					=link_to '退出系统',"/logout",:confirm => "确定退出系统?",method: :delete,class:'admin-exit'
+			%aside#main-aside
+				= render "layouts/admin/menu"
+			%section#main-admin-panel
+				-unless controller_path == 'admin/admin'
+					= render "/admin/permission_header"
+				.main-admin-c
+					= render "/layouts/message"
+					= yield
+			= javascript_include_tag "admin/base.js"
 			-unless controller_path == 'admin/admin'
-				= render "/admin/permission_header"
-			.main-admin-c
-				= render "/layouts/message"
-				= yield
-		= javascript_include_tag "admin/base.js"
-		-unless controller_path == 'admin/admin'
-			= javascript_include_tag controller_path
-		= yield :javascript
+				= javascript_include_tag controller_path
+			#admin-footer
+			= yield :javascript

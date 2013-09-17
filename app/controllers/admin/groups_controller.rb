@@ -11,7 +11,9 @@ class Admin::GroupsController < Admin::BaseController
 	def create
 		@group = Group.new
 		@group.name = params[:group][:name]
-		@group.permissions = params[:group][:permission].map{|x| Permission.find x}
+		if params[:group][:permission]
+			@group.permissions = params[:group][:permission].map{|x| Permission.find x}
+		end
 		@group.save
 
 		redirect_to action: :index
@@ -25,7 +27,9 @@ class Admin::GroupsController < Admin::BaseController
 	def update
 		@group = Group.find params[:id]
 		@group.name = params[:group][:name]
-		@group.permissions = params[:group][:permission].map{|x| Permission.find x}
+		if params[:group][:permission]
+			@group.permissions = params[:group][:permission].map{|x| Permission.find x}
+		end
 		@group.save
 		
 		redirect_to action: :index 

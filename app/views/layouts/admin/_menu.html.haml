@@ -1,8 +1,10 @@
+.admin-menu-header
 %ul{id:"admin_menu"}
 	-AdminMenu.all.each do |menu|
 		-unless (menu.permissions & current_user.group.permissions).empty?
-			%li{class: "pure-menu pure-menu-open"}
-				%span{class: "pure-menu-heading"}=menu.name
+			%li{class: "pure-menu"}
+				%div{class: "pure-menu-heading"}
+					%span=menu.name
 				%ul
 					-menu.permissions.each do |permission|
 						-if current_user.is_allow_permission permission
@@ -19,7 +21,3 @@
 							-else
 								%li
 									=link_to link_name,link_url
-	%li
-		.user-logout
-			=button_to "退出","/logout",method: :delete
-

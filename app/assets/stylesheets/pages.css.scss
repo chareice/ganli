@@ -15,8 +15,6 @@ $asset-prefix: "style";
   &:after {
     display: table;
     content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
     line-height: 0;
   }
   &:after {
@@ -246,7 +244,7 @@ $asset-prefix: "style";
 			#login-c{
 				margin-bottom: 10px;
 				width: 238px;
-				height: 181px;
+				height: 238px;
 				background: image("primary-login-form.jpg");
 				form{
 					padding-top: 38px;
@@ -258,11 +256,15 @@ $asset-prefix: "style";
 					display: block;
 					float: left;
 					line-height: 24px;
-					text-align: right;
+					text-align: left;
 					margin-right: 5px;
 				}
 				p{
 					margin-top: 10px;
+					#captcha-img{
+						margin-left: 29px;
+						cursor: pointer;
+					}
 				}
 				input{
 					width: 110px;
@@ -271,7 +273,7 @@ $asset-prefix: "style";
 					background: #eee;
 				}
 				.button-group{
-					margin-top: 35px;
+					margin-top: 15px;
 				}
 				button,.submit{
 					background: image("login-button.jpg");
@@ -449,6 +451,7 @@ $asset-prefix: "style";
 						float: right;
 						position: absolute;
 						top: 8px;
+						_top:4px;
 						right: 6px;
 						a{
 							font-size: 12px;
@@ -500,7 +503,9 @@ $asset-prefix: "style";
 					.more{
 						float: right;
 						position: absolute;
-						top: 2px;
+						top: 4px !important	;
+						top:8px;
+						line-height: 14px;
 						right: 6px;
 						a{
 							font-size: 12px;

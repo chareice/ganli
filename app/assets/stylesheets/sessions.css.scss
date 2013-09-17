@@ -42,6 +42,19 @@
 				left: 461px;
 				top: 282px;
 			}
+			#captcha{
+				width: 114px;
+				height: 33px;
+				position: absolute;
+				left: 461px;
+				top: 332px;
+			}
+			#captcha-img{
+				position: absolute;
+				left: 590px;
+				top: 331px;
+				cursor: pointer;
+			}
 			button{
 				background: url(/assets/style/admin-login-button-bg.jpg);
 				height: 40px;
@@ -51,8 +64,8 @@
 				color: #666;
 				position: absolute;
 				cursor: pointer;
-				left: 490px;
-				top: 340px;
+				left: 461px;
+				top: 382px;
 			}
 		}
 	}

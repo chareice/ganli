@@ -2,5 +2,7 @@
     =text_field_tag :email
     =password_field_tag :password
     %input{name:'goadmin',value:'1',type:'hidden'}
+    =text_field_tag :captcha
+    =captcha_tag id: 'captcha-img'
     %button{type:"submit"}
         登 陆

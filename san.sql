@@ -97,7 +97,7 @@ DELETE FROM `affair_forms`;
 /*!40000 ALTER TABLE `affair_forms` DISABLE KEYS */;
 INSERT INTO `affair_forms` (`id`, `title`, `form`, `created_at`, `updated_at`, `audit_process`) VALUES
 	(1, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span>\r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2013-08-18 02:04:16', '2013-09-15 10:09:57', '---\n- \'1\'\n'),
-	(2, '甘李学校请假登记表', '<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:645px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="38" width="133" style="text-align:center;">\r\n				姓名\r\n			</td>\r\n			<td width="95">\r\n				<br />\r\n			</td>\r\n			<td width="104" style="text-align:center;">\r\n				任教年级\r\n			</td>\r\n			<td width="115">\r\n				<br />\r\n			</td>\r\n			<td width="72" style="text-align:center;">\r\n				学科\r\n			</td>\r\n			<td width="127">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="38" style="text-align:center;">\r\n				请假时间\r\n			</td>\r\n			<td colspan="5" style="text-align:center;">\r\n				年&nbsp; 月&nbsp; &nbsp;日&nbsp;&nbsp;&nbsp; 至&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; &nbsp;月&nbsp; 日\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" style="text-align:center;">\r\n				请假事由\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" width="133" style="text-align:center;">\r\n				相关工作安排\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="6" height="39" width="645" style="text-align:center;">\r\n				注：依据《甘李学校教职工请假办法（试行）》执行，1、一天及一天内由主管主任审批；2、一天以上由主管主任签署意见后，校长审批；3、节假日前一天原则上不准请假。\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	<br />\r\n</p>', '2013-08-19 08:48:43', '2013-09-15 10:10:46', '---\n- \'3\'\n- \'4\'\n');
+	(2, '甘李学校请假登记表', '<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:645px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="38" width="133" style="text-align:center;">\r\n				姓名\r\n			</td>\r\n			<td width="95">\r\n				<br />\r\n			</td>\r\n			<td width="104" style="text-align:center;">\r\n				任教年级\r\n			</td>\r\n			<td width="115">\r\n				<br />\r\n			</td>\r\n			<td width="72" style="text-align:center;">\r\n				学科\r\n			</td>\r\n			<td width="127">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="38" style="text-align:center;">\r\n				请假时间\r\n			</td>\r\n			<td colspan="5" style="text-align:center;">\r\n				年&nbsp; 月&nbsp; &nbsp;日&nbsp;&nbsp;&nbsp; 至&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; &nbsp;月&nbsp; 日\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" style="text-align:center;">\r\n				请假事由\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" width="133" style="text-align:center;">\r\n				相关工作安排\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="6" height="39" width="645" style="text-align:center;">\r\n				注：依据《甘李学校教职工请假办法（试行）》执行，1、一天及一天内由主管主任审批；2、一天以上由主管主任签署意见后，校长审批；3、节假日前一天原则上不准请假。\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	<br />\r\n</p>', '2013-08-19 08:48:43', '2013-09-17 04:16:49', '---\n- \'3\'\n- \'4\'\n');
 /*!40000 ALTER TABLE `affair_forms` ENABLE KEYS */;
 
 
@@ -114,14 +114,17 @@ CREATE TABLE IF NOT EXISTS `affair_form_instances` (
   `status` int(11) DEFAULT '0',
   `proposer` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.affair_form_instances: ~2 rows (approximately)
+-- Dumping data for table ganli_rails.affair_form_instances: ~5 rows (approximately)
 DELETE FROM `affair_form_instances`;
 /*!40000 ALTER TABLE `affair_form_instances` DISABLE KEYS */;
 INSERT INTO `affair_form_instances` (`id`, `title`, `form`, `affair_form_id`, `created_at`, `updated_at`, `audit_process`, `status`, `proposer`) VALUES
 	(13, '甘李学校公车出行申请表', '<p><span style="font-size: 10px;"></span></p><table cellpadding="0" cellspacing="0" width="648"><colgroup><col width="168" style=";width:168px"/><col width="133" style=";width:133px"/><col width="163" style=";width:163px"/><col width="184" style=";width:184px"/></colgroup><tbody><tr height="48" style=";height:48px"><td height="48" width="168" style="">申请人</td><td width="133" style="border-left-style: none;">邵成磊<br/></td><td width="163" style="border-left-style: none;">申请出车时间</td><td width="184" style="border-left-style: none;">明天上午</td></tr><tr height="117" style=";height:117px"><td height="117" style="border-top-style: none;">申请事由</td><td colspan="3" style="border-left:none">出去旅游你懂的</td></tr></tbody></table>', 1, '2013-08-30 07:26:06', '2013-08-30 07:26:50', '---\n- \'1\'\n', 1, 1),
-	(14, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				你好世界\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				爱上大声地爱上大叔\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				爱上大声地\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-15 10:12:23', '2013-09-15 10:12:23', '---\n- \'1\'\n', 0, 1);
+	(14, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				你好世界\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				爱上大声地爱上大叔\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				爱上大声地\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-15 10:12:23', '2013-09-17 05:42:41', '---\n- \'1\'\n', 1, 1),
+	(15, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:44:01', '2013-09-17 05:52:16', '---\n- \'1\'\n', 1, 1),
+	(16, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				&nbsp; &nbsp; 邵成磊\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				&nbsp; &nbsp;明天\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				&nbsp; Helloworld\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:45:11', '2013-09-17 05:45:11', '---\n- \'1\'\n', 0, 1),
+	(17, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:50:13', '2013-09-17 05:50:13', '---\n- \'1\'\n', 0, 1);
 /*!40000 ALTER TABLE `affair_form_instances` ENABLE KEYS */;
 
 
@@ -136,14 +139,16 @@ CREATE TABLE IF NOT EXISTS `affair_form_instance_audit_logs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.affair_form_instance_audit_logs: ~2 rows (approximately)
+-- Dumping data for table ganli_rails.affair_form_instance_audit_logs: ~4 rows (approximately)
 DELETE FROM `affair_form_instance_audit_logs`;
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` DISABLE KEYS */;
 INSERT INTO `affair_form_instance_audit_logs` (`id`, `instance_id`, `status`, `remark`, `approver`, `created_at`, `updated_at`) VALUES
 	(2, 8, 0, '小心点，别被媒体拍到', 1, '2013-08-21 01:02:52', '2013-08-21 01:02:52'),
-	(3, 13, 0, '不要太高调！', 1, '2013-08-30 07:26:50', '2013-08-30 07:26:50');
+	(3, 13, 0, '不要太高调！', 1, '2013-08-30 07:26:50', '2013-08-30 07:26:50'),
+	(4, 14, 0, '', 1, '2013-09-17 05:42:41', '2013-09-17 05:42:41'),
+	(5, 15, 0, '', 1, '2013-09-17 05:52:16', '2013-09-17 05:52:16');
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` ENABLE KEYS */;
 
 
@@ -161,9 +166,9 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `flag` varchar(255) DEFAULT NULL,
   `author` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.articles: ~18 rows (approximately)
+-- Dumping data for table ganli_rails.articles: ~21 rows (approximately)
 DELETE FROM `articles`;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
 INSERT INTO `articles` (`id`, `title`, `content`, `classification_id`, `created_at`, `updated_at`, `status`, `thumb`, `flag`, `author`) VALUES
@@ -186,8 +191,7 @@ INSERT INTO `articles` (`id`, `title`, `content`, `classification_id`, `created_
 	(18, '省政府主要领导批示  肯定我校对外交流工作', '<p style="font-family:\'font-size:14px;color:#262626;text-align:center;">\r\n	&nbsp;\r\n</p>\r\n<p style="font-family:\'font-size:14px;color:#262626;text-align:center;" align="center">\r\n	<img border="0" alt="" src="http://www.jxnu.edu.cn/picture/article/2/16/c2/c133d7844625a339a138d79654e9/5ae82a48-b54f-4e22-a986-ddb9fc997eaa.jpg" width="500" />\r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 日前，接省政府办公厅电传，鹿心社省长、谢茹副省长、朱虹副省长在中国驻赞比亚使馆给省政府发来的电报《龙腾狮舞卢萨卡，欢乐春节赞比亚》上作批示。对于中国驻赞比亚使馆称赞“江西师范大学学生艺术团带来的精彩舞龙舞狮表演更是技惊全场”，朱虹副省长特别强调：对江西师范大学相关人员应给予表扬奖励。</span> \r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 2013年春节前夕，应中国驻赞比亚大使馆邀请，经省外侨办组织协调，在省外侨办张知明副主任、我校副校长张艳国率领下，以科技学院为主体组成的慰问演出团赴赞演出受到热烈欢迎和高度赞誉，演出取得圆满成功。江西师大慰问演出团是随江西省外事侨务办公室组织的江西省友好交流访问团赴赞比亚的。演出团主要是受邀参加由中国驻赞比亚大使馆举办的第一届赞比亚新年庙会开幕式并进行专场演出。赞比亚开国元勋、第一任总统、中国人民的老朋友卡翁达，现任副总统以及政府有关部长，部分国家驻赞大使、参赞等重要嘉宾出席。整场演出受到广大观众的喜爱，特别是驻赞大使馆、赞比亚中华江西同乡会周欲晓的高度赞扬，中国驻赞比亚大使周欲晓多次称赞：你们为国家赢得了荣誉，为江西争了光，为师大扬了名；演出团是民间大使，是中赞友谊的友好使者。</span><br />\r\n<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 中国驻赞比亚大使馆、赞比亚中华江西同乡会分别发来感谢信，高度评价和赞扬江西师大演出团的精彩演出及为中赞友谊作出的贡献。（文/国际合作与交流处）</span> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 2, '2013-09-15 04:19:14', '2013-09-15 10:04:43', 0, NULL, '0', 1),
 	(19, '学校召开庆祝第29个教师节表彰大会', '<p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/09a4a189-dfaf-4952-9a14-ba921519b6e9.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/93837cde-44f2-4dac-ade6-3e9ade0d7c47.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/f19feeb4-e3dc-4a1b-b8db-9e77236f9e3b.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/e29b1869-46d3-44fe-b8e7-b2623006f147.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/60e59d01-4312-4bcb-865f-27b390ad1c58.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/372604fd-d438-4ff4-9373-9724e0329210.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/3c2cb144-b730-48c0-92a1-78d923b140b2.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/fcda362a-35c8-4afc-998d-b64d00275717.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/05ecfac0-6f3a-4ca7-8273-3ae4d520c326.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/8eaa1f60-7ca4-4bfd-a38b-5b012cc3de73.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/bd0a1437-3596-4e39-9fb5-13a1b0c49ba3.jpg"/></p><p style="text-align:left;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-size:4px;font-family:宋体">&nbsp;&nbsp;&nbsp; 9月10日下午，在第29个教师节的欢庆日子里，学校在先骕楼实验剧场举行庆祝教师节表彰大会，表彰奖励近年来在学校教学科研、管理服务工作中涌现出来的先进集体和先进个人。<br/>&nbsp;&nbsp;&nbsp; 在家校领导田延光、梅国平、何小平、聂剑、廖维林、张艳国、黄加文、周晓朗、涂宗财，总会计师童颖华，校长助理熊永华出席大会，受表彰的先进集体和个人代表，各学院院长、党委书记、党委副书记、分管教学科研工作的副院长，各机关部门、直附属单位主要负责人和教师代表等500余人参加会议。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 校党委书记田延光代表学校党委和行政向全体教职员工、向为学校建设与发展做出重要贡献的老领导、离退休老同志、老教师致以节日的祝贺和亲切的问候，向获表彰的集体和个人表示热烈祝贺。田延光强调，学校要把广大教职员工作为学校事业发展的最宝贵的力量依靠，全心全意依靠教职员工办学治校，牢固树立和践行“教育以学生为本、办学以教师为本”的理念，把教师队伍建设作为加快学校内涵发展，提升教育教学质量的关键环节和战略任务，大力营造尊重劳动、尊重知识、尊重人才、尊重创造的良好氛围，进一步尊重教师劳动、关心教师发展、提供优质环境。田延光希望广大教师争当爱岗敬业的楷模、教书育人的楷模、终身学习的楷模、师德师风的楷模。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 校长梅国平在主持讲话中指出，召开此次大会旨在总结先进经验、表彰先进典型、营造良好氛围、激励教师成长，进一步增强广大教师的光荣感、责任感和使命感。他表示，学校将高度重视广大教师的利益诉求，大力营造尊师重教的良好氛围，全力做好教师发展服务工作，努力让教师工作上得心应手、生活上无忧无虑、心情上轻松快乐。他希望广大教师真诚关注学生成长，严谨治学、精心施教，做一名社会敬仰的教师；谨记教师职业道德，立德修身，以身立教，做一名品德高尚的教师；树立质量第一意识，追求卓越，拒绝平庸，做一名锐意创新的教师。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 大会表彰了一批先进集体和个人。校党委副书记何小平宣读了学校表彰2011-2012年度“三育人”标兵和先进工作者、第二届“感动师大”人物的决定；副校长聂剑宣读了学校关于国家级管理项目的表彰决定；副校长张艳国宣读了学校关于国家级本科教学工程的表彰决定；副校长涂宗财宣读了学校关于科研、学科建设的表彰决定。詹艾斌等10位同志获得“2011-2012年度‘三育人’标兵”荣誉称号，罗奇清等232位同志获得“2011-2012年度‘三育人’先进工作者”荣誉称号；杨丽娇等10个个人（团体）获得“江西师范大学‘感动师大’人物”荣誉称号；表彰奖励国家大学生校外实践教育基地等11项国家级“本科教学工程”重大项目；表彰奖励获得2013年度国家自然科学基金、社会科学基金项目立项的项目负责人吴亚东等79人、申报人蔡艳等466人、申报立项工作优秀组织单位生命科学院、数学与信息科学学院、文学院等3个学院，2012年度重大科研成果获得者傅修延等37人；表彰奖励化学化工学院获得学科建设突出成绩单位。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 在激昂的音乐声中，校领导为获奖集体和个人代表颁奖。历史文化与旅游学院教师梁洪生、数学与信息科学学院教师黄福生、生命学院院长彭以元、生命科学学院教师涂艺声、学报杂志社教师吴赘、教师教育处处长项国雄分别代表2011-2012年度“三育人”标兵、国家级本科教学工程项目获奖、国家自然、社科基金项目申报立项工作优秀组织单位、自然科学基金项目获得者、国家社会科学基金项目获得者、国家级管理项目获批单位的获奖集体和个人发言，畅谈感受，分享经验。（文/钟雪艳 图/董江洪）&nbsp;</span></p><p><br/></p>', 1, '2013-09-15 04:20:31', '2013-09-15 04:21:02', 0, NULL, '0', 1),
 	(20, '文章测试', 'TEST<img src="/assets/article/2013/09/16/QQ截图20130913145613.png" alt="" />', 1, '2013-09-16 03:02:01', '2013-09-16 03:04:01', 0, '/assets/article/2013/09/16/flash_1.jpg', 'f', 1),
-	(21, 'asdsadsad', '<img src="/assets/article/2013/09/16/bottom_nav_bg.jpg" alt="" />', 2, '2013-09-16 03:24:16', '2013-09-16 07:59:59', 0, NULL, '0', 1),
-	(22, 'TEST', 'safsd', 1, '2013-09-16 03:25:26', '2013-09-16 03:25:26', 0, '/assets/article/2013/09/16/admin-login-form-10_.jpg', '0', 1);
+	(21, 'asdsadsad', '<img src="/assets/article/2013/09/16/bottom_nav_bg.jpg" alt="" />', 2, '2013-09-16 03:24:16', '2013-09-16 07:59:59', 0, NULL, '0', 1);
 /*!40000 ALTER TABLE `articles` ENABLE KEYS */;
 
 
@@ -217,9 +221,9 @@ CREATE TABLE IF NOT EXISTS `classifications` (
   `updated_at` datetime DEFAULT NULL,
   `thumb_size` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.classifications: ~5 rows (approximately)
+-- Dumping data for table ganli_rails.classifications: ~28 rows (approximately)
 DELETE FROM `classifications`;
 /*!40000 ALTER TABLE `classifications` DISABLE KEYS */;
 INSERT INTO `classifications` (`id`, `name`, `created_at`, `updated_at`, `thumb_size`) VALUES
@@ -265,9 +269,9 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.documents: ~1 rows (approximately)
+-- Dumping data for table ganli_rails.documents: ~4 rows (approximately)
 DELETE FROM `documents`;
 /*!40000 ALTER TABLE `documents` DISABLE KEYS */;
 INSERT INTO `documents` (`id`, `name`, `path`, `status`, `uploader`, `created_at`, `updated_at`) VALUES
@@ -287,16 +291,37 @@ CREATE TABLE IF NOT EXISTS `friendly_links` (
   `rank` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `friendly_link_classification_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.friendly_links: ~2 rows (approximately)
 DELETE FROM `friendly_links`;
 /*!40000 ALTER TABLE `friendly_links` DISABLE KEYS */;
-INSERT INTO `friendly_links` (`id`, `name`, `url`, `rank`, `created_at`, `updated_at`) VALUES
-	(2, '百度中国', 'http://www.baidu.com', 0, '2013-08-27 06:56:14', '2013-08-27 06:56:14'),
-	(3, '谷歌中国', 'http://www.google.com', 1, '2013-09-12 06:51:51', '2013-09-12 06:51:51');
+INSERT INTO `friendly_links` (`id`, `name`, `url`, `rank`, `created_at`, `updated_at`, `friendly_link_classification_id`) VALUES
+	(4, '深圳市教科院', 'http://www.szjky.edu.cn/', 0, '2013-09-17 06:37:25', '2013-09-17 06:37:25', 2),
+	(5, '龙岗教育', 'http://www.szlg.edu.cn/', 1, '2013-09-17 06:40:21', '2013-09-17 06:41:27', 3);
 /*!40000 ALTER TABLE `friendly_links` ENABLE KEYS */;
+
+
+-- Dumping structure for table ganli_rails.friendly_link_classifications
+DROP TABLE IF EXISTS `friendly_link_classifications`;
+CREATE TABLE IF NOT EXISTS `friendly_link_classifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `rank` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table ganli_rails.friendly_link_classifications: ~2 rows (approximately)
+DELETE FROM `friendly_link_classifications`;
+/*!40000 ALTER TABLE `friendly_link_classifications` DISABLE KEYS */;
+INSERT INTO `friendly_link_classifications` (`id`, `name`, `created_at`, `updated_at`, `rank`) VALUES
+	(2, '市级教育部门', '2013-09-17 06:26:01', '2013-09-17 06:26:01', 0),
+	(3, '区级教育部门', '2013-09-17 06:39:15', '2013-09-17 06:39:47', 0);
+/*!40000 ALTER TABLE `friendly_link_classifications` ENABLE KEYS */;
 
 
 -- Dumping structure for table ganli_rails.groups
@@ -307,16 +332,19 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.groups: ~4 rows (approximately)
+-- Dumping data for table ganli_rails.groups: ~7 rows (approximately)
 DELETE FROM `groups`;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
 INSERT INTO `groups` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(1, '系统管理员', '2013-08-08 13:51:39', '2013-08-08 13:51:39'),
-	(2, '用户', '2013-08-11 08:04:48', '2013-08-11 08:04:48'),
-	(3, '主管部门', '2013-08-20 02:25:11', '2013-08-20 02:25:11'),
-	(4, '校长', '2013-08-20 05:51:34', '2013-08-20 05:51:34');
+	(2, '教师', '2013-08-11 08:04:48', '2013-09-16 11:43:18'),
+	(3, '级组长', '2013-08-20 02:25:11', '2013-09-16 11:44:30'),
+	(4, '科组长', '2013-08-20 05:51:34', '2013-09-16 11:44:38'),
+	(5, '行政', '2013-09-16 11:44:49', '2013-09-16 11:45:02'),
+	(6, '副校长', '2013-09-16 11:45:14', '2013-09-16 11:45:14'),
+	(7, '校长', '2013-09-16 11:45:26', '2013-09-16 11:45:26');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 
 
@@ -329,9 +357,9 @@ CREATE TABLE IF NOT EXISTS `groups_permissions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.groups_permissions: ~35 rows (approximately)
+-- Dumping data for table ganli_rails.groups_permissions: ~39 rows (approximately)
 DELETE FROM `groups_permissions`;
 /*!40000 ALTER TABLE `groups_permissions` DISABLE KEYS */;
 INSERT INTO `groups_permissions` (`id`, `permission_id`, `group_id`, `created_at`, `updated_at`) VALUES
@@ -369,7 +397,11 @@ INSERT INTO `groups_permissions` (`id`, `permission_id`, `group_id`, `created_at
 	(38, 20, 1, NULL, NULL),
 	(39, 21, 1, NULL, NULL),
 	(40, 22, 1, NULL, NULL),
-	(41, 23, 1, NULL, NULL);
+	(41, 23, 1, NULL, NULL),
+	(42, 7, 6, NULL, NULL),
+	(43, 7, 7, NULL, NULL),
+	(44, 7, 5, NULL, NULL),
+	(45, 7, 2, NULL, NULL);
 /*!40000 ALTER TABLE `groups_permissions` ENABLE KEYS */;
 
 
@@ -384,13 +416,13 @@ CREATE TABLE IF NOT EXISTS `guest_messages` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.guest_messages: ~2 rows (approximately)
 DELETE FROM `guest_messages`;
 /*!40000 ALTER TABLE `guest_messages` DISABLE KEYS */;
 INSERT INTO `guest_messages` (`id`, `status`, `nickname`, `content`, `ip`, `created_at`, `updated_at`) VALUES
-	(1, 0, '雪山居士', '阿萨德撒的', '192.168.33.1', '2013-08-27 15:40:00', '2013-08-27 15:40:00'),
+	(1, 1, '雪山居士', '阿萨德撒的', '192.168.33.1', '2013-08-27 15:40:00', '2013-09-17 05:41:51'),
 	(2, 1, 'Bootstrap ', 'Bootstrap 是快速开发Web应用程序的前端工具包。它是一个CSS和HTML的集合，它使用了最新的浏览器技术，给你的Web开发提供了时尚的版式，表单，buttons，表格，网格系统等等。', '192.168.33.1', '2013-08-28 08:03:40', '2013-08-28 08:07:55');
 /*!40000 ALTER TABLE `guest_messages` ENABLE KEYS */;
 
@@ -512,9 +544,9 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.pages: ~2 rows (approximately)
+-- Dumping data for table ganli_rails.pages: ~3 rows (approximately)
 DELETE FROM `pages`;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
 INSERT INTO `pages` (`id`, `title`, `navigation_id`, `content`, `created_at`, `updated_at`) VALUES
@@ -576,9 +608,9 @@ CREATE TABLE IF NOT EXISTS `permission_actions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.permission_actions: ~92 rows (approximately)
+-- Dumping data for table ganli_rails.permission_actions: ~100 rows (approximately)
 DELETE FROM `permission_actions`;
 /*!40000 ALTER TABLE `permission_actions` DISABLE KEYS */;
 INSERT INTO `permission_actions` (`id`, `permission_id`, `action`, `created_at`, `updated_at`) VALUES
@@ -674,7 +706,14 @@ INSERT INTO `permission_actions` (`id`, `permission_id`, `action`, `created_at`,
 	(94, 4, 'admin/users#create', '2013-09-15 11:39:27', '2013-09-15 11:39:27'),
 	(95, 1, 'admin/files#image_up', '2013-09-15 13:23:27', '2013-09-15 13:23:27'),
 	(96, 2, 'admin/files#image_up', '2013-09-15 13:23:39', '2013-09-15 13:23:40'),
-	(97, 6, 'admin/pages#update', '2013-09-16 18:05:06', '2013-09-16 18:05:06');
+	(97, 6, 'admin/pages#update', '2013-09-16 18:05:06', '2013-09-16 18:05:06'),
+	(98, 16, 'admin/friendly_link_classifications#index', '2013-09-17 12:41:56', '2013-09-17 12:41:56'),
+	(99, 16, 'admin/friendly_link_classifications#new', '2013-09-17 12:42:08', '2013-09-17 12:42:08'),
+	(100, 16, 'admin/friendly_link_classifications#edit', '2013-09-17 12:42:17', '2013-09-17 12:42:17'),
+	(101, 16, 'admin/friendly_link_classifications#update', '2013-09-17 12:42:27', '2013-09-17 12:42:28'),
+	(102, 16, 'admin/friendly_link_classifications#create', '2013-09-17 12:42:36', '2013-09-17 12:42:36'),
+	(103, 16, 'admin/friendly_link_classifications#destroy', '2013-09-17 12:42:42', '2013-09-17 12:42:43'),
+	(104, 6, 'admin/pages#destroy', '2013-09-17 14:10:54', '2013-09-17 14:10:54');
 /*!40000 ALTER TABLE `permission_actions` ENABLE KEYS */;
 
 
@@ -689,7 +728,7 @@ CREATE TABLE IF NOT EXISTS `replies` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.replies: ~14 rows (approximately)
 DELETE FROM `replies`;
@@ -719,7 +758,7 @@ CREATE TABLE IF NOT EXISTS `schema_migrations` (
   UNIQUE KEY `unique_schema_migrations` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.schema_migrations: ~52 rows (approximately)
+-- Dumping data for table ganli_rails.schema_migrations: ~55 rows (approximately)
 DELETE FROM `schema_migrations`;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
 INSERT INTO `schema_migrations` (`version`) VALUES
@@ -774,7 +813,10 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 	('20130911125802'),
 	('20130913083114'),
 	('20130913092625'),
-	('20130914085857');
+	('20130914085857'),
+	('20130917042620'),
+	('20130917050247'),
+	('20130917071707');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 
 
@@ -789,9 +831,9 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.topics: ~30 rows (approximately)
+-- Dumping data for table ganli_rails.topics: ~40 rows (approximately)
 DELETE FROM `topics`;
 /*!40000 ALTER TABLE `topics` DISABLE KEYS */;
 INSERT INTO `topics` (`id`, `user_id`, `title`, `content`, `created_at`, `updated_at`, `status`) VALUES
@@ -823,7 +865,6 @@ INSERT INTO `topics` (`id`, `user_id`, `title`, `content`, `created_at`, `update
 	(29, 1, '最近在学习 Elixir, 分享些资源, 顺便寻找同好', '阿萨德撒打算的撒的', '2013-09-02 13:43:07', '2013-09-02 13:43:07', 0),
 	(30, 1, '最近在学习 Elixir, 分享些资源, 顺便寻找同好', '阿萨德撒打算的撒的', '2013-09-02 13:43:09', '2013-09-02 13:43:09', 0),
 	(31, 1, '最近在学习 Elixir, 分享些资源, 顺便寻找同好', '阿萨德撒打算的撒的', '2013-09-02 13:43:21', '2013-09-02 13:47:43', 2),
-	(32, 1, '呵呵', '哥是有权限的', '2013-09-02 13:44:50', '2013-09-02 13:44:50', 3),
 	(33, 1, '新的帖子测试', '<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	离新一代 iPhone 发布还有几个小时，同学们都很兴奋吧。这里再告诉同学们一个好消息，《使用 RSpec 测试 Rails 程序》这本书昨天正式发布了，购买地址：<span class="Apple-converted-space">&nbsp;</span><a href="https://leanpub.com/everydayrailsrspec-cn" target="_blank">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<h4 style="color:#222222;background-color:#ffffff;text-indent:0px;">\r\n	简介\r\n</h4>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	《使用 RSpec 测试 Rails 程序》是《Everyday Rails Testing with RSpec》的中文版，原作者为 Aaron Sumner。本书的部分内容源自 Aaron 在<span class="Apple-converted-space">&nbsp;</span><a href="http://everydayrails.com/">Everyday Rails</a><span class="Apple-converted-space">&nbsp;</span>网站上发布的系列文章，后来汇编成书，并增添了部分内容。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	本书较为系统全面地介绍了如何使用 RSpec 测试 Rails 程序，通过本书你可以：\r\n</p>\r\n<ul style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	<li style="font-size:13px;color:#333333;">\r\n		了解测试的类型；\r\n	</li>\r\n	<li style="font-size:13px;color:#333333;">\r\n		知道如何测试 Rails 程序；\r\n	</li>\r\n	<li style="font-size:13px;color:#333333;">\r\n		知道如何编写各种类型的测试；\r\n	</li>\r\n	<li style="font-size:13px;color:#333333;">\r\n		知道如何组织程序；\r\n	</li>\r\n	<li style="font-size:13px;color:#333333;">\r\n		了解 Rails 测试的原则和策略；\r\n	</li>\r\n	<li style="font-size:13px;color:#333333;">\r\n		知道如何使用“测试驱动开发”理念开发 Rails 程序；\r\n	</li>\r\n</ul>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	这本书特别适合对“测试”概念不熟悉，刚开始学 Rails，而且想学习 TDD 的同学。\r\n</p>\r\n<h4 style="color:#222222;background-color:#ffffff;text-indent:0px;">\r\n	FAQ\r\n</h4>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	<strong>如何购买，怎么支付？</strong>\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	这本书通过 Leanpub 发布，可以直接在 Leanpub 的网站购买，地址为<span class="Apple-converted-space">&nbsp;</span><a href="https://leanpub.com/everydayrailsrspec-cn" target="_blank">https://leanpub.com/everydayrailsrspec-cn</a>。可以使用 Paypal 或信用卡支付。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	如果实在不便使用 Paypal 支付，可以在某宝上找我代购，地址<span class="Apple-converted-space">&nbsp;</span><a href="http://item.taobao.com/item.htm?id=20151973725" target="_blank">http://item.taobao.com/item.htm?id=20151973725</a>。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	<strong>购买后还会收到后续更新吗？</strong>\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	Leanpub 的理念就是尽早发布，持续发布。所以，我会保持更新，而且所有更新都不会再收费。一旦有更新，您会收到来自 Leanpub 的邮件通知。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	<strong>购买后，如果不满意可以退款吗？</strong>\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	可以。按 Leanpub 规定，您有 45 天得免费退款期，100% 返还。但退款后，无法收到后续更新。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	<strong>发现问题怎么反馈？</strong>\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	如果您对本书有任何建议、意见和错误指正，请发往<span class="Apple-converted-space">&nbsp;</span><a href="https://github.com/AndorChen/everydayrailsrspec-cn/issues" target="_blank">https://github.com/AndorChen/everydayrailsrspec-cn/issues</a>，我会尽快回复。\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	购买地址：<a href="https://leanpub.com/everydayrailsrspec-cn" target="_blank">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<p style="color:#333333;background-color:#ffffff;text-indent:0px;">\r\n	趁直播还没开始，赶快打开浏览器购买吧，把知识转换成<span class="Apple-converted-space">&nbsp;</span><img title=":iphone:" class="emoji" style="height:20px;width:20px;" alt="" src="http://l.ruby-china.org/assets/emojis/iphone.png" />！\r\n</p>', '2013-09-15 11:40:22', '2013-09-15 11:40:22', 3);
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
 
@@ -839,15 +880,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
   `lastlogin` datetime DEFAULT NULL,
+  `account` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.users: ~2 rows (approximately)
+-- Dumping data for table ganli_rails.users: ~1 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`) VALUES
-	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-16 11:36:28', 1, '2013-09-16 11:36:20'),
-	(6, '余凯', '522788158@qq.com', '54818b05d116eadc7f67517a3a6e4b33', '2013-09-15 06:12:36', '2013-09-15 07:46:40', 1, '2013-09-15 07:46:40');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`) VALUES
+	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-17 10:34:21', 1, '2013-09-17 10:24:04', 'chareice');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
@@ -860,9 +901,9 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ganli_rails.users_groups: ~8 rows (approximately)
+-- Dumping data for table ganli_rails.users_groups: ~10 rows (approximately)
 DELETE FROM `users_groups`;
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES
@@ -873,7 +914,9 @@ INSERT INTO `users_groups` (`id`, `user_id`, `group_id`, `created_at`, `updated_
 	(5, 4, 1, '2013-09-15 03:41:00', '2013-09-15 03:41:00'),
 	(6, 5, 1, '2013-09-15 03:42:19', '2013-09-15 03:42:19'),
 	(7, 7, 1, '2013-09-15 06:40:07', '2013-09-15 06:40:07'),
-	(8, 6, 1, '2013-09-15 06:52:26', '2013-09-15 06:52:26');
+	(8, 6, 1, '2013-09-15 06:52:26', '2013-09-15 06:52:26'),
+	(9, 7, 1, '2013-09-17 07:41:45', '2013-09-17 07:41:45'),
+	(10, 8, 1, '2013-09-17 08:06:54', '2013-09-17 08:06:54');
 /*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

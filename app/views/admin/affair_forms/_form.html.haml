@@ -1,4 +1,4 @@
--@all_audit_group = Group.includes(:permissions).where(permissions:{id:8}).to_a
+-@all_audit_group = Group.includes(:permissions).where(permissions:{id:10}).to_a
 -@audit_group = @affair_form.audit_process.map{|x| Group.find x} if @affair_form.audit_process
 -@audit_group = [] unless @audit_group
 =form_for [:admin,@affair_form] do |f|

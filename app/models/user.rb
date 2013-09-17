@@ -10,12 +10,15 @@
 #  updated_at :datetime
 #  status     :integer          default(0)
 #  lastlogin  :datetime
+#  account    :string(16)
 #
 
 class User < ActiveRecord::Base
-	validates :name,:email,:password,presence: true
-	validates :email, uniqueness: true
-	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+	validates :name,:account,:password,presence: true
+	validates :account, uniqueness: true
+	validates :account, length: { in: 6..16 }
+
+	validates_format_of :account, :with =>/[a-zA-Z0-9_]{6,16}/
 	has_one :group, through: :users_group
 	has_one :users_group
 
@@ -37,9 +40,9 @@ class User < ActiveRecord::Base
 
 	alias_method :has_permission?,:is_allow_permission
 	
-	def self.auth(email,password)
+	def self.auth(account,password)
 		require 'digest/md5'
-		user = User.find_by email:email
+		user = User.find_by account:account
 		unless user
 			raise "用户未找到" 
 		end
@@ -56,11 +59,12 @@ class User < ActiveRecord::Base
 		require 'digest/md5'
 		self.password = Digest::MD5.hexdigest(new_password)
 	end
+	
 	def check_password(che_password)
 		require 'digest/md5'
 		self.password.eql?(Digest::MD5.hexdigest(che_password))
 	end
-	
+
 	private
 	def encryptionPassword
 		require 'digest/md5'

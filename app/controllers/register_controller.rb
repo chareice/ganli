@@ -28,18 +28,20 @@ class RegisterController < ApplicationController
 	end
 
 	def email_validate_from_user
-		key = "email_validate_#{params[:email]}"
-		if Rails.cache.read key
-			if Rails.cache.read(key)[:ac] == params[:ac]
-				session[:return_to] = request.fullpath
-				@user = User.new
-				@user.email = params[:email]
-				session[:regester_user] = @user
-			else
-				render text: "验证失败，请重新注册" and return
-			end
-		else
-			render text: "验证失败，请重新注册" and return
-		end
+		#key = "email_validate_#{params[:email]}"
+		#if Rails.cache.read key
+		#	if Rails.cache.read(key)[:ac] == params[:ac]
+		#		session[:return_to] = request.fullpath
+		#		@user = User.new
+		#		@user.email = params[:email]
+		#		session[:regester_user] = @user
+		#	else
+		#		render text: "验证失败，请重新注册" and return
+		#	end
+		#else
+		#	render text: "验证失败，请重新注册" and return
+		#end
+		@user = User.new
+		#session[:regester_user] = @user
 	end
 end

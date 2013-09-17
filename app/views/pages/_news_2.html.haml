@@ -3,4 +3,4 @@
     %span 校园动态
     .more=link_to "更多",articles_path,target: "_blank"
   %ul{class: "news-list"}
-    =render partial: 'news',collection: @row_one_news,locals: {truncate: 20,time: true}
+    =render partial: 'news',collection: @row_one_news,locals: {truncate: 30,time: true}

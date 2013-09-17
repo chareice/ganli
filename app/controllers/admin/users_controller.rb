@@ -10,7 +10,7 @@ class Admin::UsersController < Admin::BaseController
 	def create
 		user = User.new
 		user.name = params[:user][:name]
-		user.email = params[:user][:email]
+		user.account = params[:user][:account]
 		user.password = params[:user][:password]
 		user.group = Group.find params[:user][:group]
 		user.status = 1
@@ -28,15 +28,19 @@ class Admin::UsersController < Admin::BaseController
 	def update
 		user = User.find params[:id]
 		user.name = params[:user][:name]
-		user.email = params[:user][:email]
+		user.account = params[:user][:account]
 		user.group = Group.find params[:user][:group]
 		
 		unless params[:user][:password].blank?
 			user.reset_password (params[:user][:password])
 		end
-		user.save
-		
-		redirect_to edit_admin_user_path(user),flash:{notice: "修改成功"}
+		if user.save
+			redirect_to admin_users_path,flash:{notice: "修改成功"}
+		else
+			flash_error user
+			redirect_to edit_admin_user_path(user)
+		end
+
 	end
 
 	def audit
@@ -49,7 +53,7 @@ class Admin::UsersController < Admin::BaseController
 		@user.status = 1
 
 		@user.save
-		UserMailer.audit_pass(@user).deliver
+		#UserMailer.audit_pass(@user).deliver
 		render text: "success"
 	end
 

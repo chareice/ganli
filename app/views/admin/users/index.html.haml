@@ -8,7 +8,7 @@
 			%td
 				姓名
 			%td
-				Email
+				登陆账号
 			%td
 				用户组
 			%td
@@ -23,11 +23,14 @@
 				%td
 					=user.name
 				%td
-					=user.email
+					=user.account
 				%td
 					=user.group.name
 				%td
-					=user.lastlogin.localtime.to_s(:db)
+					-if user.lastlogin
+						=user.lastlogin.localtime.to_s(:db)
+					-else
+						从未登陆
 				%td
 					=link_to "修改",edit_admin_user_path(user)
 =will_paginate @users

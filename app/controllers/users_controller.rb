@@ -6,17 +6,24 @@ class UsersController < ApplicationController
 
 	def create
 		unless captcha_valid? params[:captcha]
-			redirect_to session[:return_to],flash: {error: "验证码输入错误"} and return
+			redirect_to register_path,flash: {error: "验证码输入错误"} and return
 		end
-		@user = session[:regester_user]
-		session[:regester_user] = nil
-		key = "email_validate_#{@user.email}"
-		Rails.cache.delete key
-
+		#@user = session[:regester_user]
+		#session[:regester_user] = nil
+		#key = "email_validate_#{@user.email}"
+		#Rails.cache.delete key
+		@user = User.new
 		@user.name = params[:user][:name].strip
+		@user.account = params[:user][:account].strip
 		@user.password = params[:user][:password].strip
 
-		@user.save
+		if @user.save
+			flash[:notice] = "申请成功 等待管理员审核"
+			redirect_to root_path
+		else
+			flash[:error] = @user.errors.full_messages.join(',')
+			redirect_to register_path
+		end
 	end
 
 	def edit

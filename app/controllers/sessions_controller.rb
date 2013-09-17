@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 		end
 
 		begin
-			user = User.auth(params[:email],params[:password])
+			user = User.auth(params[:account],params[:password])
 		rescue Exception => e
 			flash[:error] = '用户名/密码错误，未审核通过的用户无法登陆'
 			if session[:request_page]

@@ -4,8 +4,8 @@
 		=f.label :name,"姓名"
 		=f.text_field :name
 	%p
-		=f.label :email
-		=f.text_field :email
+		=f.label :account,"用户账号"
+		=f.text_field :account
 	%p
 		=f.label :group,"用户组"
 		-if @user.id
@@ -16,4 +16,4 @@
 		=f.label :password,"重置用户密码(留空则不修改用户密码)"
 		=f.password_field :password,{:autocomplete =>"off"}
 	%p
-		=f.submit,disable_with: '提交中...'
+		=f.submit disable_with: '提交中...'

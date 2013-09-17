@@ -52,6 +52,7 @@
         name: "用户名"
         password: "密码"
         email: "用户邮箱"
+        account: "用户账户"
       article:
         title: "文章标题"
         content: "文章内容"

@@ -52,6 +52,15 @@ table{
     @include clearfix;
     margin: 0 auto;
 }
+#admin-footer{
+    p{
+        position: relative;
+        top: 25px;
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+    }
+}
 #main-aside{
 	width: $admin_menu_width;
     float: left;

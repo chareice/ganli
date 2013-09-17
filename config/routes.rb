@@ -12,9 +12,10 @@ Ganli::Application.routes.draw do
   get "/classification/:id",to: "articles#classification",as: "classification"
  
   scope '/register' do
-    get "/",to: "register#email",as: "register"
-    post "/email_validate",to: "register#email_validate"
-    get "/user_validate",to: "register#email_validate_from_user"
+    get "/",to: "register#email_validate_from_user",as: "register"
+    #get "/",to: "register#email",as: "register"
+    #post "/email_validate",to: "register#email_validate"
+    #get "/user_validate",to: "register#email_validate_from_user"
   end
 
   namespace 'admin' do

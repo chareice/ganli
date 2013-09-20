@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -8,7 +8,7 @@ gem 'annotate'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
-gem 'pure-sass'
+
 gem 'zurb-foundation', '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml'
 
 gem 'mysql2'
-
+gem 'sqlite3'
 gem 'dalli'
 gem 'easy_captcha'
 gem 'rmagick'
@@ -44,6 +44,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development,:test do
+	gem "rspec-rails","~> 2.14.0"
+	gem "factory_girl_rails", "~> 4.2.1"
+end
+
+group :test do
+	gem "faker", "~> 1.1.2"
+	gem "capybara","~> 2.1.0"
+	gem "database_cleaner","~> 1.0.1"
+	gem "launchy","~> 2.3.0"
+	gem "selenium-webdriver","~> 2.33.0"
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -653,11 +653,12 @@ $asset-prefix: "style";
 	.main-footer{
 		height: 52px;
 		background: image("footer_bg.jpg") repeat-x;
-		padding-top: 20px;
+		padding-top: 10px;
 		p{
 			color: #837C7C;
 			font-size: 12px;
 			text-align: center;
+			margin-top: 10px;
 		}
 	}
 }

@@ -67,8 +67,17 @@ Ganli::Application.routes.draw do
     resources :lunches
     resources :guest_messages
     resources :left_navs
+    resources :messages do
+      collection do
+        get 'outbox'
+      end
+      member do
+        get 'download*path',action: :download,as: :download#,constraints: {path: /[^\/]*/}
+      end
+    end
 
     post 'files/imageup',to: 'files#imageup'
+    post 'files/fileup',to: 'files#fileup'
     post 'files/imagemanger',to: 'files#imagemanger'
     get 'files/thumb/:imagename',to: 'files#thumb'
 

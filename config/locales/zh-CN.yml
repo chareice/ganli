@@ -6,6 +6,8 @@
   activerecord:
     models:
       affair_form: "内务表单"
+      announcement: "通知公告"
+      message: "私信"
       article: "文章"
       left_nav: "左侧栏目"
       group: "用户组"
@@ -15,6 +17,17 @@
       friendly_link_classification: "友情链接分类"
       friendly_link: "友情链接"
     attributes:
+      announcement:
+        title: "标题"
+        status: "状态"
+        content: "内容"
+        author: "发布人"
+      message:
+        sender: "发件人"
+        receiver: "收件人"
+        atachment: "附件"
+        status: "状态"
+        content: "内容"
       navigation:
         name: "导航名称"
       page:
@@ -53,6 +66,9 @@
         password: "密码"
         email: "用户邮箱"
         account: "用户账户"
+        teacher_position: "教师职位"
+        phone: "手机号码"
+        qq: "QQ号码"
       article:
         title: "文章标题"
         content: "文章内容"

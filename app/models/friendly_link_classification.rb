@@ -13,5 +13,7 @@ class FriendlyLinkClassification < ActiveRecord::Base
 	validates :name,:rank,presence: true
 	has_many :friendly_links,dependent: :destroy
 
-	default_scope order: :rank
+	default_scope {
+		order('rank')
+	}
 end

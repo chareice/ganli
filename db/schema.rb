@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130917071707) do
+ActiveRecord::Schema.define(version: 20130924000721) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 20130917071707) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "audit_process"
+  end
+
+  create_table "announcements", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "status",     default: 0
   end
 
   create_table "articles", force: true do |t|
@@ -146,6 +155,16 @@ ActiveRecord::Schema.define(version: 20130917071707) do
     t.datetime "updated_at"
   end
 
+  create_table "messages", force: true do |t|
+    t.integer  "sender"
+    t.integer  "receiver"
+    t.text     "content"
+    t.string   "atachment"
+    t.string   "status",     default: "0"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "navigations", force: true do |t|
     t.string   "name"
     t.string   "url"
@@ -201,9 +220,12 @@ ActiveRecord::Schema.define(version: 20130917071707) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",                default: 0
+    t.integer  "status",                      default: 0
     t.datetime "lastlogin"
-    t.string   "account",    limit: 16
+    t.string   "account",          limit: 16
+    t.string   "qq"
+    t.string   "phone"
+    t.string   "teacher_position"
   end
 
   create_table "users_groups", force: true do |t|

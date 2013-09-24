@@ -18,7 +18,9 @@ class Navigation < ActiveRecord::Base
 
 	validates :name,presence: true
 
-	default_scope order: :rank
+	default_scope {
+		order(:rank)
+	}
 
 	scope :top_nav,->{
 		where(nav_id: nil).order(:rank)

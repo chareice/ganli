@@ -1,0 +1,6 @@
+%div{id: "users_groups_select_list"}
+	%ul{id: "groups_select_list"}
+		-groups = Group.all
+		-groups.each do |group|
+			%li{"data-group-id" => "#{group.id}"}=group.name
+	%ul{id: "users_select_list"}

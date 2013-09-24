@@ -14,6 +14,8 @@
 class FriendlyLink < ActiveRecord::Base
 	validates :name,:url,:friendly_link_classification,presence: true
 
-	default_scope order: :rank
+	default_scope {
+		order(:rank)
+	}
 	belongs_to :friendly_link_classification
 end

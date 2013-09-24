@@ -1,0 +1,15 @@
+=render partial: '/admin/ueditor/message',locals:{ueditor_id: "message_content"}
+= form_for [:admin,@message] do |f|
+	=f.label :receiver
+	- unless @message.receiver
+		-receiver = "请在下方选择收件人"
+	-else
+		-receiver = @message.receiver
+	%p{id: "receiver-preview"}=receiver
+	=f.hidden_field :receiver
+	=render partial: '/admin/users/user_list'
+	%p
+		=f.label :content
+		=f.text_area :content
+	%p
+		=f.submit disable_with: "发送中..."

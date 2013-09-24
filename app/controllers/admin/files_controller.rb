@@ -11,6 +11,12 @@ class Admin::FilesController < Admin::BaseController
 		render text: "test.jpg"
 	end
 
+	def fileup
+		path = Document.save_file(params[:imgFile],"document").gsub(Rails.root.to_s,"")
+		asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("document",""))
+		render json: {url:asset_path,error: 0}
+	end
+
 	def thumb
 		render :nothing
 	end

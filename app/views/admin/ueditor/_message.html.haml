@@ -1,0 +1,4 @@
+-content_for :javascript do
+	= javascript_include_tag "/assets/kindeditor/kindeditor_m.js"
+	%script
+		KindEditor.ready(function(K) {window.editor = K.create('textarea');});

@@ -2,21 +2,23 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  password   :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  status     :integer          default(0)
-#  lastlogin  :datetime
-#  account    :string(16)
+#  id               :integer          not null, primary key
+#  name             :string(255)
+#  email            :string(255)
+#  password         :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
+#  status           :integer          default(0)
+#  lastlogin        :datetime
+#  account          :string(16)
+#  qq               :string(255)
+#  phone            :string(255)
+#  teacher_position :string(255)
 #
 
 class User < ActiveRecord::Base
-	validates :name,:account,:password,:email,presence: true
+	validates :name,:account,:password,:email,:qq,:phone,:teacher_position,presence: true
 	validates :account, uniqueness: true
-	validates :account, length: { in: 6..16 }
 	validates :email, uniqueness: true
 
 	validates_format_of :account, :with =>/[a-zA-Z0-9_]{6,16}/,message: "格式为6-16位,包含字母数字下划线"
@@ -31,9 +33,14 @@ class User < ActiveRecord::Base
 	has_many :affair_form_instance_logs,foreign_key: "approver",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
 	has_many :documents,foreign_key: "uploader",dependent: :destroy
 	has_many :lunches,foreign_key: "teacher",dependent: :destroy
+	has_many :send_message,foreign_key: "sender",class_name:"Message",dependent: :destroy
+	has_many :receive_message,foreign_key: "receiver",class_name:"Message",dependent: :destroy
 	has_many :replies,dependent: :destroy
 	before_create :encryptionPassword
 
+	scope :with_group_id,->{
+		joins(:group).select("users.id,users.name,groups.id AS group_id")
+	}
 	def is_allow_action?(action)
 		group.permissions.include?(Permission.find_by_action(action).first)
 	end

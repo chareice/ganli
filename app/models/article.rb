@@ -27,7 +27,9 @@ class Article < ActiveRecord::Base
 	scope :flash,->{
 		where(flag: "f")
 	}
-	default_scope order: "created_at DESC"
+	default_scope {
+		order("created_at DESC")
+	}
 	belongs_to :classification
 	belongs_to :author,foreign_key: "author",class_name: "User"
 end

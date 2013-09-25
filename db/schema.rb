@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925050751) do
+ActiveRecord::Schema.define(version: 20130925141225) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 20130925050751) do
     t.integer  "teacher"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mold"
   end
 
   create_table "messages", force: true do |t|

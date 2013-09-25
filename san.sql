@@ -26,9 +26,9 @@ CREATE TABLE IF NOT EXISTS `admin_menus` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.admin_menus: ~7 rows (approximately)
+-- Dumping data for table ganli_rails.admin_menus: ~9 rows (approximately)
 DELETE FROM `admin_menus`;
 /*!40000 ALTER TABLE `admin_menus` DISABLE KEYS */;
 INSERT INTO `admin_menus` (`id`, `name`, `url`, `rank`, `created_at`, `updated_at`) VALUES
@@ -38,7 +38,9 @@ INSERT INTO `admin_menus` (`id`, `name`, `url`, `rank`, `created_at`, `updated_a
 	(4, '内务管理', NULL, NULL, '2013-08-17 17:21:39', '2013-08-17 17:21:39'),
 	(5, '教学资源', NULL, NULL, '2013-08-22 10:15:19', '2013-08-22 10:15:20'),
 	(6, '订餐系统', NULL, NULL, '2013-08-26 10:57:07', '2013-08-26 10:57:08'),
-	(7, '网站管理', NULL, NULL, '2013-08-27 10:40:14', '2013-08-27 10:40:14');
+	(7, '网站管理', NULL, NULL, '2013-08-27 10:40:14', '2013-08-27 10:40:14'),
+	(8, '私信管理', NULL, NULL, '2013-09-22 17:33:28', '2013-09-22 17:33:28'),
+	(9, '通知公告', NULL, NULL, '2013-09-24 20:29:59', '2013-09-24 20:29:59');
 /*!40000 ALTER TABLE `admin_menus` ENABLE KEYS */;
 
 
@@ -52,9 +54,9 @@ CREATE TABLE IF NOT EXISTS `admin_menu_permissions` (
   `updated_at` datetime DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ganli_rails.admin_menu_permissions: ~19 rows (approximately)
+-- Dumping data for table ganli_rails.admin_menu_permissions: ~24 rows (approximately)
 DELETE FROM `admin_menu_permissions`;
 /*!40000 ALTER TABLE `admin_menu_permissions` DISABLE KEYS */;
 INSERT INTO `admin_menu_permissions` (`id`, `admin_menu_id`, `permission_id`, `created_at`, `updated_at`, `url`) VALUES
@@ -76,7 +78,12 @@ INSERT INTO `admin_menu_permissions` (`id`, `admin_menu_id`, `permission_id`, `c
 	(16, 6, 15, '2013-08-28 16:24:09', '2013-08-28 16:24:10', NULL),
 	(17, 2, 18, '2013-09-01 16:23:43', '2013-09-01 16:23:43', '/admin/users/audit'),
 	(18, 7, 21, '2013-09-11 21:07:43', '2013-09-11 21:07:43', NULL),
-	(19, 4, 22, '2013-09-14 22:27:45', '2013-09-14 22:27:46', '/admin/affair_form_instances/list');
+	(19, 4, 22, '2013-09-14 22:27:45', '2013-09-14 22:27:46', '/admin/affair_form_instances/list'),
+	(20, 8, 24, '2013-09-22 18:01:15', '2013-09-22 18:01:15', NULL),
+	(21, 8, 25, '2013-09-22 18:01:20', '2013-09-22 18:01:20', NULL),
+	(22, 8, 26, '2013-09-22 18:01:25', '2013-09-22 18:01:25', '/admin/messages/outbox'),
+	(23, 9, 27, '2013-09-24 20:30:06', '2013-09-24 20:30:06', '/admin/announcements'),
+	(24, 9, 28, '2013-09-24 20:30:15', '2013-09-24 20:30:16', '/admin/announcements/view_index');
 /*!40000 ALTER TABLE `admin_menu_permissions` ENABLE KEYS */;
 
 
@@ -90,14 +97,14 @@ CREATE TABLE IF NOT EXISTS `affair_forms` (
   `updated_at` datetime DEFAULT NULL,
   `audit_process` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.affair_forms: ~2 rows (approximately)
 DELETE FROM `affair_forms`;
 /*!40000 ALTER TABLE `affair_forms` DISABLE KEYS */;
 INSERT INTO `affair_forms` (`id`, `title`, `form`, `created_at`, `updated_at`, `audit_process`) VALUES
-	(1, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span>\r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2013-08-18 02:04:16', '2013-09-15 10:09:57', '---\n- \'1\'\n'),
-	(2, '甘李学校请假登记表', '<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:645px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="38" width="133" style="text-align:center;">\r\n				姓名\r\n			</td>\r\n			<td width="95">\r\n				<br />\r\n			</td>\r\n			<td width="104" style="text-align:center;">\r\n				任教年级\r\n			</td>\r\n			<td width="115">\r\n				<br />\r\n			</td>\r\n			<td width="72" style="text-align:center;">\r\n				学科\r\n			</td>\r\n			<td width="127">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="38" style="text-align:center;">\r\n				请假时间\r\n			</td>\r\n			<td colspan="5" style="text-align:center;">\r\n				年&nbsp; 月&nbsp; &nbsp;日&nbsp;&nbsp;&nbsp; 至&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; &nbsp;月&nbsp; 日\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" style="text-align:center;">\r\n				请假事由\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" width="133" style="text-align:center;">\r\n				相关工作安排\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="6" height="39" width="645" style="text-align:center;">\r\n				注：依据《甘李学校教职工请假办法（试行）》执行，1、一天及一天内由主管主任审批；2、一天以上由主管主任签署意见后，校长审批；3、节假日前一天原则上不准请假。\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	<br />\r\n</p>', '2013-08-19 08:48:43', '2013-09-17 04:16:49', '---\n- \'3\'\n- \'4\'\n');
+	(1, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2013-08-18 02:04:16', '2013-09-25 13:05:37', '---\n- \'1\'\n- \'2\'\n'),
+	(3, '甘李学校请假登记表', '<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:645px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="38" width="133" style="text-align:center;">\r\n				姓名\r\n			</td>\r\n			<td width="95">\r\n				<br />\r\n			</td>\r\n			<td width="104" style="text-align:center;">\r\n				任教年级\r\n			</td>\r\n			<td width="115">\r\n				<br />\r\n			</td>\r\n			<td width="72" style="text-align:center;">\r\n				学科\r\n			</td>\r\n			<td width="127">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="38" style="text-align:center;">\r\n				请假时间\r\n			</td>\r\n			<td colspan="5" style="text-align:center;">\r\n				年&nbsp; 月&nbsp; &nbsp;日&nbsp;&nbsp;&nbsp; 至&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; &nbsp;月&nbsp; 日\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" style="text-align:center;">\r\n				请假事由\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" width="133" style="text-align:center;">\r\n				相关工作安排\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="6" height="39" width="645" style="text-align:center;">\r\n				注：依据《甘李学校教职工请假办法（试行）》执行，1、一天及一天内由主管主任审批；2、一天以上由主管主任签署意见后，校长审批；3、节假日前一天原则上不准请假。\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	<br />\r\n</p>', '2013-09-25 14:02:19', '2013-09-25 14:03:16', '---\n- \'1\'\n');
 /*!40000 ALTER TABLE `affair_forms` ENABLE KEYS */;
 
 
@@ -114,17 +121,14 @@ CREATE TABLE IF NOT EXISTS `affair_form_instances` (
   `status` int(11) DEFAULT '0',
   `proposer` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.affair_form_instances: ~5 rows (approximately)
+-- Dumping data for table ganli_rails.affair_form_instances: ~2 rows (approximately)
 DELETE FROM `affair_form_instances`;
 /*!40000 ALTER TABLE `affair_form_instances` DISABLE KEYS */;
 INSERT INTO `affair_form_instances` (`id`, `title`, `form`, `affair_form_id`, `created_at`, `updated_at`, `audit_process`, `status`, `proposer`) VALUES
-	(13, '甘李学校公车出行申请表', '<p><span style="font-size: 10px;"></span></p><table cellpadding="0" cellspacing="0" width="648"><colgroup><col width="168" style=";width:168px"/><col width="133" style=";width:133px"/><col width="163" style=";width:163px"/><col width="184" style=";width:184px"/></colgroup><tbody><tr height="48" style=";height:48px"><td height="48" width="168" style="">申请人</td><td width="133" style="border-left-style: none;">邵成磊<br/></td><td width="163" style="border-left-style: none;">申请出车时间</td><td width="184" style="border-left-style: none;">明天上午</td></tr><tr height="117" style=";height:117px"><td height="117" style="border-top-style: none;">申请事由</td><td colspan="3" style="border-left:none">出去旅游你懂的</td></tr></tbody></table>', 1, '2013-08-30 07:26:06', '2013-08-30 07:26:50', '---\n- \'1\'\n', 1, 1),
-	(14, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				你好世界\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				爱上大声地爱上大叔\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				爱上大声地\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-15 10:12:23', '2013-09-17 05:42:41', '---\n- \'1\'\n', 1, 1),
-	(15, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:44:01', '2013-09-17 05:52:16', '---\n- \'1\'\n', 1, 1),
-	(16, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				&nbsp; &nbsp; 邵成磊\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				&nbsp; &nbsp;明天\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				&nbsp; Helloworld\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:45:11', '2013-09-17 05:45:11', '---\n- \'1\'\n', 0, 1),
-	(17, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-17 05:50:13', '2013-09-17 05:50:13', '---\n- \'1\'\n', 0, 1);
+	(19, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-25 13:33:19', '2013-09-25 13:34:14', '---\n- \'1\'\n- \'2\'\n', 1, 1),
+	(20, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				啊实打实打算\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-25 13:35:16', '2013-09-25 13:35:29', '---\n- \'1\'\n- \'2\'\n', 1, 1);
 /*!40000 ALTER TABLE `affair_form_instances` ENABLE KEYS */;
 
 
@@ -139,17 +143,58 @@ CREATE TABLE IF NOT EXISTS `affair_form_instance_audit_logs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.affair_form_instance_audit_logs: ~4 rows (approximately)
+-- Dumping data for table ganli_rails.affair_form_instance_audit_logs: ~3 rows (approximately)
 DELETE FROM `affair_form_instance_audit_logs`;
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` DISABLE KEYS */;
 INSERT INTO `affair_form_instance_audit_logs` (`id`, `instance_id`, `status`, `remark`, `approver`, `created_at`, `updated_at`) VALUES
-	(2, 8, 0, '小心点，别被媒体拍到', 1, '2013-08-21 01:02:52', '2013-08-21 01:02:52'),
-	(3, 13, 0, '不要太高调！', 1, '2013-08-30 07:26:50', '2013-08-30 07:26:50'),
-	(4, 14, 0, '', 1, '2013-09-17 05:42:41', '2013-09-17 05:42:41'),
-	(5, 15, 0, '', 1, '2013-09-17 05:52:16', '2013-09-17 05:52:16');
+	(9, 19, 0, 'a', 1, '2013-09-25 13:33:33', '2013-09-25 13:33:33'),
+	(10, 19, 0, 'a', 2, '2013-09-25 13:34:14', '2013-09-25 13:34:14'),
+	(11, 20, 1, '', 1, '2013-09-25 13:35:29', '2013-09-25 13:35:29');
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` ENABLE KEYS */;
+
+
+-- Dumping structure for table ganli_rails.announcements
+DROP TABLE IF EXISTS `announcements`;
+CREATE TABLE IF NOT EXISTS `announcements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `content` text,
+  `author` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `status` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table ganli_rails.announcements: ~2 rows (approximately)
+DELETE FROM `announcements`;
+/*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
+INSERT INTO `announcements` (`id`, `title`, `content`, `author`, `created_at`, `updated_at`, `status`) VALUES
+	(1, '外语学院海外研修人员归国学术报', '<table width="74%" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size:9pt;font-family:\'Microsoft YaHei\';background-color:#FFFFFF;" class="ke-zeroborder">\r\n	<tbody>\r\n		<tr>\r\n			<td height="360" valign="top" class="content" style="font-size:10.5pt;">\r\n				<p>\r\n					<span>&nbsp;</span> \r\n				</p>\r\n				<div style="font-size:9pt;">\r\n					<span><span>主讲人：唐雄英&nbsp;&nbsp;&nbsp;&nbsp;博士、教授</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>题&nbsp;目：Writing for Publication in English: Views from 5 Sojourning Young Chinese Scientists</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>海外研修单位：</span><span>美国阿拉巴马大学英文系</span><span><span>（2013年1月—2013年7月）</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span><span>报告时间：9月17日星期二下午14:00-15:00<br />\r\n</span></span><span><span>报告地点：名达楼1区1415教室</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<p>\r\n						&nbsp;\r\n					</p>\r\n					<p>\r\n						<span>&nbsp;</span> \r\n					</p>\r\n					<div style="font-size:9pt;">\r\n						<span>主讲人：徐红 副教授</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>题&nbsp;目：TESOL Advanced （Teaching English for Speakers of Other Languages）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>海外研修单位：</span><span>King George International Business College- Canada TESOL Center</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>国王乔治国际学院-加拿大TESOL中心</span></span><span><span>（2013年3月—2013年8月）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告时间：9月17日星期二下午15:00-16:00</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告地点：名达楼1区1415教室</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;主办：人事处</span></span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 承办：外国语学院</span> \r\n					</div>\r\n				</div>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-24 13:00:58', '2013-09-24 13:14:52', 0),
+	(2, '党委统战部喜获“中国统一战线宣传先进单位”荣誉', '<span style="background-color:#FFFFFF;">&nbsp;近日，我校党委统战部被中央统战部宣传办、中国统一战线杂志社授予“中国统一战线宣传先进单位”荣誉称号，这已是党委统战部连续八年获此殊荣。党委统战部陈武阳同志获“中国统一战线宣传先进个人”荣誉称号。</span><span style="color:#262626;font-family:仿宋_GB2312;font-size:19px;line-height:21px;background-color:#FFFFFF;"><br />\r\n</span><span style="background-color:#FFFFFF;">　　今年，党委统战部以党的十八大精神为指导，结合学校建设有特色高水平大学，在统一战线中着力开展“同心”系列活动，进一步将社会主义核心价值体系学与行主题教育活动引向深入；扎实做好党外知识分子工作，建立健全党外知识分子工作新机制<span>;</span>努力完善民族宗教工作，积极引导师生自觉遵守国家民族宗教政策等举措，使学校统战工作呈现出新的特点。</span><span style="color:#262626;font-family:仿宋_GB2312;font-size:19px;line-height:21px;background-color:#FFFFFF;"><br />\r\n</span><span style="background-color:#FFFFFF;">　　党委统战部将以此次荣誉的获得为契机，继续解放思想，真抓实干。在省委统战部的指导和学校党委的领导下，为建设地方一流、特色鲜明的教学研究型师范大学夯实基础，开创统战工作新局面。（文<span>/</span>统战部）<br />\r\n</span>', 1, '2013-09-24 13:50:00', '2013-09-25 01:19:21', 0);
+/*!40000 ALTER TABLE `announcements` ENABLE KEYS */;
+
+
+-- Dumping structure for table ganli_rails.announcement_viewers
+DROP TABLE IF EXISTS `announcement_viewers`;
+CREATE TABLE IF NOT EXISTS `announcement_viewers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `announcement_id` int(11) DEFAULT NULL,
+  `viewer` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table ganli_rails.announcement_viewers: ~2 rows (approximately)
+DELETE FROM `announcement_viewers`;
+/*!40000 ALTER TABLE `announcement_viewers` DISABLE KEYS */;
+INSERT INTO `announcement_viewers` (`id`, `announcement_id`, `viewer`, `created_at`, `updated_at`) VALUES
+	(1, 1, 1, '2013-09-24 21:48:24', '2013-09-24 21:48:24'),
+	(2, 2, 1, '2013-09-25 01:46:16', '2013-09-25 01:46:16');
+/*!40000 ALTER TABLE `announcement_viewers` ENABLE KEYS */;
 
 
 -- Dumping structure for table ganli_rails.articles
@@ -269,16 +314,17 @@ CREATE TABLE IF NOT EXISTS `documents` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.documents: ~4 rows (approximately)
+-- Dumping data for table ganli_rails.documents: ~5 rows (approximately)
 DELETE FROM `documents`;
 /*!40000 ALTER TABLE `documents` DISABLE KEYS */;
 INSERT INTO `documents` (`id`, `name`, `path`, `status`, `uploader`, `created_at`, `updated_at`) VALUES
 	(1, '语境及其对话语理解的作用', '/rails/ganli/documents/2013/08/23/语境在语言理解中的作用.txt', 1, 1, '2013-08-23 00:37:53', '2013-08-23 03:04:04'),
 	(6, 'adsad', '//document/2013/09/16/ConEmu64__.exe', 2, 1, '2013-09-16 03:16:25', '2013-09-16 03:31:12'),
 	(7, 'sdfsafdsaf', '//document/2013/09/16/flash_1.jpg', 2, 1, '2013-09-16 03:18:40', '2013-09-16 03:31:09'),
-	(8, 'asdasdsa', '/ganli/ganli/document/2013/09/16/admin-login-button-bg.jpg', 2, 1, '2013-09-16 03:21:44', '2013-09-16 03:31:06');
+	(8, 'asdasdsa', '/ganli/ganli/document/2013/09/16/admin-login-button-bg.jpg', 2, 1, '2013-09-16 03:21:44', '2013-09-16 03:31:06'),
+	(9, 'test', '/ganli/ganli/document/2013/09/23/1_110922145139_5 (1).jpg', 2, 1, '2013-09-23 11:30:13', '2013-09-23 11:32:46');
 /*!40000 ALTER TABLE `documents` ENABLE KEYS */;
 
 
@@ -357,9 +403,9 @@ CREATE TABLE IF NOT EXISTS `groups_permissions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.groups_permissions: ~39 rows (approximately)
+-- Dumping data for table ganli_rails.groups_permissions: ~44 rows (approximately)
 DELETE FROM `groups_permissions`;
 /*!40000 ALTER TABLE `groups_permissions` DISABLE KEYS */;
 INSERT INTO `groups_permissions` (`id`, `permission_id`, `group_id`, `created_at`, `updated_at`) VALUES
@@ -401,7 +447,12 @@ INSERT INTO `groups_permissions` (`id`, `permission_id`, `group_id`, `created_at
 	(42, 7, 6, NULL, NULL),
 	(43, 7, 7, NULL, NULL),
 	(44, 7, 5, NULL, NULL),
-	(45, 7, 2, NULL, NULL);
+	(45, 7, 2, NULL, NULL),
+	(46, 24, 1, NULL, NULL),
+	(47, 25, 1, NULL, NULL),
+	(48, 26, 1, NULL, NULL),
+	(49, 27, 1, NULL, NULL),
+	(50, 28, 1, NULL, NULL);
 /*!40000 ALTER TABLE `groups_permissions` ENABLE KEYS */;
 
 
@@ -456,19 +507,42 @@ CREATE TABLE IF NOT EXISTS `lunches` (
   `teacher` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `mold` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ganli_rails.lunches: ~5 rows (approximately)
 DELETE FROM `lunches`;
 /*!40000 ALTER TABLE `lunches` DISABLE KEYS */;
-INSERT INTO `lunches` (`id`, `date`, `teacher`, `created_at`, `updated_at`) VALUES
-	(1, '2013-08-30', 1, '2013-08-28 15:35:59', '2013-08-28 15:35:59'),
-	(2, '2013-09-03', 1, '2013-09-01 13:01:56', '2013-09-01 13:01:56'),
-	(3, '2013-09-03', 2, '2013-09-01 13:02:16', '2013-09-01 13:02:16'),
-	(4, '2013-09-13', 1, '2013-09-12 10:15:39', '2013-09-12 10:15:39'),
-	(5, '2013-09-16', 1, '2013-09-14 11:17:22', '2013-09-14 11:17:22');
+INSERT INTO `lunches` (`id`, `date`, `teacher`, `created_at`, `updated_at`, `mold`) VALUES
+	(1, '2013-08-30', 1, '2013-08-28 15:35:59', '2013-08-28 15:35:59', NULL),
+	(2, '2013-09-03', 1, '2013-09-01 13:01:56', '2013-09-01 13:01:56', NULL),
+	(3, '2013-09-03', 2, '2013-09-01 13:02:16', '2013-09-01 13:02:16', NULL),
+	(4, '2013-09-13', 1, '2013-09-12 10:15:39', '2013-09-12 10:15:39', NULL),
+	(5, '2013-09-16', 1, '2013-09-14 11:17:22', '2013-09-14 11:17:22', NULL);
 /*!40000 ALTER TABLE `lunches` ENABLE KEYS */;
+
+
+-- Dumping structure for table ganli_rails.messages
+DROP TABLE IF EXISTS `messages`;
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sender` int(11) DEFAULT NULL,
+  `receiver` int(11) DEFAULT NULL,
+  `content` text,
+  `atachment` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
+  `status` varchar(255) CHARACTER SET latin1 DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table ganli_rails.messages: ~1 rows (approximately)
+DELETE FROM `messages`;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+INSERT INTO `messages` (`id`, `sender`, `receiver`, `content`, `atachment`, `status`, `created_at`, `updated_at`) VALUES
+	(1, 1, 1, '你好！', NULL, '1', '2013-09-24 00:10:11', '2013-09-24 09:17:59');
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 
 
 -- Dumping structure for table ganli_rails.navigations
@@ -567,9 +641,9 @@ CREATE TABLE IF NOT EXISTS `permissions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.permissions: ~23 rows (approximately)
+-- Dumping data for table ganli_rails.permissions: ~28 rows (approximately)
 DELETE FROM `permissions`;
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
 INSERT INTO `permissions` (`id`, `name`, `describe`, `created_at`, `updated_at`) VALUES
@@ -595,7 +669,12 @@ INSERT INTO `permissions` (`id`, `name`, `describe`, `created_at`, `updated_at`)
 	(20, '论坛受信用户组', '可先显示发布的消息再进行审核', '2013-09-02 21:47:50', '2013-09-02 21:47:50'),
 	(21, '页面左侧栏目', '管理页面左侧的栏目', '2013-09-11 21:06:29', '2013-09-11 21:06:30'),
 	(22, '内务申请表查看', '查看所有的内务申请表', '2013-09-14 22:23:11', '2013-09-14 22:23:11'),
-	(23, '删除教育资源', '可对教育资源进行删除操作', '2013-09-15 09:16:36', '2013-09-15 09:16:36');
+	(23, '删除教育资源', '可对教育资源进行删除操作', '2013-09-15 09:16:36', '2013-09-15 09:16:36'),
+	(24, '写私信', '发送私信', '2013-09-22 17:56:21', '2013-09-22 17:56:21'),
+	(25, '收件箱', '查看收到的私信', '2013-09-22 17:56:37', '2013-09-22 17:56:37'),
+	(26, '发件箱', '查看发出的私信', '2013-09-22 17:56:52', '2013-09-22 17:56:52'),
+	(27, '通知公告管理', '发布通知公告', '2013-09-24 18:40:57', '2013-09-24 18:40:57'),
+	(28, '查看通知公告', '查看通知公告', '2013-09-24 18:41:12', '2013-09-24 18:41:12');
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 
 
@@ -608,9 +687,9 @@ CREATE TABLE IF NOT EXISTS `permission_actions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.permission_actions: ~100 rows (approximately)
+-- Dumping data for table ganli_rails.permission_actions: ~118 rows (approximately)
 DELETE FROM `permission_actions`;
 /*!40000 ALTER TABLE `permission_actions` DISABLE KEYS */;
 INSERT INTO `permission_actions` (`id`, `permission_id`, `action`, `created_at`, `updated_at`) VALUES
@@ -713,7 +792,25 @@ INSERT INTO `permission_actions` (`id`, `permission_id`, `action`, `created_at`,
 	(101, 16, 'admin/friendly_link_classifications#update', '2013-09-17 12:42:27', '2013-09-17 12:42:28'),
 	(102, 16, 'admin/friendly_link_classifications#create', '2013-09-17 12:42:36', '2013-09-17 12:42:36'),
 	(103, 16, 'admin/friendly_link_classifications#destroy', '2013-09-17 12:42:42', '2013-09-17 12:42:43'),
-	(104, 6, 'admin/pages#destroy', '2013-09-17 14:10:54', '2013-09-17 14:10:54');
+	(104, 6, 'admin/pages#destroy', '2013-09-17 14:10:54', '2013-09-17 14:10:54'),
+	(105, 24, 'admin/messages#new', '2013-09-22 17:58:31', '2013-09-22 17:58:42'),
+	(106, 24, 'admin/messages#create', '2013-09-22 17:58:54', '2013-09-22 17:58:54'),
+	(107, 25, 'admin/messages#index', '2013-09-22 17:59:08', '2013-09-22 17:59:08'),
+	(108, 26, 'admin/messages#outbox', '2013-09-22 18:00:59', '2013-09-22 18:01:00'),
+	(109, 24, 'admin/messages#download', '2013-09-23 20:25:08', '2013-09-23 20:25:08'),
+	(110, 25, 'admin/messages#download', '2013-09-23 20:25:16', '2013-09-23 20:25:16'),
+	(111, 26, 'admin/messages#download', '2013-09-23 20:25:20', '2013-09-23 20:25:20'),
+	(113, 25, 'admin/messages#show', '2013-09-23 20:33:20', '2013-09-23 20:33:21'),
+	(114, 26, 'admin/messages#show', '2013-09-23 20:33:31', '2013-09-23 20:33:31'),
+	(115, 26, 'admin/messages#preview', '2013-09-24 18:17:26', '2013-09-24 18:17:26'),
+	(116, 27, 'admin/announcements#new', '2013-09-24 20:27:25', '2013-09-24 20:27:25'),
+	(117, 27, 'admin/announcements#create', '2013-09-24 20:27:52', '2013-09-24 20:27:52'),
+	(118, 27, 'admin/announcements#index', '2013-09-24 20:28:07', '2013-09-24 20:28:07'),
+	(119, 27, 'admin/announcements#edit', '2013-09-24 20:28:34', '2013-09-24 20:28:34'),
+	(120, 27, 'admin/announcements#update', '2013-09-24 20:28:48', '2013-09-24 20:28:48'),
+	(121, 27, 'admin/announcements#destroy', '2013-09-24 20:28:56', '2013-09-24 20:28:57'),
+	(122, 28, 'admin/announcements#show', '2013-09-24 20:29:07', '2013-09-24 20:29:07'),
+	(123, 28, 'admin/announcements#view_index', '2013-09-24 20:29:18', '2013-09-24 20:29:18');
 /*!40000 ALTER TABLE `permission_actions` ENABLE KEYS */;
 
 
@@ -758,7 +855,7 @@ CREATE TABLE IF NOT EXISTS `schema_migrations` (
   UNIQUE KEY `unique_schema_migrations` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.schema_migrations: ~55 rows (approximately)
+-- Dumping data for table ganli_rails.schema_migrations: ~62 rows (approximately)
 DELETE FROM `schema_migrations`;
 /*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
 INSERT INTO `schema_migrations` (`version`) VALUES
@@ -816,7 +913,14 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 	('20130914085857'),
 	('20130917042620'),
 	('20130917050247'),
-	('20130917071707');
+	('20130917071707'),
+	('20130920094647'),
+	('20130920105831'),
+	('20130922084344'),
+	('20130924000721'),
+	('20130924134430'),
+	('20130925050751'),
+	('20130925141225');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 
 
@@ -881,14 +985,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `status` int(11) DEFAULT '0',
   `lastlogin` datetime DEFAULT NULL,
   `account` varchar(16) DEFAULT NULL,
+  `qq` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `teacher_position` varchar(255) DEFAULT NULL,
+  `grade` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Dumping data for table ganli_rails.users: ~1 rows (approximately)
+-- Dumping data for table ganli_rails.users: ~2 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`) VALUES
-	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-17 10:34:21', 1, '2013-09-17 10:24:04', 'chareice');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`, `qq`, `phone`, `teacher_position`, `grade`) VALUES
+	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-25 12:52:14', 1, '2013-09-25 09:41:06', 'chareice', '81376258', '18942321753', '', ''),
+	(2, '年级组长', 'chareice@live.com', 'c4ca4238a0b923820dcc509a6f75849b', '2013-09-25 11:53:15', '2013-09-25 13:17:24', 1, '2013-09-25 11:53:15', 'tester', '81376258', '18942321753', '', '');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 
@@ -901,22 +1010,14 @@ CREATE TABLE IF NOT EXISTS `users_groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ganli_rails.users_groups: ~10 rows (approximately)
+-- Dumping data for table ganli_rails.users_groups: ~2 rows (approximately)
 DELETE FROM `users_groups`;
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`, `created_at`, `updated_at`) VALUES
 	(1, 1, 1, '2013-08-08 14:54:30', '2013-08-20 14:20:47'),
-	(2, 2, 4, '2013-09-01 09:40:39', '2013-09-01 09:44:46'),
-	(3, 3, 2, '2013-09-01 09:44:17', '2013-09-15 05:07:42'),
-	(4, 10, 4, '2013-09-02 06:35:47', '2013-09-02 06:56:54'),
-	(5, 4, 1, '2013-09-15 03:41:00', '2013-09-15 03:41:00'),
-	(6, 5, 1, '2013-09-15 03:42:19', '2013-09-15 03:42:19'),
-	(7, 7, 1, '2013-09-15 06:40:07', '2013-09-15 06:40:07'),
-	(8, 6, 1, '2013-09-15 06:52:26', '2013-09-15 06:52:26'),
-	(9, 7, 1, '2013-09-17 07:41:45', '2013-09-17 07:41:45'),
-	(10, 8, 1, '2013-09-17 08:06:54', '2013-09-17 08:06:54');
+	(11, 2, 4, '2013-09-25 11:53:15', '2013-09-25 13:28:03');
 /*!40000 ALTER TABLE `users_groups` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

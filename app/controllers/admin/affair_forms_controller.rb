@@ -16,6 +16,7 @@ class Admin::AffairFormsController < Admin::BaseController
 	end
 
 	def create
+=begin
 		@affair_form = AffairForm.create affair_from_params
 		@affair_form.audit_process = params[:affair_form][:audit_process]
 		
@@ -26,6 +27,8 @@ class Admin::AffairFormsController < Admin::BaseController
 			flash[:error] =  @affair_form.errors.full_messages.join(",")
 			redirect_to action: :new
 		end
+=end
+	render json: params
 	end
 
 	def edit

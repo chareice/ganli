@@ -1,15 +1,30 @@
 =form_for [:admin,@user] do |f|
 	%p
-		=f.label :name,"姓名"
+		=f.label :name
 		=f.text_field :name
 	%p
-		=f.label :account,"用户账号"
+		=f.label :account
 		=f.text_field :account
 	%p
-		=f.label :password,"用户密码"
+		=f.label :password
 		=f.password_field :password,{:autocomplete =>"off"}
 	%p
-		=f.label :group,"用户组"
+		=f.label :email
+		=f.text_field :email
+	%p
+		=f.label :qq
+		=f.text_field :qq
+	%p
+		=f.label :phone
+		=f.text_field :phone
+	%p
+		=f.label :teacher_position
+		=f.text_field :teacher_position
+	%p
+		=f.label :grade
+		=f.text_field :grade
+	%p
+		=f.label :group
 		-if @user.id
 			=collection_select :user,:group,Group.all,:id,:name,{selected: @user.group.id}
 		-else

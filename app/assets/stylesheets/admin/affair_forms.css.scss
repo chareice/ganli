@@ -1,3 +1,62 @@
-// Place all the styles related to the admin/affair_forms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+#users_groups_select_list{
+	@include clearfix;
+	background: #fff;
+	padding: 10px;
+	ul{
+		margin-bottom: 0;
+		width: 30%;
+		float: left;
+		
+		li{
+			cursor: pointer;
+
+		}
+	}
+}
+.message_content{
+	margin: 10px;
+	padding: 10px;
+	border: 1px #ccc solid;
+	background: #fff;
+}
+.send-time{
+	color: #666;
+	font-size: 12px;
+}
+#audit_process{
+	@include clearfix;
+	li{
+		font-size: 12px;
+		float: left;
+		line-height: 23px;
+		padding: 0 9px;
+		background: rgba(0, 0, 0, 0.6);
+		margin: 0 5px 5px 0;
+		-moz-border-radius: 2px;
+		-webkit-border-radius: 2px;
+		border-radius: 2px;
+		color: #EEE;
+		white-space: nowrap;
+		box-shadow: 0 1px 1px #B7B9BC;
+		line-height: 23px;
+		color: #EEE;
+		white-space: nowrap;
+		.delete-tag-btn{
+			color: #EEE;
+			cursor: pointer;
+			padding-left: 5px;
+		}
+	}
+}

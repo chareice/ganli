@@ -17,9 +17,8 @@
 #
 
 class User < ActiveRecord::Base
-	validates :name,:account,:password,:email,:qq,:phone,:teacher_position,presence: true
+	validates :name,:account,:password,:email,:qq,:phone,presence: true
 	validates :account, uniqueness: true
-	validates :email, uniqueness: true
 
 	validates_format_of :account, :with =>/[a-zA-Z0-9_]{6,16}/,message: "格式为6-16位,包含字母数字下划线"
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,message: "格式不正确"

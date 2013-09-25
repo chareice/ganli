@@ -8,18 +8,22 @@
 	%p
 		=f.label :form,"申请表"
 		=f.text_area :form
-	.audit-process-contro
-		=label_tag "exist-group","可审核组"
-		%select{id:"exist-group",multiple:"multiple"}
-			-(@all_audit_group-@audit_group).each do |group|
-				%option{value:"#{group.id}"}
-					=group.name
-		%button.add >>
-		%button.remove <<
-		=label_tag "affair_form_audit_process","该表单审核组"
-		%select{id:"affair_form_audit_process",name:"affair_form[audit_process][]",multiple:"multiple"}
-			-@audit_group.each do |group|
-				%option{value:"#{group.id}"}
-					=group.name
+	-# .audit-process-contro
+	-# 	=label_tag "exist-group","可审核组"
+	-# 	%select{id:"exist-group",multiple:"multiple"}
+	-# 		-(@all_audit_group-@audit_group).each do |group|
+	-# 			%option{value:"#{group.id}"}
+	-# 				=group.name
+	-# 	%button.add >>
+	-# 	%button.remove <<
+	-# 	=label_tag "affair_form_audit_process","该表单审核组"
+	-# 	%select{id:"affair_form_audit_process",name:"affair_form[audit_process][]",multiple:"multiple"}
+	-# 		-@audit_group.each do |group|
+	-# 			%option{value:"#{group.id}"}
+	-# 				=group.name
+	%p
+		请选择审核用户
+		%ul#audit_process
+		=render partial: '/admin/users/user_list'
 	%p
 		=f.submit disable_with: "处理中..."

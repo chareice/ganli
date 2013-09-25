@@ -12,6 +12,11 @@ class Admin::UsersController < Admin::BaseController
 		user.name = params[:user][:name]
 		user.account = params[:user][:account]
 		user.password = params[:user][:password]
+		user.email = params[:user][:email]
+		user.qq = params[:user][:qq]
+		user.phone = params[:user][:phone]
+		user.grade = params[:user][:grade]
+		user.teacher_position = params[:user][:teacher_position]
 		user.group = Group.find params[:user][:group]
 		user.status = 1
 		if user.save
@@ -29,6 +34,11 @@ class Admin::UsersController < Admin::BaseController
 		user = User.find params[:id]
 		user.name = params[:user][:name]
 		user.account = params[:user][:account]
+		user.email = params[:user][:email]
+		user.qq = params[:user][:qq]
+		user.phone = params[:user][:phone]
+		user.grade = params[:user][:grade]
+		user.teacher_position = params[:user][:teacher_position]
 		user.group = Group.find params[:user][:group]
 		
 		unless params[:user][:password].blank?

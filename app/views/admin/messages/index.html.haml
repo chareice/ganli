@@ -1,0 +1,12 @@
+%table
+	%tr
+		%td ID
+		%td 发件人
+		%td 发送时间
+		%td 操作
+	-@messages.each do |message|
+		%tr
+			%td=message.id
+			%td=message.sender.name
+			%td=message.created_at.localtime.to_s(:db)
+			%td=link_to "查看",admin_message_path(message)

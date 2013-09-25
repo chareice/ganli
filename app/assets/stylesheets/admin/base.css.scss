@@ -1,7 +1,7 @@
 @import 'compass/reset';
 @import "foundation";
 @import 'pagination';
-
+@import 'pop_window';
 @mixin clearfix {
   *zoom: 1;
   &:before,

@@ -35,4 +35,6 @@
 			#admin-footer
 				%p
 					甘李学校网站 Provided By Chareice 
+			-if current_user
+				= render '/admin/messages/pop_window'
 			= yield :javascript

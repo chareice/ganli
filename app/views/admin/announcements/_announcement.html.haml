@@ -1,0 +1,8 @@
+%tr
+	%td=announcement.id
+	%td
+		=link_to truncate_u(announcement.title),edit_admin_announcement_path(announcement)
+	%td=announcement.created_at.localtime.to_s(:db)
+	%td=announcement.updated_at.localtime.to_s(:db)
+	%td=announcement.author.name
+	%td=link_to "修改",action: :edit,id: announcement

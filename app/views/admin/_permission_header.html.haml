@@ -1,3 +1,6 @@
 .permission-header
-	=link_to permission_name,header_url,class: "small button"
+	-if content_for?(:permission_name)
+		=yield(:permission_name)
+	-else
+		=link_to permission_name,header_url,class: "small button"
 	=yield(:actions_button)

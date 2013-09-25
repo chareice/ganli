@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
 	has_one :users_group
 
 	has_many :topics,dependent: :destroy
+	has_many :announcement_viewers,foreign_key: "viewer",dependent: :destroy
+	has_many :announcements,foreign_key: "author",dependent: :destroy
 	has_many :articles,foreign_key: "author",dependent: :destroy
 	has_many :affair_form_instances,foreign_key: "proposer",class_name:"AffairFormInstance",dependent: :destroy
 	has_many :affair_form_instance_logs,foreign_key: "approver",class_name:"AffairFormInstanceAuditLog",dependent: :destroy

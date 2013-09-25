@@ -70,9 +70,17 @@ Ganli::Application.routes.draw do
     resources :messages do
       collection do
         get 'outbox'
+        get 'new_message_notice'
       end
       member do
         get 'download*path',action: :download,as: :download#,constraints: {path: /[^\/]*/}
+        get 'preview'
+      end
+    end
+    
+    resources :announcements do
+      collection do
+        get 'view_index'
       end
     end
 

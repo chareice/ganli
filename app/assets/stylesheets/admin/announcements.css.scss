@@ -1,0 +1,26 @@
+.title{
+	font-size: 32px;
+	color: #329900;
+	font-weight: bold;
+	text-align:center;
+	margin-bottom:10px;
+}
+.public-time{
+	text-align:center;
+	color: #666;
+	font-size: 12px;
+	margin-top: 20px;
+}
+.contents{
+	margin: 10px;
+	padding: 10px;
+	border: 1px #ccc solid;
+	background: #fff;
+	text-indent: 2em;
+	font-size: 14px;
+	line-height: 20px;
+	p{
+		text-indent: 2em;
+		margin: 15px 0;
+	}
+}

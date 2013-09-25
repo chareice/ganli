@@ -1,0 +1,10 @@
+=render partial: '/admin/ueditor/admin',locals:{ueditor_id: "announcement_content"}
+=form_for [:admin,@announcement] do |f|
+	%p
+		=f.label :title
+		=f.text_field :title
+	%p
+		=f.label :content
+		=f.text_area :content
+	%p
+		=f.submit disable_with: "提交中..."

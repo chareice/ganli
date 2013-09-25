@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def access_forbidden
-  	render :file => "public/401.html",:layout => false,:status=>401 
+  	render :file => "public/401.html",:layout => false,:status=>401 and return
   end
   
   def require_login

@@ -1,0 +1,36 @@
+#pop-window-c{
+	display: none;
+	width:400px;
+	height:250px;
+	background: #fff;
+	position: fixed !important;
+	right: 0px !important;
+	bottom: 0px !important;
+	_position:absolute;
+	_bottom:auto;
+	_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+	
+	.pop-window-header{
+		height: 30px;
+		background: #77ab54;
+		border: 1px solid #76653e;
+		color: #fff;
+		font-size: 14px;
+		position: relative;
+		strong{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		.window-close{
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			cursor: pointer;
+		}
+	}
+	#pop-window{
+		border: 1px solid #e8e8e8;
+		height: 220px;
+	}
+}

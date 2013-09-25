@@ -1,0 +1,3 @@
+%p="收件人 #{@message.receiver.name}"
+%p.send-time="发送时间 #{@message.created_at.localtime.to_s(:db)}"
+.message_content= @message.content

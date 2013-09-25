@@ -1,0 +1,23 @@
+-if @announcements.empty?
+	没有可显示的内容
+-else
+	%table
+		%tr
+			%td
+				ID
+			%td
+				通知标题
+			%td
+				发布时间
+			%td
+				更新时间
+			%td
+				发布人
+		-@announcements.each do |announcement|
+			%tr
+				%td=announcement.id
+				%td=link_to truncate_u(announcement.title),admin_announcement_path(announcement)
+				%td=announcement.created_at.localtime.to_s(:db)
+				%td=announcement.updated_at.localtime.to_s(:db)
+				%td=announcement.author.name
+	=will_paginate @announcements

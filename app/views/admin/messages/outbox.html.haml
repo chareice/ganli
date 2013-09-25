@@ -1,0 +1,14 @@
+-content_for :permission_name do
+	=link_to "发件箱",header_url,class: "small button"
+%table
+	%tr
+		%td ID
+		%td 收件人
+		%td 发送时间
+		%td 操作
+	-@messages.each do |message|
+		%tr
+			%td=message.id
+			%td=message.receiver.name
+			%td=message.created_at.localtime.to_s(:db)
+			%td=link_to "查看",preview_admin_message_path(message)

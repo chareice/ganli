@@ -1,6 +1,8 @@
 -@all_audit_group = Group.includes(:permissions).where(permissions:{id:10}).to_a
--@audit_group = @affair_form.audit_process.map{|x| Group.find x} if @affair_form.audit_process
--@audit_group = [] unless @audit_group
+-#@audit_group = @affair_form.audit_process.map{|x| Group.find x} if @affair_form.audit_process
+-#@audit_group = [] unless @audit_group
+-users_list = User.with_groups_id(@all_audit_group.collect{|group| group.id})
+%input{type:"hidden",id:"user-data","data-users"=> users_list.to_json}
 =form_for [:admin,@affair_form] do |f|
 	%p
 		=f.label :title,"申请表头"
@@ -23,7 +25,7 @@
 	-# 				=group.name
 	%p
 		请选择审核用户
-		%ul#audit_process
-		=render partial: '/admin/users/user_list'
+		= content_tag('ul',"",id: "audit_process",data: {audit_user: @affair_form.audit_process})
+		=render partial: '/admin/users/user_list',locals:{groups: @all_audit_group}
 	%p
 		=f.submit disable_with: "处理中..."

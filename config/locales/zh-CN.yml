@@ -62,7 +62,7 @@
         nickname: "昵称"
         content: "留言内容"
       user:
-        name: "用户名"
+        name: "姓名"
         password: "密码"
         email: "用户邮箱"
         account: "用户账户"

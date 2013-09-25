@@ -1,5 +1,4 @@
-<% users = User.with_group_id %>
-users_list = <%= users.to_json%>
+users_list = $("#user-data").data("users")
 Object.keys = Object.keys || (o) ->
     result = []
     for name in o  
@@ -33,15 +32,8 @@ $("#groups_select_list li").click ->
 	$("#users_select_list li").click ->
 		user_id = $(this).data("user-id")
 		for user in users_list
-			if user.id = user_id
+			if user.id == user_id
 				c_user = user
 				break
-		$("#audit_process").append list_user(c_user)
-		$(".delete-tag-btn").click ->
-			$($(this).closest("li")).remove()
-list_user = (user)->
-	"<li data-user-id='#{user.id}' >
-		<span>#{user.name}</span>
-		<a title='删除' class='delete-tag-btn'>x</a>
-		<input value='#{user.id}' name='affair_form[audit_process][]' type='hidden' />
-	</li>"
+		$("#receiver-preview").text(c_user.name)
+		$("#message_receiver").val(user_id)

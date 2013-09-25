@@ -1,4 +1,5 @@
 =render partial: '/admin/ueditor/message',locals:{ueditor_id: "message_content"}
+%input{type:"hidden",id:"user-data","data-users"=> User.with_group_id.to_json}
 = form_for [:admin,@message] do |f|
 	=f.label :receiver
 	- unless @message.receiver

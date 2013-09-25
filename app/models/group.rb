@@ -9,7 +9,7 @@
 #
 
 class Group < ActiveRecord::Base
-	has_many :users,through: :users_group
+	has_many :users,through: :users_group,dependent: :destroy
 	has_many :users_group
 
 	validates :name,presence: true

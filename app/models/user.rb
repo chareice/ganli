@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 	validates_format_of :account, :with =>/[a-zA-Z0-9_]{6,16}/,message: "格式为6-16位,包含字母数字下划线"
 	validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,message: "格式不正确"
 	
-	has_one :group, through: :users_group
+	has_one :group, through: :users_group,dependent: :destroy
 	has_one :users_group
 
 	has_many :topics,dependent: :destroy
@@ -41,7 +41,14 @@ class User < ActiveRecord::Base
 
 	scope :with_group_id,->{
 		joins(:group).select("users.id,users.name,groups.id AS group_id")
+		.where(:status => 1)	
 	}
+	scope :with_groups_id,->(groups_id){
+		joins(:group).select("users.id,users.name,groups.id AS group_id")
+		.where("groups.id in (?)",groups_id)
+		.where(:status => 1)
+	}
+
 	def is_allow_action?(action)
 		group.permissions.include?(Permission.find_by_action(action).first)
 	end

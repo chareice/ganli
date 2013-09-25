@@ -2,7 +2,7 @@ class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 	before_action :audit_permission,only:[:new,:create]
 	def index
 		require 'will_paginate/array'
-		@instances = AffairFormInstance.audit_by_group(current_user.group).paginate(:page=>params[:page],per_page: 10)
+		@instances = AffairFormInstance.audit_by_user(current_user).paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def show
@@ -23,8 +23,8 @@ class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 			
 			log.save
 		end
-		if @instance.audit_process.last == current_user.group.id.to_s or log.status == 1
-			@instance.status = 1
+		if @instance.audit_process.last == current_user.id.to_s or log.status == 1
+			@instance.status = "1"
 			@instance.save
 		end
 		flash[:notice] = "审核成功"
@@ -33,7 +33,7 @@ class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 
 	private
 	def audit_permission
-		render :file => "public/401.html",:layout => false,:status=>401 unless AffairFormInstance.find(params[:instance]).in?(AffairFormInstance.audit_by_group current_user.group)
+		render :file => "public/401.html",:layout => false,:status=>401 unless AffairFormInstance.find(params[:instance]).in?(AffairFormInstance.audit_by_user current_user)
 	end
 
 	def log_params

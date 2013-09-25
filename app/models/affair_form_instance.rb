@@ -20,15 +20,15 @@ class AffairFormInstance < ActiveRecord::Base
 	has_many :logs,foreign_key: "instance_id",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
 
 	default_scope order: "created_at desc"
-	scope :audit_by_group,->(group){
-		where("audit_process like ? AND status = ?","%'#{group.id}'%",0).select{|instance|
-			group.id.to_s == instance.audit_process[instance.logs.size]
+	scope :audit_by_user,->(user){
+		where("audit_process like ? AND status = ?","%'#{user.id}'%",0).select{|instance|
+			user.id.to_s == instance.audit_process[instance.logs.size]
 		}
 	}
 
 	def current_status_to_s
 		if status == 0
-			"等待" + audit_group_name = Group.find(audit_process[logs.size]).name + "审核"
+			"等待" + audit_user_name = User.find(audit_process[logs.size]).name + "审核"
 		else
 			if audit_process.size == logs.size
 				"审核通过"
@@ -39,6 +39,9 @@ class AffairFormInstance < ActiveRecord::Base
 	end
 
 	def audit_process_to_s
-		audit_process.map.with_index{|group,i| "#{i+1}.#{Group.find(group).name}"}.join " -> "
+		audit_process.map.with_index{ |user,i| 
+				c_user = User.find(user)
+				"#{i+1}.#{c_user.name}(#{c_user.group.name})"
+			}.join " -> "
 	end
 end

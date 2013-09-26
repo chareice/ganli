@@ -6,13 +6,13 @@
 	=submit_tag "查看"
 %p
 	="日期 #{@query_date}"
-%p
-	="订餐人数 #{@lunches.size}"
+
 -unless @lunches.empty?
 	%table
 		%tr
-			%td
-				姓名
-			%td
-				订餐时间
+			%td 姓名
+			%td 订餐时间
+			%td 预定类型
 		=render(partial: "lunch",collection: @lunches)
+-else
+	该日期没有人订餐

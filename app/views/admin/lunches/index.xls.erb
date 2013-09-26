@@ -15,8 +15,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>5565</WindowHeight>
-  <WindowWidth>7470</WindowWidth>
+  <WindowHeight>8355</WindowHeight>
+  <WindowWidth>20490</WindowWidth>
   <WindowTopX>0</WindowTopX>
   <WindowTopY>0</WindowTopY>
   <ProtectStructure>False</ProtectStructure>
@@ -26,7 +26,7 @@
   <Style ss:ID="Default" ss:Name="Normal">
    <Alignment ss:Vertical="Center"/>
    <Borders/>
-   <Font ss:FontName="宋体" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+   <Font ss:FontName="宋体" ss:Size="11" ss:Color="#000000"/>
    <Interior/>
    <NumberFormat/>
    <Protection/>
@@ -40,27 +40,39 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Sheet1">
-  <Table x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="8" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="13.5">
    <Column ss:AutoFitWidth="0" ss:Width="69.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="179.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="120.75"/>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="1" ss:StyleID="s62"><Data ss:Type="String">订餐查看日期：<%= @query_date %></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">查看订餐日期：<%= @query_date %></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="1" ss:StyleID="s62"><Data ss:Type="String">表格导出时间：<%= Time.now.localtime.strftime('%F %T') %></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">表格导出时间：<%= Time.now.localtime.strftime('%F %T') %></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="1" ss:StyleID="s62"><Data ss:Type="String">订餐人数：<%= @lunches.size %></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">总订餐人数：<%= @lunches.size %></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">早餐订餐人数：<%= Lunch.by_mold(1).count%></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">午餐订餐人数：<%= Lunch.by_mold(2).count%></Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">晚餐订餐人数：<%= Lunch.by_mold(3).count%></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s62"><Data ss:Type="String">教师姓名</Data></Cell>
     <Cell ss:StyleID="s62"><Data ss:Type="String">订餐时间</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">预定类型</Data></Cell>
    </Row>
    <% @lunches.each do |lunch|%>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s62"><Data ss:Type="String"><%= lunch.teacher.name %></Data></Cell>
     <Cell ss:StyleID="s64"><Data ss:Type="String"><%= lunch.created_at.localtime.to_s(:db) %></Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String"><%= lunch.mold_to_s.join(",") %></Data></Cell>
    </Row>
    <% end %>
   </Table>
@@ -76,8 +88,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>2</ActiveRow>
+     <RangeSelection>R3C1:R3C3</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

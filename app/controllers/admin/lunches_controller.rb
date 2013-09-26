@@ -10,15 +10,23 @@ class Admin::LunchesController < Admin::BaseController
 	end
 
 	def new
+		@lunch = Lunch.new
 	end
 
 	def create
+		#render json: params
 		unless Lunch.scheduled? current_user
 			lunch = Lunch.new
 			lunch.date = Lunch.lunch_date
 			lunch.teacher = current_user
-			lunch.save
+			lunch.mold = params[:lunch][:mold].reject{ |c| c.empty? }
+			if lunch.save
+				flash[:notice] = "订餐成功"
+			else
+				flash_error lunch
+			end
+			redirect_to action: :new
 		end
-		redirect_to action: :new
+		#redirect_to action: :new
 	end
 end

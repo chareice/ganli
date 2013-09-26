@@ -71,6 +71,8 @@
         qq: "QQ号码"
         grade: "年级"
         group: "用户组"
+      lunch:
+        mold: "用餐类型"
       article:
         title: "文章标题"
         content: "文章内容"

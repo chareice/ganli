@@ -11,7 +11,40 @@
 
 class Lunch < ActiveRecord::Base
 	belongs_to :teacher,class_name: "User",foreign_key: "teacher"
+	serialize :mold
+	validates :mold,presence: {message:"必须选择"}
 
+	scope :by_mold,->(mold_id){
+		where("mold like ?","%#{mold_id}%")
+	}
+	scope :current_user_mold,->(user){
+		where(date:Lunch.lunch_date.to_date,teacher:user).take
+	}
+	def mold_to_s
+		self.mold.map do |mold|
+			case mold
+				when '1'
+					"早餐"
+				when '2'
+					"中餐"
+				when '3'
+					"晚餐"
+			end
+		end
+	end
+
+	def breakfast
+		
+	end
+
+	def lunch
+		
+	end
+
+	def dinner
+		
+	end
+	
 	def self.scheduled?(user)
 		!Lunch.where(date:Lunch.lunch_date.to_date,teacher:user).empty?
 	end

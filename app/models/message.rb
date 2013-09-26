@@ -18,7 +18,7 @@ class Message < ActiveRecord::Base
 	belongs_to :sender,foreign_key: "sender",class_name: "User"
 	belongs_to :receiver,foreign_key: "receiver",class_name: "User"
 	default_scope{
-		order("created_at desc")
+		order("messages.created_at desc")
 	}
 	scope :inbox,->(user_id){
 		where(:receiver => user_id)
@@ -27,7 +27,8 @@ class Message < ActiveRecord::Base
 		where(:sender => user_id)
 	}
 	scope :unread,->(user_id){
-		where(:status => 0,:receiver => user_id).select("id")
+		joins(:sender)
+		.where(:status => 0,:receiver => user_id).select("messages.id AS id, users.name AS name")
 	}
 	scope :unread_count,->(user_id){
 		where(:status => 0,:receiver => user_id).count

@@ -1,5 +1,6 @@
 #pop-window-c{
 	display: none;
+	z-index: 999;
 	width:400px;
 	height:250px;
 	background: #fff;
@@ -30,7 +31,24 @@
 		}
 	}
 	#pop-window{
+		background: #BBF8BD;
 		border: 1px solid #e8e8e8;
 		height: 220px;
+		.pop-message-header{
+			margin-top: 10px;
+		}
+		.pop-message{
+			width: 350px;
+			margin: 0 auto;
+			font-size: 12px;
+			line-height: 20px;
+			a{
+				color: #666;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }

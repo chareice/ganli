@@ -1,0 +1,23 @@
+#main-aside,#admin-header,.permission-header,#pop-window-c,#admin-footer{
+	display: none;
+}
+.printable{
+	display: block !important;
+	table{
+	  border-collapse:collapse;
+	  border: 1px solid #ccc;
+	  width:100%;
+	  vertical-align: baseline;
+	  caption{
+	  	margin-bottom: 1em;
+	  }
+	  td{
+	  	border: 1px solid #ccc;
+	  	display: table-cell;
+		line-height: 1.125em;
+		padding: 0.5625em 0.625em;
+		font-size: 0.875em;
+		color: #222222;
+	  }
+	}
+}

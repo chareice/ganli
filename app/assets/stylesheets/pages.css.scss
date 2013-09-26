@@ -694,20 +694,46 @@ $asset-prefix: "style";
 		}
 	}
 	.validate_form{
+		position: relative;
 		width: 410px;
-		p{
+		.register-submit{
+			input{
+				width: 100px;
+				position: absolute;
+				left: 105px;
+			}
+		}
+		p{	
+			#captcha{
+				width: 140px;
+			}
+			#captcha-img{
+				cursor: pointer;
+			}
 			padding: 10px 0;
 			label{
 				width: 95px;
 				display: block;
 				float: left;
 				line-height: 25px;
+				margin-right: 10px;
+				text-align: right;
 			}
 			img{
 				float: right;
 			}
+				input{
+				background: #FFFBD5;
+				border: 1px solid #727272;
+				font-size: 14px;
+				padding: 0 3px;
+				color: #333;
+				height: 24px;
+				line-height: 24px;
+				border: 1px solid #A0B4C5;
+				width: 265px;
+			}
 		}
-		
 	}
 }
 .reset-password{
@@ -756,4 +782,22 @@ $asset-prefix: "style";
 }
 .close{
 	display: none;
+}
+
+.profile-form{
+	width: 350px;
+	margin: 0 auto;
+	p{
+		padding: 10px 0;
+		label{
+			width: 85px;
+			margin-right: 10px;
+			display: block;
+			float: left;
+			line-height: 25px;
+		}
+		img{
+			float: right;
+		}
+	}
 }

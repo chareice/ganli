@@ -1,19 +1,22 @@
-%h4
-	=@instance.title
-=@instance.form.html_safe
-%p="审核状态: " << @instance.current_status_to_s
--unless @instance.logs.empty?
-	%table
-		%caption
-			审核日志
-		%tr
-			%td 审核人
-			%td 审核时间
-			%td 审核结果
-			%td 审核备注
-		-@instance.logs.each do |log|
+-content_for :actions_button do
+	=link_to "打印","#",onclick: "window.print();return false;",class: "tiny secondary button"
+.printable
+	%h4
+		=@instance.title
+	=@instance.form.html_safe
+	%p="审核状态: " << @instance.current_status_to_s
+	-unless @instance.logs.empty?
+		%table
+			%caption
+				审核日志
 			%tr
-				%td=User.find(log.approver).name
-				%td=log.created_at.to_date
-				%td=(log.status == 0) ? "通过" : "不通过"
-				%td=log.remark
+				%td 审核人
+				%td 审核时间
+				%td 审核结果
+				%td 审核备注
+			-@instance.logs.each do |log|
+				%tr
+					%td=User.find(log.approver).name
+					%td=log.created_at.to_date
+					%td=(log.status == 0) ? "通过" : "不通过"
+					%td=log.remark

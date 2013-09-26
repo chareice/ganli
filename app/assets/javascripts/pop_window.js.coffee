@@ -13,10 +13,11 @@ list = ->
 	for context in arguments
 		if context.count > 0
 			"<div class='pop-message'>
-				<div class='pop-message-header'>#{context.name}</div>
+				<div class='pop-message-header'>#{context.name} (#{context.count})</div>
 				<ul>#{listItem(context)}</ul>
 			 </div>"
 listItem = (context)->
-	for li in context.list
-		"<li><a href='#{context.show_path}/#{li.id}/'>#{li.name}</a></li>"
+	(listItemTemplate(li,context) for li in context.list).join("")
+listItemTemplate = (li,context)->
+	"<li><a href='#{context.show_path}/#{li.id}/'>#{li.name}</a></li>"
 get_notice()

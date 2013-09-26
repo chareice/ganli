@@ -30,6 +30,8 @@ if $("#audit_process").data("audit-user")
 $(".delete-tag-btn").click ->
 	$($(this).closest("li")).remove()
 $("#groups_select_list li").click ->
+	$("#groups_select_list li").removeClass("active")
+	$(this).addClass("active")
 	group_id =  $(this).data("group-id")
 	users = users_list.filter (x) -> x.group_id == group_id
 	$("#users_select_list").html("")

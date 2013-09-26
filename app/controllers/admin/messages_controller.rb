@@ -1,7 +1,7 @@
 class Admin::MessagesController < Admin::BaseController
 	skip_before_filter :authenticate,only:[:new_message_notice]
 	def index
-		@messages = Message.inbox(current_user.id)
+		@messages = Message.inbox(current_user.id).paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def new
@@ -28,11 +28,11 @@ class Admin::MessagesController < Admin::BaseController
 	end
 
 	def download
-		render json: params
+		send_file("#{Rails.root}#{params[:path]}.#{params[:format]}")
 	end
 
 	def outbox
-		@messages = Message.outbox current_user
+		@messages = Message.outbox(current_user).paginate(:page=>params[:page],per_page: 10)
 	end
 
 	def show
@@ -60,8 +60,8 @@ class Admin::MessagesController < Admin::BaseController
 	def new_message_notice
 		c_u_id = current_user.id
 		notice = {
-			messages: {count: Message.unread_count(c_u_id),list: Message.unread(c_u_id).limit(5),name: "私信",show_path: admin_messages_path},
-			announcements:{count:Announcement.unread_list_count(c_u_id), list: Announcement.unread_list(c_u_id).limit(5),name: "通知公告",show_path: admin_announcements_path} 
+			messages: {count: Message.unread_count(c_u_id),list: Message.unread(c_u_id).limit(5),name: "未读私信",show_path: admin_messages_path},
+			announcements:{count:Announcement.unread_list_count(c_u_id), list: Announcement.unread_list(c_u_id).limit(5),name: "未读通知公告",show_path: admin_announcements_path} 
 		}
 		render json: notice
 	end

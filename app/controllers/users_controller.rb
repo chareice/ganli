@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 		@user.name = params[:user][:name].strip
 		@user.account = params[:user][:account].strip
 		@user.password = params[:user][:password].strip
+		@user.email = params[:user][:email].strip
+		@user.qq = params[:user][:qq].strip
+		@user.phone = params[:user][:phone].strip
+		@user.teacher_position = params[:user][:teacher_position]
+		@user.grade = params[:user][:grade]
 
 		if @user.save
 			flash[:notice] = "申请成功 等待管理员审核"
@@ -31,6 +36,26 @@ class UsersController < ApplicationController
 			access_forbidden
 		end
 		@user = User.find params[:id]
+	end
+
+	def profile
+		@user = current_user
+	end
+
+	def edit_profile
+		@user = current_user
+		@user.email = params[:user][:email].strip
+		@user.qq = params[:user][:qq].strip
+		@user.phone = params[:user][:phone].strip
+		@user.teacher_position = params[:user][:teacher_position]
+		@user.grade = params[:user][:grade]
+		if @user.save
+			flash[:notice] = "修改成功"
+			redirect_to profile_path
+		else
+			flash[:error] = @user.errors.full_messages.join(',')
+			redirect_to profile_path
+		end
 	end
 
 	def update

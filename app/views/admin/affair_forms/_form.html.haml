@@ -24,7 +24,7 @@
 	-# 			%option{value:"#{group.id}"}
 	-# 				=group.name
 	%p
-		请选择审核用户
+		请选择审核用户(审核顺序从左至右)
 		= content_tag('ul',"",id: "audit_process",data: {audit_user: @affair_form.audit_process})
 		=render partial: '/admin/users/user_list',locals:{groups: @all_audit_group}
 	%p

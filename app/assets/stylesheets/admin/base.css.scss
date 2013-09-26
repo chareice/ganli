@@ -120,7 +120,7 @@ table{
         line-height: 20px;
     }
     .header-actions-button-group{
-        width: 284px;
+        width: 371px;
         position: absolute;
         right: 40px;
         bottom: 27px;
@@ -144,6 +144,9 @@ table{
             }
             &.admin-reset-password{
                 background: image('admin-reset-password-button.jpg');
+            }
+            &.admin-profile{
+                background: image('admin-profile-button.jpg');
             }
             &.admin-exit{
                 background: image('admin-exit-button.jpg');
@@ -205,5 +208,31 @@ table{
 .alert-box{
     p{
         margin-bottom: 0px;
+    }
+}
+#groups_select_list{
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    margin-right: 10px;
+    li{
+        text-indent: 2em;
+        color: #08c;
+        &:hover,&.active{
+            color: #fff;
+            background: #08c;
+        }
+    }
+}
+#users_select_list{
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    margin-right: 10px;
+    li{
+        text-indent: 2em;
+        color: #08c;
+        &:hover,&.active{
+            color: #fff;
+            background: #08c;
+        }
     }
 }

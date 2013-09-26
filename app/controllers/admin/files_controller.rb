@@ -13,7 +13,7 @@ class Admin::FilesController < Admin::BaseController
 
 	def fileup
 		path = Document.save_file(params[:imgFile],"document").gsub(Rails.root.to_s,"")
-		asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("document",""))
+		asset_path = "/document" + ActionController::Base.helpers.asset_path(path.gsub("document",""))
 		render json: {url:asset_path,error: 0}
 	end
 

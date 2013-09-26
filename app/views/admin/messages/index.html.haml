@@ -10,3 +10,4 @@
 			%td=message.sender.name
 			%td=message.created_at.localtime.to_s(:db)
 			%td=link_to "查看",admin_message_path(message)
+=will_paginate @messages

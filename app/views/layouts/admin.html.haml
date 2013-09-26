@@ -7,8 +7,8 @@
 			= stylesheet_link_tag controller_path
 		= javascript_include_tag "vendor/custom.modernizr"
 		= yield :stylesheet
+		= stylesheet_link_tag "admin/print.css", :media => "print"
 		= csrf_meta_tag
-		
 		/[if lt IE 9]
 			= javascript_include_tag "html5shiv/dist/html5shiv.js"
 		%title 甘李后台管理
@@ -20,6 +20,7 @@
 				.header-actions-button-group
 					=link_to '系统首页',admin_path, class:'admin-index'
 					=link_to '修改密码',edit_user_path(current_user),class:'admin-reset-password'
+					=link_to '修改资料',profile_path,class:'admin-profile'
 					=link_to '退出系统',"/logout",:confirm => "确定退出系统?",method: :delete,class:'admin-exit'
 			%aside#main-aside
 				= render "layouts/admin/menu"
@@ -34,7 +35,7 @@
 				= javascript_include_tag controller_path
 			#admin-footer
 				%p
-					甘李学校网站 Provided By Chareice 
+					甘李学校网站 Copyright © 2013 Chareice. All Rights Reserved.
 			-if current_user
 				= render '/admin/messages/pop_window'
 			= yield :javascript

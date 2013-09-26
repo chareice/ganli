@@ -1,18 +1,33 @@
 .register
 	=form_for @user,html:{class: "validate_form"} do |f|
 		%p
-			=f.label :account,"用户账号"
+			=f.label :account,"用户账号 *"
 			=f.text_field :account
 		%p
-			=f.label :name,"姓名"
+			=f.label :name,"姓名 *"
 			=f.text_field :name
 		%p
-			=f.label :password,"密码"
+			=f.label :password,"密码 *"
 			=f.password_field :password
 		%p
-			=f.label :password_confirmation ,"确认密码"
+			=f.label :password_confirmation ,"确认密码 *"
 			=f.password_field :password_confirmation 
 		%p
-			=render "/captcha/captcha"
+			=f.label :email,"用户邮箱 *"
+			=f.text_field :email
 		%p
+			=f.label :qq,"QQ *"
+			=f.text_field :qq
+		%p
+			=f.label :phone,"联系电话 *"
+			=f.text_field :phone
+		%p
+			=f.label :teacher_position
+			=f.text_field :teacher_position
+		%p
+			=f.label :grade
+			=f.text_field :grade
+		%p
+			=render "/captcha/captcha"
+		%p.register-submit
 			=f.submit "提交",disable_with: "提交中"

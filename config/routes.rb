@@ -71,9 +71,9 @@ Ganli::Application.routes.draw do
       collection do
         get 'outbox'
         get 'new_message_notice'
+        get 'download*path',action: :download,as: :download#,constraints: {path: /[^\/]*/}
       end
       member do
-        get 'download*path',action: :download,as: :download#,constraints: {path: /[^\/]*/}
         get 'preview'
       end
     end
@@ -122,5 +122,7 @@ Ganli::Application.routes.draw do
   end
 
   get '/login',to:'sessions#new'
+  get '/profile',to: 'users#profile',as: "profile"
+  patch 'edit_profile',to: 'users#edit_profile'
   match '/logout',to:'sessions#destroy',via: :delete
 end

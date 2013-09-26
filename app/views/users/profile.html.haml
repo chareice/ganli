@@ -1,0 +1,21 @@
+=form_for @user,url:{action: :edit_profile},html:{class: "profile-form"} do |f|
+	%p
+		=f.label :name
+		=f.text_field :name
+	%p
+		=f.label :email
+		=f.text_field :email
+	%p
+		=f.label :qq
+		=f.text_field :qq
+	%p
+		=f.label :phone
+		=f.text_field :phone
+	%p
+		=f.label :teacher_position
+		=f.text_field :teacher_position
+	%p
+		=f.label :grade
+		=f.text_field :grade
+	%p
+		=f.submit "修改",disable_with: "提交中..."

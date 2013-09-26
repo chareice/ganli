@@ -1,3 +1,4 @@
+=render partial: '/admin/delete_button',locals:{name: "删除通知公告",confirm:"确定删除 #{@announcement.title} ?"}
 =render partial: '/admin/ueditor/admin',locals:{ueditor_id: "announcement_content"}
 =form_for [:admin,@announcement] do |f|
 	%p

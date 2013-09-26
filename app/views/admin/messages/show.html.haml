@@ -1,3 +1,4 @@
 %p="发件人 #{@message.sender.name}"
 %p.send-time="发送时间 #{@message.created_at.localtime.to_s(:db)}"
-.message_content= @message.content
+.message_content{"data-download" => '/admin/messages/download'}
+	= @message.content.html_safe

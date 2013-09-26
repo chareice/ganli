@@ -42,7 +42,10 @@ class Admin::AnnouncementsController < Admin::BaseController
 	end
 
 	def destroy
-		
+		@announcement = Announcement.find params[:id]
+		@announcement.destroy
+		flash_notice
+		redirect_to admin_announcements_path
 	end
 
 	def view_index 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130926133757) do
+ActiveRecord::Schema.define(version: 20130927031719) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -229,9 +229,9 @@ ActiveRecord::Schema.define(version: 20130926133757) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",                      default: 0
+    t.integer  "status",           default: 0
     t.datetime "lastlogin"
-    t.string   "account",          limit: 16
+    t.string   "account"
     t.string   "qq"
     t.string   "phone"
     t.string   "teacher_position"

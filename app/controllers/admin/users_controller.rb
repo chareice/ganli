@@ -79,7 +79,7 @@ class Admin::UsersController < Admin::BaseController
 			@user.name = "已删除的用户"
 			radom =  Digest::MD5.hexdigest((0...50).map{ ('a'..'z').to_a[rand(26)] }.join + Time.now.to_s)
 			@user.account = radom
-			@user.save
+			@user.save!
 		end
 
 		respond_to do |format|

@@ -6,25 +6,27 @@
 	%table{class: "audit_users"}
 		%thead
 			%tr
-				%td
-					用户ID
-				%td
-					姓名
-				%td
-					account
-				%td
-					用户组
-				%td
-					操作
+				%td 用户ID
+				%td 姓名
+				%td 用户账户
+				%td 用户邮箱
+				%td QQ
+				%td 联系电话
+				%td 教师职位
+				%td 年级
+				%td 用户组
+				%td 操作
 		%tbody
 			-@users.each do |user|
 				%tr{"data-user-id" => user.id}
-					%td
-						=user.id
-					%td
-						=user.name
-					%td
-						=user.account
+					%td= user.id
+					%td= user.name
+					%td= user.account
+					%td= user.email
+					%td= user.qq
+					%td= user.phone
+					%td= user.teacher_position
+					%td= user.grade
 					%td
 						%select
 							%option{value: 0}

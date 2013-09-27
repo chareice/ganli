@@ -37,7 +37,7 @@ $("#groups_select_list li").click ->
 	$("#users_select_list").html("")
 	if users.length > 0
 		users_li = ("<li data-user-id=#{user.id}>#{user.name}</li>" for user in users)
-		html = users_li.join()
+		html = users_li.join("")
 	else
 		html = "该组下无用户"
 	$("#users_select_list").html(html)

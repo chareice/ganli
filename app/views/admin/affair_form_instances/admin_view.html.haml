@@ -3,6 +3,8 @@
 .printable
 	%h4
 		=@instance.title
+	%p
+	="申请时间： #{@instance.created_at.localtime.to_s(:db)}"
 	=@instance.form.html_safe
 	%p="审核状态: " << @instance.current_status_to_s
 	-unless @instance.logs.empty?
@@ -17,6 +19,6 @@
 			-@instance.logs.each do |log|
 				%tr
 					%td=User.find(log.approver).name
-					%td=log.created_at.to_date
+					%td=log.created_at.localtime.to_s(:db)
 					%td=(log.status == 0) ? "通过" : "不通过"
 					%td=log.remark

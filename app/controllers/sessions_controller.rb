@@ -30,7 +30,8 @@ class SessionsController < ApplicationController
 			elsif params[:goadmin]
 				redirect_to admin_path
 			else
-				redirect_to root_path
+				redirect_to admin_path
+				#redirect_to root_path
 			end
 		end
 	end

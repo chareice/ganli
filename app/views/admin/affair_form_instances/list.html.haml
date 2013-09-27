@@ -1,3 +1,10 @@
+按日期区间(时间格式：2013-10-01)
+=form_tag list_admin_affair_form_instances_path,class: "query_by_data",method: :get do
+	=label_tag 'start_date','起始日期'
+	=text_field_tag 'start_date', params[:start_date]
+	=label_tag 'start_date','结束日期'
+	=text_field_tag 'end_date', params[:end_date]
+	=submit_tag "查看"
 -if @instances.empty?
 	没有申请表
 -else

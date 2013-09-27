@@ -172,6 +172,23 @@ $asset-prefix: "style";
 		.header{
 			height: 197px;
 			background: image("header.jpg"); 
+			position: relative;
+			.header-nav-c{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				font-size: 12px;
+				ul{
+					li{
+						background: #24BD00;
+						padding: 5px;
+						a{
+							color: #fff;
+						}
+					}
+				}
+				
+			}
 		}
 		.primary-nav{
 			@include clearfix;
@@ -211,7 +228,7 @@ $asset-prefix: "style";
 						width: 100%;
 						margin: 0 auto;
 						z-index: 999;
-						background: #21ae00;
+						background: #24BD00;
 						top: 36px;
 						left: 0px;
 						_left:1px; 

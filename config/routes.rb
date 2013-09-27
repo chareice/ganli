@@ -125,4 +125,6 @@ Ganli::Application.routes.draw do
   get '/profile',to: 'users#profile',as: "profile"
   patch 'edit_profile',to: 'users#edit_profile'
   match '/logout',to:'sessions#destroy',via: :delete
+
+  get '/page/service',to: 'pages#service'
 end

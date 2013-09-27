@@ -1,6 +1,30 @@
-// Place all the styles related to the admin/affair_form_instances controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .edui-editor-toolbarboxinner{
 	display: none !important;
+}
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.query_by_data{
+	@include clearfix;
+	margin-top: 10px;
+	label{
+		float: left;
+		width: 80px;
+		line-height: 30px;
+	}
+	input{
+		float: left;
+		height: 30px;
+		width: 150px;
+		margin-right: 10px;
+	}
 }

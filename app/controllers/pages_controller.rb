@@ -28,4 +28,8 @@ class PagesController < ApplicationController
 
 		render :text => "create success"
 	end
+
+	def service
+		
+	end
 end

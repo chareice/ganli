@@ -4,7 +4,17 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 	end
 
 	def list
-		@instances = AffairFormInstance.all.paginate(:page=>params[:page],per_page: 10)
+		if !!params[:start_date] and !!params[:end_date]
+			begin
+				@instances = AffairFormInstance.where(:created_at =>DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date]).tomorrow).paginate(:page=>params[:page],per_page: 10)
+			rescue
+				flash[:error] = "时间格式不正确"
+				redirect_to list_admin_affair_form_instances_path
+				@instances = []
+			end
+		else
+			@instances = AffairFormInstance.all.paginate(:page=>params[:page],per_page: 10)
+		end
 	end
 
 	def admin_view

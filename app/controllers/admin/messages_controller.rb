@@ -10,6 +10,7 @@ class Admin::MessagesController < Admin::BaseController
 
 	def create
 		@message = Message.new message_params
+		@message.destroy_status = 3
 		if @message.save
 			flash_notice
 			redirect_to new_admin_message_path()
@@ -54,7 +55,31 @@ class Admin::MessagesController < Admin::BaseController
 	end
 
 	def destroy
-		
+		@message = Message.find params[:id]
+		mark = 0
+		return_path = ""
+		if params[:type] ==  "inbox"
+			unless current_user == @message.receiver
+				access_forbidden
+			end
+			mark = 1
+			return_path =  admin_messages_path
+		elsif params[:type] ==  "outbox"
+			unless current_user == @message.sender
+				access_forbidden
+			end
+			mark = 2
+			return_path =  outbox_admin_messages_path
+		end
+		@message.destroy_status -= mark
+
+		if @message.destroy_status.to_i == 0
+			@message.destroy
+		else
+			@message.save
+		end
+		flash_notice
+		redirect_to return_path
 	end
 
 	def new_message_notice

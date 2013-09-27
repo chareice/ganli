@@ -1,3 +1,5 @@
+-content_for :actions_button do
+	=link_to "删除私信",{action: :destroy,type: "inbox"},class: "alert small button",method: "delete",data:{confirm: "确定删除这条私信吗？"}
 %p="发件人 #{@message.sender.name}"
 %p.send-time="发送时间 #{@message.created_at.localtime.to_s(:db)}"
 .message_content{"data-download" => '/admin/messages/download'}

@@ -22,9 +22,11 @@ class Message < ActiveRecord::Base
 	}
 	scope :inbox,->(user_id){
 		where(:receiver => user_id)
+		.where("destroy_status in (3,1)")
 	}
 	scope :outbox,->(user_id){
 		where(:sender => user_id)
+		.where("destroy_status in (3,2)")
 	}
 	scope :unread,->(user_id){
 		joins(:sender)

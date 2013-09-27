@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925141225) do
+ActiveRecord::Schema.define(version: 20130926133757) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -168,9 +168,10 @@ ActiveRecord::Schema.define(version: 20130925141225) do
     t.integer  "receiver"
     t.text     "content"
     t.string   "atachment"
-    t.string   "status",     default: "0"
+    t.string   "status",         default: "0"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "destroy_status"
   end
 
   create_table "navigations", force: true do |t|

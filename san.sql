@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `affair_forms` (
 DELETE FROM `affair_forms`;
 /*!40000 ALTER TABLE `affair_forms` DISABLE KEYS */;
 INSERT INTO `affair_forms` (`id`, `title`, `form`, `created_at`, `updated_at`, `audit_process`) VALUES
-	(1, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2013-08-18 02:04:16', '2013-09-25 13:05:37', '---\n- \'1\'\n- \'2\'\n'),
+	(1, '甘李学校公车出行申请表', '<p>\r\n	<span style="font-size:10px;"></span> \r\n</p>\r\n<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:648px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="48" width="168">\r\n				申请人\r\n			</td>\r\n			<td width="133">\r\n				<br />\r\n			</td>\r\n			<td width="163">\r\n				申请出车时间\r\n			</td>\r\n			<td width="184">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="117">\r\n				申请事由\r\n			</td>\r\n			<td colspan="3">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', '2013-08-18 02:04:16', '2013-09-26 10:20:13', '---\n- \'1\'\n- \'2\'\n'),
 	(3, '甘李学校请假登记表', '<table cellpadding="0" cellspacing="0" class="ke-zeroborder" style="width:645px;">\r\n	<tbody>\r\n		<tr>\r\n			<td height="38" width="133" style="text-align:center;">\r\n				姓名\r\n			</td>\r\n			<td width="95">\r\n				<br />\r\n			</td>\r\n			<td width="104" style="text-align:center;">\r\n				任教年级\r\n			</td>\r\n			<td width="115">\r\n				<br />\r\n			</td>\r\n			<td width="72" style="text-align:center;">\r\n				学科\r\n			</td>\r\n			<td width="127">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="38" style="text-align:center;">\r\n				请假时间\r\n			</td>\r\n			<td colspan="5" style="text-align:center;">\r\n				年&nbsp; 月&nbsp; &nbsp;日&nbsp;&nbsp;&nbsp; 至&nbsp;&nbsp;&nbsp; 年&nbsp;&nbsp; &nbsp;月&nbsp; 日\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" style="text-align:center;">\r\n				请假事由\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td height="80" width="133" style="text-align:center;">\r\n				相关工作安排\r\n			</td>\r\n			<td colspan="5">\r\n				<br />\r\n			</td>\r\n		</tr>\r\n		<tr>\r\n			<td colspan="6" height="39" width="645" style="text-align:center;">\r\n				注：依据《甘李学校教职工请假办法（试行）》执行，1、一天及一天内由主管主任审批；2、一天以上由主管主任签署意见后，校长审批；3、节假日前一天原则上不准请假。\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n<p>\r\n	<br />\r\n</p>', '2013-09-25 14:02:19', '2013-09-25 14:03:16', '---\n- \'1\'\n');
 /*!40000 ALTER TABLE `affair_forms` ENABLE KEYS */;
 
@@ -172,8 +172,7 @@ CREATE TABLE IF NOT EXISTS `announcements` (
 DELETE FROM `announcements`;
 /*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
 INSERT INTO `announcements` (`id`, `title`, `content`, `author`, `created_at`, `updated_at`, `status`) VALUES
-	(1, '外语学院海外研修人员归国学术报', '<table width="74%" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size:9pt;font-family:\'Microsoft YaHei\';background-color:#FFFFFF;" class="ke-zeroborder">\r\n	<tbody>\r\n		<tr>\r\n			<td height="360" valign="top" class="content" style="font-size:10.5pt;">\r\n				<p>\r\n					<span>&nbsp;</span> \r\n				</p>\r\n				<div style="font-size:9pt;">\r\n					<span><span>主讲人：唐雄英&nbsp;&nbsp;&nbsp;&nbsp;博士、教授</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>题&nbsp;目：Writing for Publication in English: Views from 5 Sojourning Young Chinese Scientists</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>海外研修单位：</span><span>美国阿拉巴马大学英文系</span><span><span>（2013年1月—2013年7月）</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span><span>报告时间：9月17日星期二下午14:00-15:00<br />\r\n</span></span><span><span>报告地点：名达楼1区1415教室</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<p>\r\n						&nbsp;\r\n					</p>\r\n					<p>\r\n						<span>&nbsp;</span> \r\n					</p>\r\n					<div style="font-size:9pt;">\r\n						<span>主讲人：徐红 副教授</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>题&nbsp;目：TESOL Advanced （Teaching English for Speakers of Other Languages）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>海外研修单位：</span><span>King George International Business College- Canada TESOL Center</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>国王乔治国际学院-加拿大TESOL中心</span></span><span><span>（2013年3月—2013年8月）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告时间：9月17日星期二下午15:00-16:00</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告地点：名达楼1区1415教室</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;主办：人事处</span></span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 承办：外国语学院</span> \r\n					</div>\r\n				</div>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-24 13:00:58', '2013-09-24 13:14:52', 0),
-	(2, '党委统战部喜获“中国统一战线宣传先进单位”荣誉', '<span style="background-color:#FFFFFF;">&nbsp;近日，我校党委统战部被中央统战部宣传办、中国统一战线杂志社授予“中国统一战线宣传先进单位”荣誉称号，这已是党委统战部连续八年获此殊荣。党委统战部陈武阳同志获“中国统一战线宣传先进个人”荣誉称号。</span><span style="color:#262626;font-family:仿宋_GB2312;font-size:19px;line-height:21px;background-color:#FFFFFF;"><br />\r\n</span><span style="background-color:#FFFFFF;">　　今年，党委统战部以党的十八大精神为指导，结合学校建设有特色高水平大学，在统一战线中着力开展“同心”系列活动，进一步将社会主义核心价值体系学与行主题教育活动引向深入；扎实做好党外知识分子工作，建立健全党外知识分子工作新机制<span>;</span>努力完善民族宗教工作，积极引导师生自觉遵守国家民族宗教政策等举措，使学校统战工作呈现出新的特点。</span><span style="color:#262626;font-family:仿宋_GB2312;font-size:19px;line-height:21px;background-color:#FFFFFF;"><br />\r\n</span><span style="background-color:#FFFFFF;">　　党委统战部将以此次荣誉的获得为契机，继续解放思想，真抓实干。在省委统战部的指导和学校党委的领导下，为建设地方一流、特色鲜明的教学研究型师范大学夯实基础，开创统战工作新局面。（文<span>/</span>统战部）<br />\r\n</span>', 1, '2013-09-24 13:50:00', '2013-09-25 01:19:21', 0);
+	(1, '外语学院海外研修人员归国学术报', '<table width="74%" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size:9pt;font-family:\'Microsoft YaHei\';background-color:#FFFFFF;" class="ke-zeroborder">\r\n	<tbody>\r\n		<tr>\r\n			<td height="360" valign="top" class="content" style="font-size:10.5pt;">\r\n				<p>\r\n					<span>&nbsp;</span> \r\n				</p>\r\n				<div style="font-size:9pt;">\r\n					<span><span>主讲人：唐雄英&nbsp;&nbsp;&nbsp;&nbsp;博士、教授</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>题&nbsp;目：Writing for Publication in English: Views from 5 Sojourning Young Chinese Scientists</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>海外研修单位：</span><span>美国阿拉巴马大学英文系</span><span><span>（2013年1月—2013年7月）</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span>&nbsp;</span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<span><span>报告时间：9月17日星期二下午14:00-15:00<br />\r\n</span></span><span><span>报告地点：名达楼1区1415教室</span></span> \r\n				</div>\r\n				<div style="font-size:9pt;">\r\n					<p>\r\n						&nbsp;\r\n					</p>\r\n					<p>\r\n						<span>&nbsp;</span> \r\n					</p>\r\n					<div style="font-size:9pt;">\r\n						<span>主讲人：徐红 副教授</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>题&nbsp;目：TESOL Advanced （Teaching English for Speakers of Other Languages）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>海外研修单位：</span><span>King George International Business College- Canada TESOL Center</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>国王乔治国际学院-加拿大TESOL中心</span></span><span><span>（2013年3月—2013年8月）</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告时间：9月17日星期二下午15:00-16:00</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>报告地点：名达楼1区1415教室</span></span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;</span> \r\n					</div>\r\n					<div style="font-size:9pt;">\r\n						<span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;主办：人事处</span></span> \r\n					</div>\r\n					<div align="center" style="font-size:9pt;">\r\n						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 承办：外国语学院</span> \r\n					</div>\r\n				</div>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>', 1, '2013-09-24 13:00:58', '2013-09-24 13:14:52', 0);
 /*!40000 ALTER TABLE `announcements` ENABLE KEYS */;
 
 
@@ -192,8 +191,7 @@ CREATE TABLE IF NOT EXISTS `announcement_viewers` (
 DELETE FROM `announcement_viewers`;
 /*!40000 ALTER TABLE `announcement_viewers` DISABLE KEYS */;
 INSERT INTO `announcement_viewers` (`id`, `announcement_id`, `viewer`, `created_at`, `updated_at`) VALUES
-	(1, 1, 1, '2013-09-24 21:48:24', '2013-09-24 21:48:24'),
-	(2, 2, 1, '2013-09-25 01:46:16', '2013-09-25 01:46:16');
+	(1, 1, 1, '2013-09-24 21:48:24', '2013-09-24 21:48:24');
 /*!40000 ALTER TABLE `announcement_viewers` ENABLE KEYS */;
 
 
@@ -233,7 +231,7 @@ INSERT INTO `articles` (`id`, `title`, `content`, `classification_id`, `created_
 	(15, '学校后操场', '<p>test</p>', 3, '2013-09-14 01:16:59', '2013-09-14 01:16:59', 0, '/assets/article/2013/09/14/image_show.jpg', '0', 1),
 	(16, '学校后操场', '<p>asdadasdas</p>', 3, '2013-09-14 01:17:50', '2013-09-14 01:17:50', 0, '/assets/article/2013/09/14/image_show.jpg', '0', 1),
 	(17, '实训中心', '<p>阿三大声大声的</p>', 3, '2013-09-14 01:18:22', '2013-09-14 01:18:22', 0, '/assets/article/2013/09/14/image_show.jpg', '0', 1),
-	(18, '省政府主要领导批示  肯定我校对外交流工作', '<p style="font-family:\'font-size:14px;color:#262626;text-align:center;">\r\n	&nbsp;\r\n</p>\r\n<p style="font-family:\'font-size:14px;color:#262626;text-align:center;" align="center">\r\n	<img border="0" alt="" src="http://www.jxnu.edu.cn/picture/article/2/16/c2/c133d7844625a339a138d79654e9/5ae82a48-b54f-4e22-a986-ddb9fc997eaa.jpg" width="500" />\r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 日前，接省政府办公厅电传，鹿心社省长、谢茹副省长、朱虹副省长在中国驻赞比亚使馆给省政府发来的电报《龙腾狮舞卢萨卡，欢乐春节赞比亚》上作批示。对于中国驻赞比亚使馆称赞“江西师范大学学生艺术团带来的精彩舞龙舞狮表演更是技惊全场”，朱虹副省长特别强调：对江西师范大学相关人员应给予表扬奖励。</span> \r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 2013年春节前夕，应中国驻赞比亚大使馆邀请，经省外侨办组织协调，在省外侨办张知明副主任、我校副校长张艳国率领下，以科技学院为主体组成的慰问演出团赴赞演出受到热烈欢迎和高度赞誉，演出取得圆满成功。江西师大慰问演出团是随江西省外事侨务办公室组织的江西省友好交流访问团赴赞比亚的。演出团主要是受邀参加由中国驻赞比亚大使馆举办的第一届赞比亚新年庙会开幕式并进行专场演出。赞比亚开国元勋、第一任总统、中国人民的老朋友卡翁达，现任副总统以及政府有关部长，部分国家驻赞大使、参赞等重要嘉宾出席。整场演出受到广大观众的喜爱，特别是驻赞大使馆、赞比亚中华江西同乡会周欲晓的高度赞扬，中国驻赞比亚大使周欲晓多次称赞：你们为国家赢得了荣誉，为江西争了光，为师大扬了名；演出团是民间大使，是中赞友谊的友好使者。</span><br />\r\n<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 中国驻赞比亚大使馆、赞比亚中华江西同乡会分别发来感谢信，高度评价和赞扬江西师大演出团的精彩演出及为中赞友谊作出的贡献。（文/国际合作与交流处）</span> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 2, '2013-09-15 04:19:14', '2013-09-15 10:04:43', 0, NULL, '0', 1),
+	(18, '省政府主要领导批示  肯定我校对外交流工作', '<p style="font-family:\'font-size:14px;color:#262626;text-align:center;">\r\n	&nbsp;\r\n</p>\r\n<p style="font-family:\'font-size:14px;color:#262626;text-align:center;" align="center">\r\n	<img border="0" alt="" src="http://www.jxnu.edu.cn/picture/article/2/16/c2/c133d7844625a339a138d79654e9/5ae82a48-b54f-4e22-a986-ddb9fc997eaa.jpg" width="500" /> \r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 日前，接省政府办公厅电传，鹿心社省长、谢茹副省长、朱虹副省长在中国驻赞比亚使馆给省政府发来的电报《龙腾狮舞卢萨卡，欢乐春节赞比亚》上作批示。对于中国驻赞比亚使馆称赞“江西师范大学学生艺术团带来的精彩舞龙舞狮表演更是技惊全场”，朱虹副省长特别强调：对江西师范大学相关人员应给予表扬奖励。</span> \r\n</p>\r\n<p>\r\n	<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 2013年春节前夕，应中国驻赞比亚大使馆邀请，经省外侨办组织协调，在省外侨办张知明副主任、我校副校长张艳国率领下，以科技学院为主体组成的慰问演出团赴赞演出受到热烈欢迎和高度赞誉，演出取得圆满成功。江西师大慰问演出团是随江西省外事侨务办公室组织的江西省友好交流访问团赴赞比亚的。演出团主要是受邀参加由中国驻赞比亚大使馆举办的第一届赞比亚新年庙会开幕式并进行专场演出。赞比亚开国元勋、第一任总统、中国人民的老朋友卡翁达，现任副总统以及政府有关部长，部分国家驻赞大使、参赞等重要嘉宾出席。整场演出受到广大观众的喜爱，特别是驻赞大使馆、赞比亚中华江西同乡会周欲晓的高度赞扬，中国驻赞比亚大使周欲晓多次称赞：你们为国家赢得了荣誉，为江西争了光，为师大扬了名；演出团是民间大使，是中赞友谊的友好使者。</span><br />\r\n<span style="font-size:16px;font-family:宋体;">&nbsp;&nbsp;&nbsp; 中国驻赞比亚大使馆、赞比亚中华江西同乡会分别发来感谢信，高度评价和赞扬江西师大演出团的精彩演出及为中赞友谊作出的贡献。（文/国际合作与交流处）</span> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 13, '2013-09-15 04:19:14', '2013-09-26 07:43:15', 0, NULL, '0', 1),
 	(19, '学校召开庆祝第29个教师节表彰大会', '<p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/09a4a189-dfaf-4952-9a14-ba921519b6e9.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/93837cde-44f2-4dac-ade6-3e9ade0d7c47.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/f19feeb4-e3dc-4a1b-b8db-9e77236f9e3b.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/e29b1869-46d3-44fe-b8e7-b2623006f147.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/60e59d01-4312-4bcb-865f-27b390ad1c58.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/372604fd-d438-4ff4-9373-9724e0329210.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/3c2cb144-b730-48c0-92a1-78d923b140b2.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/fcda362a-35c8-4afc-998d-b64d00275717.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/05ecfac0-6f3a-4ca7-8273-3ae4d520c326.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/8eaa1f60-7ca4-4bfd-a38b-5b012cc3de73.jpg"/></p><p style="text-align:center;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><img border="0" width="600" alt="" src="http://www.jxnu.edu.cn/picture/article/2/d6/00/27eded8e49a3b4c119bba9829539/bd0a1437-3596-4e39-9fb5-13a1b0c49ba3.jpg"/></p><p style="text-align:left;color: rgb(38, 38, 38); font-family: &#39;Microsoft YaHei&#39;; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-size:4px;font-family:宋体">&nbsp;&nbsp;&nbsp; 9月10日下午，在第29个教师节的欢庆日子里，学校在先骕楼实验剧场举行庆祝教师节表彰大会，表彰奖励近年来在学校教学科研、管理服务工作中涌现出来的先进集体和先进个人。<br/>&nbsp;&nbsp;&nbsp; 在家校领导田延光、梅国平、何小平、聂剑、廖维林、张艳国、黄加文、周晓朗、涂宗财，总会计师童颖华，校长助理熊永华出席大会，受表彰的先进集体和个人代表，各学院院长、党委书记、党委副书记、分管教学科研工作的副院长，各机关部门、直附属单位主要负责人和教师代表等500余人参加会议。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 校党委书记田延光代表学校党委和行政向全体教职员工、向为学校建设与发展做出重要贡献的老领导、离退休老同志、老教师致以节日的祝贺和亲切的问候，向获表彰的集体和个人表示热烈祝贺。田延光强调，学校要把广大教职员工作为学校事业发展的最宝贵的力量依靠，全心全意依靠教职员工办学治校，牢固树立和践行“教育以学生为本、办学以教师为本”的理念，把教师队伍建设作为加快学校内涵发展，提升教育教学质量的关键环节和战略任务，大力营造尊重劳动、尊重知识、尊重人才、尊重创造的良好氛围，进一步尊重教师劳动、关心教师发展、提供优质环境。田延光希望广大教师争当爱岗敬业的楷模、教书育人的楷模、终身学习的楷模、师德师风的楷模。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 校长梅国平在主持讲话中指出，召开此次大会旨在总结先进经验、表彰先进典型、营造良好氛围、激励教师成长，进一步增强广大教师的光荣感、责任感和使命感。他表示，学校将高度重视广大教师的利益诉求，大力营造尊师重教的良好氛围，全力做好教师发展服务工作，努力让教师工作上得心应手、生活上无忧无虑、心情上轻松快乐。他希望广大教师真诚关注学生成长，严谨治学、精心施教，做一名社会敬仰的教师；谨记教师职业道德，立德修身，以身立教，做一名品德高尚的教师；树立质量第一意识，追求卓越，拒绝平庸，做一名锐意创新的教师。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 大会表彰了一批先进集体和个人。校党委副书记何小平宣读了学校表彰2011-2012年度“三育人”标兵和先进工作者、第二届“感动师大”人物的决定；副校长聂剑宣读了学校关于国家级管理项目的表彰决定；副校长张艳国宣读了学校关于国家级本科教学工程的表彰决定；副校长涂宗财宣读了学校关于科研、学科建设的表彰决定。詹艾斌等10位同志获得“2011-2012年度‘三育人’标兵”荣誉称号，罗奇清等232位同志获得“2011-2012年度‘三育人’先进工作者”荣誉称号；杨丽娇等10个个人（团体）获得“江西师范大学‘感动师大’人物”荣誉称号；表彰奖励国家大学生校外实践教育基地等11项国家级“本科教学工程”重大项目；表彰奖励获得2013年度国家自然科学基金、社会科学基金项目立项的项目负责人吴亚东等79人、申报人蔡艳等466人、申报立项工作优秀组织单位生命科学院、数学与信息科学学院、文学院等3个学院，2012年度重大科研成果获得者傅修延等37人；表彰奖励化学化工学院获得学科建设突出成绩单位。&nbsp;<br/>&nbsp;&nbsp;&nbsp; 在激昂的音乐声中，校领导为获奖集体和个人代表颁奖。历史文化与旅游学院教师梁洪生、数学与信息科学学院教师黄福生、生命学院院长彭以元、生命科学学院教师涂艺声、学报杂志社教师吴赘、教师教育处处长项国雄分别代表2011-2012年度“三育人”标兵、国家级本科教学工程项目获奖、国家自然、社科基金项目申报立项工作优秀组织单位、自然科学基金项目获得者、国家社会科学基金项目获得者、国家级管理项目获批单位的获奖集体和个人发言，畅谈感受，分享经验。（文/钟雪艳 图/董江洪）&nbsp;</span></p><p><br/></p>', 1, '2013-09-15 04:20:31', '2013-09-15 04:21:02', 0, NULL, '0', 1),
 	(20, '文章测试', 'TEST<img src="/assets/article/2013/09/16/QQ截图20130913145613.png" alt="" />', 1, '2013-09-16 03:02:01', '2013-09-16 03:04:01', 0, '/assets/article/2013/09/16/flash_1.jpg', 'f', 1),
 	(21, 'asdsadsad', '<img src="/assets/article/2013/09/16/bottom_nav_bg.jpg" alt="" />', 2, '2013-09-16 03:24:16', '2013-09-16 07:59:59', 0, NULL, '0', 1);
@@ -266,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `classifications` (
   `updated_at` datetime DEFAULT NULL,
   `thumb_size` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.classifications: ~28 rows (approximately)
 DELETE FROM `classifications`;
@@ -297,9 +295,10 @@ INSERT INTO `classifications` (`id`, `name`, `created_at`, `updated_at`, `thumb_
 	(23, '学校制度', '2013-09-16 07:58:07', '2013-09-16 07:58:07', ''),
 	(24, '招标采购', '2013-09-16 07:58:14', '2013-09-16 07:58:14', ''),
 	(25, '财务信息', '2013-09-16 07:58:22', '2013-09-16 07:58:22', ''),
-	(26, '制度', '2013-09-16 07:58:36', '2013-09-16 07:58:36', ''),
-	(27, '内容', '2013-09-16 07:58:52', '2013-09-16 07:58:52', ''),
-	(28, '流程', '2013-09-16 07:59:01', '2013-09-16 07:59:01', '');
+	(26, '服务事项', '2013-09-16 07:58:36', '2013-09-26 10:06:04', ''),
+	(27, '工作流程', '2013-09-16 07:58:52', '2013-09-26 10:06:20', ''),
+	(28, '工作制度', '2013-09-16 07:59:01', '2013-09-26 10:06:27', ''),
+	(29, '联系方式', '2013-09-26 10:06:36', '2013-09-26 10:06:36', '');
 /*!40000 ALTER TABLE `classifications` ENABLE KEYS */;
 
 
@@ -320,7 +319,6 @@ CREATE TABLE IF NOT EXISTS `documents` (
 DELETE FROM `documents`;
 /*!40000 ALTER TABLE `documents` DISABLE KEYS */;
 INSERT INTO `documents` (`id`, `name`, `path`, `status`, `uploader`, `created_at`, `updated_at`) VALUES
-	(1, '语境及其对话语理解的作用', '/rails/ganli/documents/2013/08/23/语境在语言理解中的作用.txt', 1, 1, '2013-08-23 00:37:53', '2013-08-23 03:04:04'),
 	(6, 'adsad', '//document/2013/09/16/ConEmu64__.exe', 2, 1, '2013-09-16 03:16:25', '2013-09-16 03:31:12'),
 	(7, 'sdfsafdsaf', '//document/2013/09/16/flash_1.jpg', 2, 1, '2013-09-16 03:18:40', '2013-09-16 03:31:09'),
 	(8, 'asdasdsa', '/ganli/ganli/document/2013/09/16/admin-login-button-bg.jpg', 2, 1, '2013-09-16 03:21:44', '2013-09-16 03:31:06'),
@@ -365,8 +363,8 @@ CREATE TABLE IF NOT EXISTS `friendly_link_classifications` (
 DELETE FROM `friendly_link_classifications`;
 /*!40000 ALTER TABLE `friendly_link_classifications` DISABLE KEYS */;
 INSERT INTO `friendly_link_classifications` (`id`, `name`, `created_at`, `updated_at`, `rank`) VALUES
-	(2, '市级教育部门', '2013-09-17 06:26:01', '2013-09-17 06:26:01', 0),
-	(3, '区级教育部门', '2013-09-17 06:39:15', '2013-09-17 06:39:47', 0);
+	(2, '市级教育部门', '2013-09-17 06:26:01', '2013-09-26 07:48:46', 0),
+	(3, '区级教育部门', '2013-09-17 06:39:15', '2013-09-26 07:49:05', 1);
 /*!40000 ALTER TABLE `friendly_link_classifications` ENABLE KEYS */;
 
 
@@ -509,17 +507,13 @@ CREATE TABLE IF NOT EXISTS `lunches` (
   `updated_at` datetime DEFAULT NULL,
   `mold` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ganli_rails.lunches: ~5 rows (approximately)
+-- Dumping data for table ganli_rails.lunches: ~1 rows (approximately)
 DELETE FROM `lunches`;
 /*!40000 ALTER TABLE `lunches` DISABLE KEYS */;
 INSERT INTO `lunches` (`id`, `date`, `teacher`, `created_at`, `updated_at`, `mold`) VALUES
-	(1, '2013-08-30', 1, '2013-08-28 15:35:59', '2013-08-28 15:35:59', NULL),
-	(2, '2013-09-03', 1, '2013-09-01 13:01:56', '2013-09-01 13:01:56', NULL),
-	(3, '2013-09-03', 2, '2013-09-01 13:02:16', '2013-09-01 13:02:16', NULL),
-	(4, '2013-09-13', 1, '2013-09-12 10:15:39', '2013-09-12 10:15:39', NULL),
-	(5, '2013-09-16', 1, '2013-09-14 11:17:22', '2013-09-14 11:17:22', NULL);
+	(6, '2013-09-27', 1, '2013-09-26 02:02:16', '2013-09-26 02:02:16', '---\n- \'1\'\n- \'2\'\n- \'3\'\n');
 /*!40000 ALTER TABLE `lunches` ENABLE KEYS */;
 
 
@@ -534,14 +528,17 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `status` varchar(255) CHARACTER SET latin1 DEFAULT '0',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `destroy_status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.messages: ~1 rows (approximately)
 DELETE FROM `messages`;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` (`id`, `sender`, `receiver`, `content`, `atachment`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 1, 1, '你好！', NULL, '1', '2013-09-24 00:10:11', '2013-09-24 09:17:59');
+INSERT INTO `messages` (`id`, `sender`, `receiver`, `content`, `atachment`, `status`, `created_at`, `updated_at`, `destroy_status`) VALUES
+	(1, 1, 1, '你好！', NULL, '1', '2013-09-24 00:10:11', '2013-09-24 09:17:59', 3),
+	(2, 1, 2, 'hehehehehehhehe', NULL, '0', '2013-09-26 07:59:21', '2013-09-26 07:59:21', 3),
+	(3, 1, 1, '<a class="ke-insertfile" href="/assets/2013/09/26/Steve Jobs.epub" target="_blank">乔布斯传记</a>', NULL, '1', '2013-09-26 12:52:46', '2013-09-27 00:49:08', 2);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 
 
@@ -575,7 +572,7 @@ INSERT INTO `navigations` (`id`, `name`, `url`, `nav_id`, `created_at`, `updated
 	(11, '安全教育', '15', NULL, '2013-09-08 11:24:41', '2013-09-08 11:24:41', 5),
 	(12, '党建专栏', '18', NULL, '2013-09-08 11:24:53', '2013-09-08 11:24:53', 6),
 	(13, '校务公开', '22', NULL, '2013-09-08 11:25:12', '2013-09-08 11:25:12', 7),
-	(14, '服务窗口', '26', NULL, '2013-09-08 11:25:25', '2013-09-08 11:25:25', 8),
+	(14, '服务窗口', '/page/service', NULL, '2013-09-08 11:25:25', '2013-09-27 01:06:58', 8),
 	(15, '论坛资源', '/bbs', NULL, '2013-09-08 11:25:33', '2013-09-14 13:50:07', 9),
 	(16, '组织机构', '', 1, '2013-09-12 10:44:21', '2013-09-12 10:44:21', NULL),
 	(17, '办学理念', '', 1, '2013-09-12 10:44:38', '2013-09-12 10:44:38', NULL),
@@ -598,10 +595,10 @@ INSERT INTO `navigations` (`id`, `name`, `url`, `nav_id`, `created_at`, `updated
 	(34, '学校制度', '23', 13, '2013-09-12 10:48:07', '2013-09-12 10:48:07', NULL),
 	(35, '招标采购', '24', 13, '2013-09-12 10:48:17', '2013-09-12 10:48:17', NULL),
 	(36, '财务信息', '25', 13, '2013-09-12 10:48:27', '2013-09-12 10:48:27', NULL),
-	(37, '制度', '26', 14, '2013-09-12 10:48:37', '2013-09-12 10:48:37', NULL),
-	(38, '内容', '27', 14, '2013-09-12 10:48:49', '2013-09-12 10:48:49', NULL),
-	(39, '流程', '28', 14, '2013-09-12 10:48:58', '2013-09-12 10:48:58', NULL),
-	(40, '内务申请', '/admin/affair_forms/apply', 14, '2013-09-12 10:49:07', '2013-09-12 10:49:07', NULL),
+	(37, '服务事项', '26', 14, '2013-09-12 10:48:37', '2013-09-26 10:04:50', NULL),
+	(38, '工作流程', '27', 14, '2013-09-12 10:48:49', '2013-09-26 10:04:59', NULL),
+	(39, '工作制度', '28', 14, '2013-09-12 10:48:58', '2013-09-26 10:05:08', NULL),
+	(40, '联系方式', '29', 14, '2013-09-12 10:49:07', '2013-09-26 10:06:53', NULL),
 	(41, '甘李论坛', '', 15, '2013-09-12 10:49:17', '2013-09-12 10:49:17', NULL),
 	(42, '内部资源', '', 15, '2013-09-12 10:49:27', '2013-09-12 10:49:27', NULL),
 	(43, '振华智邦', '', 15, '2013-09-12 10:49:36', '2013-09-12 10:49:36', NULL);
@@ -660,7 +657,7 @@ INSERT INTO `permissions` (`id`, `name`, `describe`, `created_at`, `updated_at`)
 	(11, '上传教育资源', '上传教育资源到系统', '2013-08-22 10:24:43', '2013-08-22 10:24:44'),
 	(12, '教育资源审核', '审核教师发布的教育资源', '2013-08-23 09:01:42', '2013-08-23 09:01:42'),
 	(13, '教育资源库', '浏览教育资源库中的内容', '2013-08-23 09:02:06', '2013-08-23 09:02:07'),
-	(14, '预定次日午餐', '进行第二个工作日的午餐预订', '2013-08-26 10:57:50', '2013-08-26 10:57:51'),
+	(14, '预定次日用餐', '进行第二个工作日的用餐预订', '2013-08-26 10:57:50', '2013-08-26 10:57:51'),
 	(15, '订餐查看', '按日期查看订餐情况', '2013-08-26 11:01:30', '2013-08-26 11:01:30'),
 	(16, '友情链接管理', '友情链接的管理', '2013-08-27 10:39:41', '2013-08-27 10:39:41'),
 	(17, '留言板管理', '网站留言板管理', '2013-08-27 10:40:03', '2013-08-27 10:40:03'),
@@ -687,7 +684,7 @@ CREATE TABLE IF NOT EXISTS `permission_actions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table ganli_rails.permission_actions: ~118 rows (approximately)
 DELETE FROM `permission_actions`;
@@ -810,7 +807,9 @@ INSERT INTO `permission_actions` (`id`, `permission_id`, `action`, `created_at`,
 	(120, 27, 'admin/announcements#update', '2013-09-24 20:28:48', '2013-09-24 20:28:48'),
 	(121, 27, 'admin/announcements#destroy', '2013-09-24 20:28:56', '2013-09-24 20:28:57'),
 	(122, 28, 'admin/announcements#show', '2013-09-24 20:29:07', '2013-09-24 20:29:07'),
-	(123, 28, 'admin/announcements#view_index', '2013-09-24 20:29:18', '2013-09-24 20:29:18');
+	(123, 28, 'admin/announcements#view_index', '2013-09-24 20:29:18', '2013-09-24 20:29:18'),
+	(124, 25, 'admin/messages#destroy', '2013-09-26 21:50:46', '2013-09-26 21:50:47'),
+	(125, 26, 'admin/messages#destroy', '2013-09-26 21:50:51', '2013-09-26 21:50:51');
 /*!40000 ALTER TABLE `permission_actions` ENABLE KEYS */;
 
 
@@ -920,7 +919,9 @@ INSERT INTO `schema_migrations` (`version`) VALUES
 	('20130924000721'),
 	('20130924134430'),
 	('20130925050751'),
-	('20130925141225');
+	('20130925141225'),
+	('20130926133359'),
+	('20130926133757');
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 
 
@@ -996,8 +997,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`, `qq`, `phone`, `teacher_position`, `grade`) VALUES
-	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-25 12:52:14', 1, '2013-09-25 09:41:06', 'chareice', '81376258', '18942321753', '', ''),
-	(2, '年级组长', 'chareice@live.com', 'c4ca4238a0b923820dcc509a6f75849b', '2013-09-25 11:53:15', '2013-09-25 13:17:24', 1, '2013-09-25 11:53:15', 'tester', '81376258', '18942321753', '', '');
+	(1, '邵成磊', 'chareice@live.com', '9c8c784647ef61e23dc0a134e940b32e', '2013-08-07 04:34:13', '2013-09-27 02:34:09', 1, '2013-09-27 02:33:30', 'chareice', '81376258', '18942321753', '', ''),
+	(2, '年级组长', 'chareice@live.com', 'c4ca4238a0b923820dcc509a6f75849b', '2013-09-25 11:53:15', '2013-09-26 07:49:56', 1, '2013-09-25 13:17:24', 'tester', '81376258', '18942321753', '', '');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 

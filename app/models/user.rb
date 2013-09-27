@@ -66,6 +66,8 @@ class User < ActiveRecord::Base
 		end
 		if user.status == 0
 			raise "用户还在审核中，无法登陆"
+		elsif user.status == 2
+			raise "已经删除的用户"
 		end
 		unless user.password.eql?(Digest::MD5.hexdigest password)
 			raise "密码错误"

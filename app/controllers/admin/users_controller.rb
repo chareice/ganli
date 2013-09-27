@@ -69,7 +69,18 @@ class Admin::UsersController < Admin::BaseController
 
 	def destroy
 		@user = User.find params[:id]
-		@user.destroy
+		#用户待审 删除，直接从数据库删除
+		#已有用户删除 改变状态 改变用户名称以及账号
+		if @user.status == 0
+			@user.destroy
+		else
+			require 'digest/md5'
+			@user.status = 2
+			@user.name = "已删除的用户"
+			radom =  Digest::MD5.hexdigest((0...50).map{ ('a'..'z').to_a[rand(26)] }.join + Time.now.to_s)
+			@user.account = radom
+			@user.save
+		end
 
 		respond_to do |format|
 			format.html { redirect_to admin_users_path,flash: {notice: "删除成功"}}

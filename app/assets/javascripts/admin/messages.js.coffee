@@ -42,6 +42,6 @@ $("#groups_select_list li").click ->
 		$("#receiver-preview").text(c_user.name)
 		$("#message_receiver").val(user_id)
 
-$(".message_content a.ke-insertfile").click (e)->
-	downpath = $(".message_content").data("download")
+$(".insert-files-c a.ke-insertfile").click (e)->
+	downpath = $(".insert-files-c").data("download")
 	this.href = downpath + $(this).attr("href")

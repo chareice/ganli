@@ -62,6 +62,7 @@ class Bbs::TopicsController < Bbs::BbsController
 			if @topic.wait_audit?
 				redirect_to bbs_topics_path,flash: {notice: "发布成功，等待管理员审核"}
 			else
+				flash[:notice]="发布成功"
 				redirect_to bbs_topic_path(@topic)
 			end
 		else

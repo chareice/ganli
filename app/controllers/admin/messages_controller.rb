@@ -56,6 +56,12 @@ class Admin::MessagesController < Admin::BaseController
 		unless @message.sender == current_user
 			access_forbidden
 		end
+		insert_file_regex = %r{<a\sclass="ke-insertfile".*</a>}
+		@insert_files = []
+		@message.content.gsub!(insert_file_regex){|file| @insert_files.append(file);nil}
+		@message.content.gsub!(/<p>[\s$]*<\/p>/, '') 
+
+		render 'show'
 	end
 
 	def destroy

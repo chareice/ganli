@@ -2,10 +2,11 @@
 	=link_to "导出xls格式",admin_lunches_path(format: :xls,date: params[:date]),class: "success tiny button"
 =form_tag admin_lunches_path,method: :get do
 	按日期
-	=text_field_tag 'date',@query_date
+	=select_date @query_date
 	=submit_tag "查看"
 %p
 	="日期 #{@query_date}"
+	
 
 -unless @lunches.empty?
 	%table

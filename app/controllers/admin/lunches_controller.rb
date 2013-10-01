@@ -1,6 +1,7 @@
 class Admin::LunchesController < Admin::BaseController
 	def index
-		@query_date = params[:date] || Lunch.lunch_date.to_date
+
+		@query_date = params[:date].values.join("-").to_date || Lunch.lunch_date.to_date
 		@lunches = Lunch.where(date:@query_date)
 
 		respond_to do |format|
@@ -14,6 +15,7 @@ class Admin::LunchesController < Admin::BaseController
 	end
 
 	def create
+
 		#render json: params
 		unless Lunch.scheduled? current_user
 			lunch = Lunch.new

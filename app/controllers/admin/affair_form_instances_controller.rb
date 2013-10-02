@@ -19,6 +19,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 
 	def admin_view
 		@instance = AffairFormInstance.find params[:id]
+		session[:return_to] = list_admin_affair_form_instances_path
 	end
 
 	def show
@@ -26,6 +27,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 		if @instance.proposer != current_user
 			access_forbidden
 		end
+		session[:return_to] = propose_admin_affair_forms_path
 	end
 
 	def new
@@ -57,6 +59,6 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 		end
 		@instance.destroy
 
-		redirect_to propose_admin_affair_forms_path
+		redirect_to session[:return_to]
 	end
 end

@@ -3,6 +3,5 @@
 .affair_forms
 	.header
 		请选择您要申请的表单
-	%ul
-		-@affair_forms.each do |affair_form|
-			%li=link_to affair_form.title,new_admin_affair_form_affair_form_instance_path(affair_form),class: "small success button"
+	-@affair_forms.each do |affair_form|
+		=link_to affair_form.title,new_admin_affair_form_affair_form_instance_path(affair_form),class: "small success button"

@@ -6,13 +6,16 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 	def list
 		if !!params[:start_date] and !!params[:end_date]
 			begin
-				@instances = AffairFormInstance.where(:created_at =>DateTime.parse(params[:start_date])..DateTime.parse(params[:end_date]).tomorrow).paginate(:page=>params[:page],per_page: 10)
+				@start_date = "#{params[:start_date][:year]}-#{params[:start_date][:month]}-#{params[:start_date][:day]}".to_date
+				@end_date = "#{params[:end_date][:year]}-#{params[:end_date][:month]}-#{params[:end_date][:day]}".to_date
+				@instances = AffairFormInstance.where(:created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 10)
 			rescue
 				flash[:error] = "时间格式不正确"
 				redirect_to list_admin_affair_form_instances_path
 				@instances = []
 			end
 		else
+			@start_date = @end_date = Time.now
 			@instances = AffairFormInstance.all.paginate(:page=>params[:page],per_page: 10)
 		end
 	end

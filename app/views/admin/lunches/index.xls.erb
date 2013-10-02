@@ -40,8 +40,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Sheet1">
-  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="8" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="13.5">
+  <Table>
    <Column ss:AutoFitWidth="0" ss:Width="69.75"/>
    <Column ss:AutoFitWidth="0" ss:Width="179.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="120.75"/>
@@ -55,13 +54,13 @@
     <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">总订餐人数：<%= @lunches.size %></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">早餐订餐人数：<%= Lunch.by_mold(1).count%></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">早餐订餐人数：<%= Lunch.by_mold(1,@query_date).count%></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">午餐订餐人数：<%= Lunch.by_mold(2).count%></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">午餐订餐人数：<%= Lunch.by_mold(2,@query_date).count%></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">晚餐订餐人数：<%= Lunch.by_mold(3).count%></Data></Cell>
+    <Cell ss:MergeAcross="2" ss:StyleID="s62"><Data ss:Type="String">晚餐订餐人数：<%= Lunch.by_mold(3,@query_date).count%></Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s62"><Data ss:Type="String">教师姓名</Data></Cell>
@@ -78,12 +77,6 @@
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <Unsynced/>
-   <Print>
-    <ValidPrinterInfo/>
-    <PaperSizeIndex>9</PaperSizeIndex>
-    <HorizontalResolution>1200</HorizontalResolution>
-    <VerticalResolution>1200</VerticalResolution>
-   </Print>
    <Selected/>
    <Panes>
     <Pane>

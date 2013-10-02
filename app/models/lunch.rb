@@ -14,12 +14,17 @@ class Lunch < ActiveRecord::Base
 	serialize :mold
 	validates :mold,presence: {message:"必须选择"}
 
-	scope :by_mold,->(mold_id){
+	scope :by_mold,->(mold_id,date){
 		where("mold like ?","%#{mold_id}%")
+		.where(date: date)
 	}
 	scope :current_user_mold,->(user){
 		where(date:Lunch.lunch_date.to_date,teacher:user).take
 	}
+
+	def by_mold(mold_id)
+		where("mold like ?","%#{mold_id}%")
+	end
 	def mold_to_s
 		self.mold.map do |mold|
 			case mold

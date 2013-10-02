@@ -1,7 +1,7 @@
 class Admin::LunchesController < Admin::BaseController
 	def index
 
-		@query_date = params[:date].values.join("-").to_date || Lunch.lunch_date.to_date
+		@query_date = if params[:date] then params[:date].values.join("-").to_date else Lunch.lunch_date.to_date end
 		@lunches = Lunch.where(date:@query_date)
 
 		respond_to do |format|

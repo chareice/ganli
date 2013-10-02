@@ -77,6 +77,8 @@
         title: "文章标题"
         content: "文章内容"
         classification: "文章分类"
+      reply:
+        content: "回复内容"
     errors:
       models:
         topic: "帖子"

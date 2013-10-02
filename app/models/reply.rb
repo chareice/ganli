@@ -15,7 +15,8 @@ class Reply < ActiveRecord::Base
 	validates :content,presence: true
 	belongs_to :topic
 	belongs_to :user
-	
+	before_create :make_floor
+
 	scope :public,->{
 		where(status: [1,3])
 	}
@@ -25,7 +26,7 @@ class Reply < ActiveRecord::Base
 	}
 
 	scope :wait_audit,->{
-		where(status: [0,3])
+		where(status: [0])
 	}
 
 	def set_public
@@ -54,5 +55,13 @@ class Reply < ActiveRecord::Base
 
 	def public?
 		self.status == 1
+	end
+	
+	private
+	def make_floor
+		last_floor = self.topic.last_floor + 1
+		self.floor = last_floor
+		self.topic.last_floor += 1
+		self.topic.save
 	end
 end

@@ -16,4 +16,12 @@ module Bbs::BbsHelper
 			user.has_permission? Permission.find(trusted_permission_id)
 		end
 	end
+
+	def unaudit_topices
+		Topic.wait_audit.count
+	end
+
+	def unaudit_replies
+		Reply.wait_audit.count
+	end
 end

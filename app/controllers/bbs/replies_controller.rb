@@ -12,13 +12,18 @@ class Bbs::RepliesController < Bbs::BbsController
 
 		@topic.replies << reply
 		
-		if reply.wait_audit?
-			notice = "回复成功，等待审核"
+		if reply.valid?
+			if reply.wait_audit?
+				notice = "回复成功，等待审核"
+			else
+				notice = "回复成功"
+			end
+			
+			redirect_to bbs_topic_path(@topic),flash: {notice: notice}
 		else
-			notice = "回复成功"
+			flash_error reply
+			redirect_to bbs_topic_path(@topic)
 		end
-		
-		redirect_to bbs_topic_path(@topic),flash: {notice: notice}
 	end
 
 	def change_status

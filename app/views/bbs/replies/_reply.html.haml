@@ -1,7 +1,8 @@
 .reply
 	.reply_content
-		=reply.user.name + ":"
-		=reply.content
+		%span.reply-username=reply.user.name
+		=%Q{:}
+		.reply-content{"data-username" => reply.user.name,"data-floor" => reply.floor}=reply.content.html_safe
 	-if is_admin?
 		.manage
 			=button_to "删除",bbs_reply_path(reply),method: :delete,data: {confirm: "确定删除？"}
@@ -10,4 +11,6 @@
 			-else reply.public?
 				=button_to "隐藏", change_status_bbs_reply_path(reply,status:"hidden")
 	.reply_time
-		=reply.created_at.localtime.to_s(:db)
+		%span.floor="##{reply.floor}楼"
+		%span=reply.created_at.localtime.to_s(:db)
+		%span.cmt-do-quote 评论

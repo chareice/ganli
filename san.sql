@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.13)
 # Database: ganli_rails
-# Generation Time: 2013-10-02 14:07:39 +0000
+# Generation Time: 2013-10-02 22:18:40 +0000
 # ************************************************************
 
 
@@ -117,7 +117,7 @@ CREATE TABLE `affair_form_instance_audit_logs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `affair_form_instance_audit_logs` WRITE;
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` DISABLE KEYS */;
@@ -147,7 +147,7 @@ CREATE TABLE `affair_form_instances` (
   `status` int(11) DEFAULT '0',
   `proposer` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `affair_form_instances` WRITE;
 /*!40000 ALTER TABLE `affair_form_instances` DISABLE KEYS */;
@@ -636,21 +636,8 @@ CREATE TABLE `messages` (
   `updated_at` datetime DEFAULT NULL,
   `destroy_status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `messages` WRITE;
-/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-
-INSERT INTO `messages` (`id`, `sender`, `receiver`, `content`, `atachment`, `status`, `created_at`, `updated_at`, `destroy_status`)
-VALUES
-	(1,1,1,'你好！',NULL,'1','2013-09-24 00:10:11','2013-09-24 09:17:59',3),
-	(2,1,2,'hehehehehehhehe',NULL,'0','2013-09-26 07:59:21','2013-09-26 07:59:21',3),
-	(3,1,1,'<a class=\"ke-insertfile\" href=\"/assets/2013/09/26/Steve Jobs.epub\" target=\"_blank\">乔布斯传记</a>',NULL,'1','2013-09-26 12:52:46','2013-09-27 00:49:08',2),
-	(6,1,1,'<a class=\"ke-insertfile\" href=\"/document/2013/09/28/main.m\" target=\"_blank\">object c</a>',NULL,'1','2013-09-28 00:35:46','2013-09-28 00:35:49',3),
-	(7,1,1,'<p>\r\n	把附件提取出来的测试\r\n</p>\r\n<p>\r\n	你们这些凡人颤抖吧\r\n</p>\r\n<p>\r\n	<a class=\"ke-insertfile\" href=\"/document/2013/09/28/main_.m\" target=\"_blank\">我是附件</a> \r\n</p>',NULL,'1','2013-09-28 00:44:05','2013-09-28 00:44:06',3);
-
-/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table navigations
@@ -763,7 +750,7 @@ CREATE TABLE `permission_actions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `permission_actions` WRITE;
 /*!40000 ALTER TABLE `permission_actions` DISABLE KEYS */;
@@ -889,7 +876,9 @@ VALUES
 	(122,28,'admin/announcements#show','2013-09-24 20:29:07','2013-09-24 20:29:07'),
 	(123,28,'admin/announcements#view_index','2013-09-24 20:29:18','2013-09-24 20:29:18'),
 	(124,25,'admin/messages#destroy','2013-09-26 21:50:46','2013-09-26 21:50:47'),
-	(125,26,'admin/messages#destroy','2013-09-26 21:50:51','2013-09-26 21:50:51');
+	(125,26,'admin/messages#destroy','2013-09-26 21:50:51','2013-09-26 21:50:51'),
+	(126,25,'admin/messages#crocodoc',NULL,NULL),
+	(127,26,'admin/messages#crocodoc',NULL,NULL);
 
 /*!40000 ALTER TABLE `permission_actions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -962,7 +951,7 @@ CREATE TABLE `replies` (
   `status` int(11) DEFAULT '0',
   `floor` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
@@ -982,7 +971,8 @@ VALUES
 	(38,1,21,'对啊 是这么个情况','2013-10-02 11:37:37','2013-10-02 11:37:37',3,1),
 	(39,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n</blockquote>\r\n<p>\r\n	你这就不对了\r\n</p>','2013-10-02 11:37:53','2013-10-02 11:39:05',1,2),
 	(40,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#2楼 邵成磊 : \r\n              	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n              	你这就不对了\r\n</blockquote>\r\n<p>\r\n	怎么不对？\r\n</p>','2013-10-02 11:38:02','2013-10-02 11:39:01',1,3),
-	(41,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#3楼 邵成磊 : \r\n              	回复#2楼 邵成磊 : \r\n                            	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n                            	你这就不对了\r\n  ...\r\n</blockquote>\r\n<p>\r\n	<img src=\"http://localhost:3000/assets/kindeditor/plugins/emoticons/images/32.gif\" border=\"0\" alt=\"\" />\r\n</p>','2013-10-02 11:38:25','2013-10-02 11:38:25',3,4);
+	(41,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#3楼 邵成磊 : \r\n              	回复#2楼 邵成磊 : \r\n                            	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n                            	你这就不对了\r\n  ...\r\n</blockquote>\r\n<p>\r\n	<img src=\"http://localhost:3000/assets/kindeditor/plugins/emoticons/images/32.gif\" border=\"0\" alt=\"\" />\r\n</p>','2013-10-02 11:38:25','2013-10-02 11:38:25',3,4),
+	(42,1,22,'asdasds','2013-10-03 06:09:39','2013-10-03 06:09:39',3,1);
 
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1115,7 +1105,7 @@ VALUES
 	(19,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0),
 	(20,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0),
 	(21,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-02 11:38:25',1,4),
-	(22,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-09-15 11:30:25',1,0),
+	(22,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-03 06:09:39',1,1),
 	(23,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-09-02 05:54:41',0,0),
 	(24,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:42','2013-09-02 05:54:42',0,0),
 	(25,1,'safasfs','afsfadf','2013-09-02 06:00:12','2013-09-02 06:00:12',0,0),
@@ -1159,7 +1149,7 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`, `qq`, `phone`, `teacher_position`, `grade`)
 VALUES
-	(1,'邵成磊','chareice@live.com','9c8c784647ef61e23dc0a134e940b32e','2013-08-07 04:34:13','2013-10-02 13:58:48',1,'2013-10-02 11:03:10','chareice','81376258','18942321753','',''),
+	(1,'邵成磊','chareice@live.com','9c8c784647ef61e23dc0a134e940b32e','2013-08-07 04:34:13','2013-10-03 00:59:37',1,'2013-10-02 14:20:20','chareice','81376258','18942321753','',''),
 	(2,'年级组长','chareice@live.com','c4ca4238a0b923820dcc509a6f75849b','2013-09-25 11:53:15','2013-10-02 08:37:38',1,'2013-09-26 07:49:56','tester','81376258','18942321753','','');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;

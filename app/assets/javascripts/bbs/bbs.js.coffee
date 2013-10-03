@@ -18,3 +18,6 @@ $(".cmt-do-quote").click ->
 	i_html =  c_content.html().replace(regex," ").truncate(150)
 	i_html = "<blockquote style='color: #999;font-size: 12px;margin: 10px 0;padding-left: 10px;border-left: 1px solid #d5d5d5;' >回复##{floor}楼 #{username} : #{i_html}</blockquote><p><br/></p>"
 	editor.insertHtml i_html
+	$("html, body").animate
+  		scrollTop: $("body").height()
+	, 1000

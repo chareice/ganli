@@ -31,6 +31,15 @@ class Admin::MessagesController < Admin::BaseController
 	def download
 		send_file("#{Rails.root}#{params[:path]}.#{params[:format]}")
 	end
+	def crocodoc
+		status = Crocodoc::Document.status params[:uuid]
+		if status["status"] == "DONE" and status["viewable"]
+			session_key = Crocodoc::Session.create(status["uuid"])
+			redirect_to "https://crocodoc.com/view/#{session_key}"
+		else
+			render text: "服务器预览失败 请直接下载附件"
+		end
+	end
 
 	def outbox
 		@messages = Message.outbox(current_user).paginate(:page=>params[:page],per_page: 10)

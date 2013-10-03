@@ -72,6 +72,7 @@ Ganli::Application.routes.draw do
         get 'outbox'
         get 'new_message_notice'
         get 'download*path',action: :download,as: :download#,constraints: {path: /[^\/]*/}
+        get 'crocodoc*uuid',action: :crocodoc,as: :crocodoc
       end
       member do
         get 'preview'

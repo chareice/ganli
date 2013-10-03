@@ -214,6 +214,7 @@ DEPENDENCIES
   jquery-rails
   launchy (~> 2.3.0)
   mysql2
+  nokogiri
   rails (= 4.0.0)
   rmagick
   rspec-rails (~> 2.14.0)

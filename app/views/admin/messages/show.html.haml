@@ -18,4 +18,17 @@
 		.insert-files-header="附件列表(#{@insert_files.size}个附件)"
 		%ul.insert-files
 			-@insert_files.each do |file|
-				%li=file.html_safe
+				-a_tag = Nokogiri.parse(file)
+				-unname_regex = %r{/document/\d{4}/\d{2}/\d{2}/.?}
+				-if a_tag.at('a').text =~ unname_regex
+					-text = a_tag.at('a').attributes["href"].value
+					- if text =~ %r{\?uuid=[\d\w-]*}
+						-uuid = %r{\?uuid=[\d\w-]*}.match(text).to_s
+						-basename = File.basename(text).gsub(%r{\?uuid=[\d\w-]*},"")
+					- else
+						-uuid = false
+						-basename = File.basename(text)
+					-a_tag.at('a').content = basename
+					%li
+						=a_tag.to_html.html_safe
+						=link_to "预览",{action: :crocodoc,uuid: uuid.gsub(%r{\?uuid=},"")},target: "_blank"

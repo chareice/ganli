@@ -54,10 +54,10 @@ class Admin::MessagesController < Admin::BaseController
 			@message.status = "1"
 			@message.save
 		end
-		insert_file_regex = %r{<a\sclass="ke-insertfile".*</a>}
-		@insert_files = []
-		@message.content.gsub!(insert_file_regex){|file| @insert_files.append(file);nil}
-		@message.content.gsub!(/<p>[\s$]*<\/p>/, '') 
+		insert_file_regex = %r{<a[^>]*>.*?</a>}
+		@insert_files = Array.new
+		@message.content.gsub!(insert_file_regex){|file| @insert_files << file.to_s;nil}
+		@message.content.gsub!(/<p>[\s$]*<\/p>/, '')
 	end
 
 	def preview

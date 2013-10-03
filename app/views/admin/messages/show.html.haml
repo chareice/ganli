@@ -29,6 +29,11 @@
 						-uuid = false
 						-basename = File.basename(text)
 					-a_tag.at('a').content = basename
-					%li
-						=a_tag.to_html.html_safe
+				-else
+					-text = a_tag.at('a').attributes["href"].value
+					- if text =~ %r{\?uuid=[\d\w-]*}
+						-uuid = %r{\?uuid=[\d\w-]*}.match(text).to_s
+				%li
+					=a_tag.to_html.html_safe
+					-if uuid
 						=link_to "预览",{action: :crocodoc,uuid: uuid.gsub(%r{\?uuid=},"")},target: "_blank"

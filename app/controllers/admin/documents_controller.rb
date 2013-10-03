@@ -12,7 +12,7 @@ class Admin::DocumentsController < Admin::BaseController
 		@document = Document.new
 		@document.name = params[:document][:name]
 		@document.uploader = current_user
-		@document.path = Document.save_file params[:document][:path]
+		@document.path = Document.save_file(params[:document][:path]).gsub("#{Rails.root}","")
 
 		if @document.save
 			flash[:notice] = "上传资料成功，等待审核"
@@ -32,7 +32,7 @@ class Admin::DocumentsController < Admin::BaseController
 		unless @document.status == 1
 			access_forbidden
 		else
-			send_file(@document.path)
+			send_file("#{Rails.root}#{@document.path}")
 		end
 	end
 
@@ -50,7 +50,7 @@ class Admin::DocumentsController < Admin::BaseController
 
 	def audit_download
 		@document  = Document.find params[:id]
-		send_file(@document.path)
+		send_file("#{Rails.root}#{@document.path}")
 	end
 
 	def destroy

@@ -1,10 +1,13 @@
-// Place all the styles related to the admin/groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 label{
 	width: 120px;
 	float: left;
 }
 input[type=checkbox]{
 	float: left;
+}
+.group-name{
+	label{
+		width: 100%;
+		float: none;
+	}
 }

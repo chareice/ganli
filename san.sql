@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.13)
 # Database: ganli_rails
-# Generation Time: 2013-10-02 22:18:40 +0000
+# Generation Time: 2013-10-05 12:23:33 +0000
 # ************************************************************
 
 
@@ -33,7 +33,7 @@ CREATE TABLE `admin_menu_permissions` (
   `updated_at` datetime DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `admin_menu_permissions` WRITE;
 /*!40000 ALTER TABLE `admin_menu_permissions` DISABLE KEYS */;
@@ -82,7 +82,7 @@ CREATE TABLE `admin_menus` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `admin_menus` WRITE;
 /*!40000 ALTER TABLE `admin_menus` DISABLE KEYS */;
@@ -117,7 +117,7 @@ CREATE TABLE `affair_form_instance_audit_logs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `affair_form_instance_audit_logs` WRITE;
 /*!40000 ALTER TABLE `affair_form_instance_audit_logs` DISABLE KEYS */;
@@ -147,7 +147,7 @@ CREATE TABLE `affair_form_instances` (
   `status` int(11) DEFAULT '0',
   `proposer` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `affair_form_instances` WRITE;
 /*!40000 ALTER TABLE `affair_form_instances` DISABLE KEYS */;
@@ -173,7 +173,7 @@ CREATE TABLE `affair_forms` (
   `updated_at` datetime DEFAULT NULL,
   `audit_process` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `affair_forms` WRITE;
 /*!40000 ALTER TABLE `affair_forms` DISABLE KEYS */;
@@ -199,7 +199,7 @@ CREATE TABLE `announcement_viewers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `announcement_viewers` WRITE;
 /*!40000 ALTER TABLE `announcement_viewers` DISABLE KEYS */;
@@ -226,7 +226,7 @@ CREATE TABLE `announcements` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `announcements` WRITE;
 /*!40000 ALTER TABLE `announcements` DISABLE KEYS */;
@@ -256,7 +256,7 @@ CREATE TABLE `articles` (
   `flag` varchar(255) DEFAULT NULL,
   `author` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `articles` WRITE;
 /*!40000 ALTER TABLE `articles` DISABLE KEYS */;
@@ -316,7 +316,7 @@ CREATE TABLE `classifications` (
   `updated_at` datetime DEFAULT NULL,
   `thumb_size` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `classifications` WRITE;
 /*!40000 ALTER TABLE `classifications` DISABLE KEYS */;
@@ -371,7 +371,7 @@ CREATE TABLE `documents` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `documents` WRITE;
 /*!40000 ALTER TABLE `documents` DISABLE KEYS */;
@@ -381,7 +381,9 @@ VALUES
 	(6,'adsad','//document/2013/09/16/ConEmu64__.exe',2,1,'2013-09-16 03:16:25','2013-09-16 03:31:12'),
 	(7,'sdfsafdsaf','//document/2013/09/16/flash_1.jpg',2,1,'2013-09-16 03:18:40','2013-09-16 03:31:09'),
 	(8,'asdasdsa','/ganli/ganli/document/2013/09/16/admin-login-button-bg.jpg',2,1,'2013-09-16 03:21:44','2013-09-16 03:31:06'),
-	(9,'test','/ganli/ganli/document/2013/09/23/1_110922145139_5 (1).jpg',2,1,'2013-09-23 11:30:13','2013-09-23 11:32:46');
+	(9,'test','/ganli/ganli/document/2013/09/23/1_110922145139_5 (1).jpg',2,1,'2013-09-23 11:30:13','2013-09-23 11:32:46'),
+	(10,'test','/Users/chareice/git/ganli/document/2013/10/03/Untitled 1.doc',1,1,'2013-10-03 06:23:04','2013-10-03 06:23:20'),
+	(11,'tetst','/document/2013/10/03/ganli_rails_2013-10-03.sql',1,1,'2013-10-03 06:26:20','2013-10-03 06:26:53');
 
 /*!40000 ALTER TABLE `documents` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -399,7 +401,7 @@ CREATE TABLE `friendly_link_classifications` (
   `updated_at` datetime DEFAULT NULL,
   `rank` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `friendly_link_classifications` WRITE;
 /*!40000 ALTER TABLE `friendly_link_classifications` DISABLE KEYS */;
@@ -427,7 +429,7 @@ CREATE TABLE `friendly_links` (
   `updated_at` datetime DEFAULT NULL,
   `friendly_link_classification_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `friendly_links` WRITE;
 /*!40000 ALTER TABLE `friendly_links` DISABLE KEYS */;
@@ -452,7 +454,7 @@ CREATE TABLE `groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
@@ -483,7 +485,7 @@ CREATE TABLE `groups_permissions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `groups_permissions` WRITE;
 /*!40000 ALTER TABLE `groups_permissions` DISABLE KEYS */;
@@ -553,7 +555,7 @@ CREATE TABLE `guest_messages` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `guest_messages` WRITE;
 /*!40000 ALTER TABLE `guest_messages` DISABLE KEYS */;
@@ -581,7 +583,7 @@ CREATE TABLE `left_navs` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `left_navs` WRITE;
 /*!40000 ALTER TABLE `left_navs` DISABLE KEYS */;
@@ -607,7 +609,7 @@ CREATE TABLE `lunches` (
   `updated_at` datetime DEFAULT NULL,
   `mold` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `lunches` WRITE;
 /*!40000 ALTER TABLE `lunches` DISABLE KEYS */;
@@ -638,6 +640,16 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `messages` WRITE;
+/*!40000 ALTER TABLE `messages` DISABLE KEYS */;
+
+INSERT INTO `messages` (`id`, `sender`, `receiver`, `content`, `atachment`, `status`, `created_at`, `updated_at`, `destroy_status`)
+VALUES
+	(1,1,1,'<a class=\"ke-insertfile\" href=\"/document/2013/10/03/Untitled 1_.doc?uuid=1aafd6f3-06c8-401a-baf0-5205ee2d281d\" target=\"_blank\">文件说明</a><a class=\"ke-insertfile\" href=\"/document/2013/10/03/diodict3B词典文件.txt\" target=\"_blank\">/document/2013/10/03/diodict3B词典文件.txt</a>',NULL,'1','2013-10-03 11:33:33','2013-10-03 11:33:35',3),
+	(2,1,1,'<a class=\"ke-insertfile\" href=\"/document/2013/10/03/1.4.3 (1)_______.crx\" target=\"_blank\">/document/2013/10/03/1.4.3 (1)_______.crx</a><br />\r\n<a class=\"ke-insertfile\" href=\"/document/2013/10/03/1.4.3____.crx\" target=\"_blank\">/document/2013/10/03/1.4.3____.crx</a><br />',NULL,'1','2013-10-03 13:33:44','2013-10-03 13:33:46',3);
+
+/*!40000 ALTER TABLE `messages` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table navigations
@@ -654,7 +666,7 @@ CREATE TABLE `navigations` (
   `updated_at` datetime DEFAULT NULL,
   `rank` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `navigations` WRITE;
 /*!40000 ALTER TABLE `navigations` DISABLE KEYS */;
@@ -722,7 +734,7 @@ CREATE TABLE `pages` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
@@ -750,7 +762,7 @@ CREATE TABLE `permission_actions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `permission_actions` WRITE;
 /*!40000 ALTER TABLE `permission_actions` DISABLE KEYS */;
@@ -896,7 +908,7 @@ CREATE TABLE `permissions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `permissions` WRITE;
 /*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
@@ -951,7 +963,7 @@ CREATE TABLE `replies` (
   `status` int(11) DEFAULT '0',
   `floor` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `replies` WRITE;
 /*!40000 ALTER TABLE `replies` DISABLE KEYS */;
@@ -972,7 +984,14 @@ VALUES
 	(39,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n</blockquote>\r\n<p>\r\n	你这就不对了\r\n</p>','2013-10-02 11:37:53','2013-10-02 11:39:05',1,2),
 	(40,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#2楼 邵成磊 : \r\n              	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n              	你这就不对了\r\n</blockquote>\r\n<p>\r\n	怎么不对？\r\n</p>','2013-10-02 11:38:02','2013-10-02 11:39:01',1,3),
 	(41,1,21,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#3楼 邵成磊 : \r\n              	回复#2楼 邵成磊 : \r\n                            	回复#1楼 邵成磊 : 对啊 是这么个情况\r\n                            	你这就不对了\r\n  ...\r\n</blockquote>\r\n<p>\r\n	<img src=\"http://localhost:3000/assets/kindeditor/plugins/emoticons/images/32.gif\" border=\"0\" alt=\"\" />\r\n</p>','2013-10-02 11:38:25','2013-10-02 11:38:25',3,4),
-	(42,1,22,'asdasds','2013-10-03 06:09:39','2013-10-03 06:09:39',3,1);
+	(42,1,22,'asdasds','2013-10-03 06:09:39','2013-10-03 06:09:39',3,1),
+	(43,1,33,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#2楼 邵成磊 : hehe\r\n</blockquote>\r\n<p>\r\n	还不错哦\r\n</p>','2013-10-05 09:14:30','2013-10-05 09:14:30',3,4),
+	(44,1,34,'是的','2013-10-05 10:15:54','2013-10-05 10:15:54',3,7),
+	(45,1,35,'顶一个','2013-10-05 11:33:35','2013-10-05 11:33:35',3,1),
+	(46,1,10,'顶一个','2013-10-05 11:39:44','2013-10-05 11:39:44',3,1),
+	(47,2,34,'好热闹啊 我来晚了吗？<br />','2013-10-05 12:02:51','2013-10-05 12:03:01',1,8),
+	(48,1,34,'<blockquote style=\"color:#999;font-size:12px;\">\r\n	回复#8楼 年级组长 : 好热闹啊 我来晚了吗？\r\n</blockquote>\r\n<p>\r\n	哈哈 是啊\r\n</p>','2013-10-05 12:03:16','2013-10-05 12:19:15',2,9),
+	(49,1,10,'啊&nbsp;','2013-10-05 12:16:44','2013-10-05 12:16:44',3,2);
 
 /*!40000 ALTER TABLE `replies` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1059,7 +1078,8 @@ VALUES
 	('20130926133757'),
 	('20130927031719'),
 	('20131002091540'),
-	('20131002091605');
+	('20131002091605'),
+	('20131005093556');
 
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1079,44 +1099,46 @@ CREATE TABLE `topics` (
   `updated_at` datetime DEFAULT NULL,
   `status` int(11) DEFAULT '0',
   `last_floor` int(11) DEFAULT '0',
+  `read_count` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `topics` WRITE;
 /*!40000 ALTER TABLE `topics` DISABLE KEYS */;
 
-INSERT INTO `topics` (`id`, `user_id`, `title`, `content`, `created_at`, `updated_at`, `status`, `last_floor`)
+INSERT INTO `topics` (`id`, `user_id`, `title`, `content`, `created_at`, `updated_at`, `status`, `last_floor`, `read_count`)
 VALUES
-	(3,1,'Ruby 性能真的比 Node 差这么多么','公司内部有个项目，很简单，几乎没什么业务逻辑，就是根据几个Key到mongodb中去查询，然后前端返回JSON\r\n\r\n一开始是使用rails配合grape出的第一版，跑在passenger下，然后被passenger蛋疼的并发模式伤到了，切到了rack配合grape跑在thin上，快了很多，2核机器4个process下，性能提高了2倍，但是由于历史原因还是载入整个rails环境，而且，Mongodb使用了Mongoid的驱动\r\n\r\n看了robbin同志关于api后台的描述，后面又不满足了，去掉了rails环境，单独使用grape配合mongodb的原生驱动，加入rainbows的线程池模式，4个process,64个线程池加上64个连接池，大概也就提升了50%\r\n\r\n后面，闲着无聊，觉得mongodb的原始驱动是基于阻塞的socket模式，在线程池模式下，将会带来大量的线程切换的消耗，因此萌生了基于Eventmachine搞一个异步io查询的连接池, 先尝试了下用Node写了个基本的从Mongod中查询api，然后基于mongodb的原生驱动写了个基本可用~~报错不管~~的异步游标的实现，对比下，顿时，我和我的小伙伴都惊呆了\r\n\r\n使用ruby + 自制的异步游标 + rainbows , 单进程大概可以负载15个请求每秒，而同样的查询同样的数据源，NODE单个进程可以负担50+的请求每秒，而且，平均消耗时间都在ruby的一半以下\r\n\r\nruby是1.9.3--p286,有点老，\r\nnode用的是apt-get的装的\r\n在2K的数据中查询出113个数据，数据JSON化之后大概有70+KB，有点大，\r\n但是差距真的感觉十分明显啊','2013-08-25 13:21:31','2013-09-02 13:47:55',2,0),
-	(5,1,'MongoDB 图形界面的管理工具那个好用？','Ubuntu 上有什么好的 GUI 工具啊，介绍一下，谢谢.','2013-09-02 04:35:19','2013-09-14 13:50:35',1,0),
-	(6,1,'MongoDB 图形界面的管理工具那个好用？','Ubuntu 上有什么好的 GUI 工具啊，介绍一下，谢谢.','2013-09-02 04:35:38','2013-09-15 11:29:09',1,0),
-	(7,1,'Rails secret key 泄漏了，是不是逆向计算任意用户 Cookie','比如 Ruby China 用的是 cookie_store，并且 secret key 现在是知道的，如：https://github.com/ruby-china/ruby-china/blob/master/config/initializers/secret_token.rb\r\n\r\n是不是就可以逆向计算出任意用户的 cookie？\r\n\r\n由于 Ruby China 是用了 Devise，假如有最简单的 Rails 项目，没有使用这个 gem ，是否可以呢？','2013-09-02 04:39:53','2013-09-15 11:29:49',1,0),
-	(8,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:26','2013-09-15 11:30:43',1,0),
-	(9,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:26','2013-09-15 11:30:45',1,0),
-	(10,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-15 11:30:47',1,0),
-	(11,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-02 04:40:27',0,0),
-	(12,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-02 04:40:27',0,0),
-	(13,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-15 11:30:22',1,0),
-	(14,1,'我校2013级统招本科新生开始首日军训',' 8月29日，我校2013级统招本科新生开始了第一天的军训。早上六点半，参加军训的新生们身着迷彩服，个个精神抖擞，在奥林匹克运动场集合，开始了大学里的第一课。胡剑锋、黄辉玲副校长在教务处、学工处等部门负责人的陪同下巡视了现场。胡剑锋详细询问了各学院的中队分布情况和出勤率，要求各学院认真抓好入学教育的第一课，叮嘱医务等后勤人员做好医疗急救、水源供给等后勤工作，确保新生军训安全有序地进行。据悉，军训首日的安排是学唱校歌、入学专业介绍和自查内务。','2013-09-02 05:53:46','2013-09-02 05:53:46',0,0),
-	(15,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:24','2013-10-02 08:43:54',1,0),
-	(16,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-09-02 05:54:25',0,0),
-	(17,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-09-02 05:54:25',0,0),
-	(18,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-10-02 11:31:21',1,5),
-	(19,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0),
-	(20,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0),
-	(21,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-02 11:38:25',1,4),
-	(22,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-03 06:09:39',1,1),
-	(23,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-09-02 05:54:41',0,0),
-	(24,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:42','2013-09-02 05:54:42',0,0),
-	(25,1,'safasfs','afsfadf','2013-09-02 06:00:12','2013-09-02 06:00:12',0,0),
-	(26,1,'我是受信任的组吗？','萨达撒的撒','2013-09-02 13:37:57','2013-09-02 13:37:57',0,0),
-	(27,1,'发个试下','我的也要审核？','2013-09-02 13:42:12','2013-09-02 13:42:12',0,0),
-	(28,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:42:36','2013-09-02 13:42:36',0,0),
-	(29,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:07','2013-09-02 13:43:07',0,0),
-	(30,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:09','2013-09-02 13:43:09',0,0),
-	(31,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:21','2013-09-02 13:47:43',2,0),
-	(33,1,'新的帖子测试','<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	离新一代 iPhone 发布还有几个小时，同学们都很兴奋吧。这里再告诉同学们一个好消息，《使用 RSpec 测试 Rails 程序》这本书昨天正式发布了，购买地址：<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<h4 style=\"color:#222222;background-color:#ffffff;text-indent:0px;\">\r\n	简介\r\n</h4>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	《使用 RSpec 测试 Rails 程序》是《Everyday Rails Testing with RSpec》的中文版，原作者为 Aaron Sumner。本书的部分内容源自 Aaron 在<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"http://everydayrails.com/\">Everyday Rails</a><span class=\"Apple-converted-space\">&nbsp;</span>网站上发布的系列文章，后来汇编成书，并增添了部分内容。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	本书较为系统全面地介绍了如何使用 RSpec 测试 Rails 程序，通过本书你可以：\r\n</p>\r\n<ul style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		了解测试的类型；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何测试 Rails 程序；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何编写各种类型的测试；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何组织程序；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		了解 Rails 测试的原则和策略；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何使用“测试驱动开发”理念开发 Rails 程序；\r\n	</li>\r\n</ul>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	这本书特别适合对“测试”概念不熟悉，刚开始学 Rails，而且想学习 TDD 的同学。\r\n</p>\r\n<h4 style=\"color:#222222;background-color:#ffffff;text-indent:0px;\">\r\n	FAQ\r\n</h4>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>如何购买，怎么支付？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	这本书通过 Leanpub 发布，可以直接在 Leanpub 的网站购买，地址为<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>。可以使用 Paypal 或信用卡支付。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	如果实在不便使用 Paypal 支付，可以在某宝上找我代购，地址<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"http://item.taobao.com/item.htm?id=20151973725\" target=\"_blank\">http://item.taobao.com/item.htm?id=20151973725</a>。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>购买后还会收到后续更新吗？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	Leanpub 的理念就是尽早发布，持续发布。所以，我会保持更新，而且所有更新都不会再收费。一旦有更新，您会收到来自 Leanpub 的邮件通知。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>购买后，如果不满意可以退款吗？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	可以。按 Leanpub 规定，您有 45 天得免费退款期，100% 返还。但退款后，无法收到后续更新。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>发现问题怎么反馈？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	如果您对本书有任何建议、意见和错误指正，请发往<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://github.com/AndorChen/everydayrailsrspec-cn/issues\" target=\"_blank\">https://github.com/AndorChen/everydayrailsrspec-cn/issues</a>，我会尽快回复。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	购买地址：<a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	趁直播还没开始，赶快打开浏览器购买吧，把知识转换成<span class=\"Apple-converted-space\">&nbsp;</span><img title=\":iphone:\" class=\"emoji\" style=\"height:20px;width:20px;\" alt=\"\" src=\"http://l.ruby-china.org/assets/emojis/iphone.png\" />！\r\n</p>','2013-09-15 11:40:22','2013-10-02 09:26:33',3,3),
-	(34,1,'师大打算 as 丶','安师大安师大撒撒速度','2013-09-28 05:00:30','2013-10-02 11:29:35',3,6);
+	(3,1,'Ruby 性能真的比 Node 差这么多么','公司内部有个项目，很简单，几乎没什么业务逻辑，就是根据几个Key到mongodb中去查询，然后前端返回JSON\r\n\r\n一开始是使用rails配合grape出的第一版，跑在passenger下，然后被passenger蛋疼的并发模式伤到了，切到了rack配合grape跑在thin上，快了很多，2核机器4个process下，性能提高了2倍，但是由于历史原因还是载入整个rails环境，而且，Mongodb使用了Mongoid的驱动\r\n\r\n看了robbin同志关于api后台的描述，后面又不满足了，去掉了rails环境，单独使用grape配合mongodb的原生驱动，加入rainbows的线程池模式，4个process,64个线程池加上64个连接池，大概也就提升了50%\r\n\r\n后面，闲着无聊，觉得mongodb的原始驱动是基于阻塞的socket模式，在线程池模式下，将会带来大量的线程切换的消耗，因此萌生了基于Eventmachine搞一个异步io查询的连接池, 先尝试了下用Node写了个基本的从Mongod中查询api，然后基于mongodb的原生驱动写了个基本可用~~报错不管~~的异步游标的实现，对比下，顿时，我和我的小伙伴都惊呆了\r\n\r\n使用ruby + 自制的异步游标 + rainbows , 单进程大概可以负载15个请求每秒，而同样的查询同样的数据源，NODE单个进程可以负担50+的请求每秒，而且，平均消耗时间都在ruby的一半以下\r\n\r\nruby是1.9.3--p286,有点老，\r\nnode用的是apt-get的装的\r\n在2K的数据中查询出113个数据，数据JSON化之后大概有70+KB，有点大，\r\n但是差距真的感觉十分明显啊','2013-08-25 13:21:31','2013-09-02 13:47:55',2,0,0),
+	(5,1,'MongoDB 图形界面的管理工具那个好用？','Ubuntu 上有什么好的 GUI 工具啊，介绍一下，谢谢.','2013-09-02 04:35:19','2013-09-14 13:50:35',1,0,3),
+	(6,1,'MongoDB 图形界面的管理工具那个好用？','Ubuntu 上有什么好的 GUI 工具啊，介绍一下，谢谢.','2013-09-02 04:35:38','2013-09-15 11:29:09',1,0,2),
+	(7,1,'Rails secret key 泄漏了，是不是逆向计算任意用户 Cookie','比如 Ruby China 用的是 cookie_store，并且 secret key 现在是知道的，如：https://github.com/ruby-china/ruby-china/blob/master/config/initializers/secret_token.rb\r\n\r\n是不是就可以逆向计算出任意用户的 cookie？\r\n\r\n由于 Ruby China 是用了 Devise，假如有最简单的 Rails 项目，没有使用这个 gem ，是否可以呢？','2013-09-02 04:39:53','2013-09-15 11:29:49',1,0,2),
+	(8,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:26','2013-09-15 11:30:43',1,0,1),
+	(9,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:26','2013-09-15 11:30:45',1,0,0),
+	(10,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-10-05 12:16:44',1,2,14),
+	(11,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-02 04:40:27',0,0,0),
+	(12,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-02 04:40:27',0,0,0),
+	(13,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','其实早就关注这个语言，只是一直没有花时间学习。\r\n\r\n最近下定决心开始深入，感觉还是很不错的。\r\n\r\n整理了一些各方面的资源，分享一下：\r\n\r\n入门\r\n\r\n官方入门文档：\r\n\r\nGetting started Guide: http://elixir-lang.org/getting_started/1.html\r\nMix 入门： http://elixir-lang.org/getting_started/mix/1.html\r\nElixir OTP入门： http://elixir-lang.org/getting_started/mix/2.html\r\n\r\n书籍\r\n\r\nDave Thomas Programming Elixir: http://pragprog.com/book/elixir/programming-elixir\r\nO\'Reilly: Introducing Elixir: http://shop.oreilly.com/product/0636920030584.do\r\n两本书推荐PragProg Dave Thomas的，不过两本书都明显滞后于当前开发版本。\r\n\r\n视频\r\n\r\nPragProg 9 Minutes: http://www.youtube.com/watch?v=hht9s6nAAx8&feature=youtu.be\r\nPragProg 30 Minutes: http://www.youtube.com/watch?v=a-off4Vznjs&feature=youtu.be\r\n上面两个都是很好的入门视频。\r\n\r\n还有一个跟PeepCode跟Jose Valim的Meet Elixir，\r\nhttps://peepcode.com/products/elixir\r\n这个是跟Jose一起做一个小项目，不太算入门视频，更像是展示Elixir的特性。\r\n\r\nDave Thomas, Power of Erlang, Joy of Ruby:\r\nhttp://confreaks.com/videos/2591-lonestarruby2013-elixir-power-of-erlang-joy-of-ruby\r\n\r\nElixir 项目\r\n\r\nElixir语言： https://github.com/elixir-lang/elixir\r\nDynamo Web Framework: https://github.com/elixir-lang/dynamo\r\nEcto: Database Client: https://github.com/elixir-lang/ecto\r\n\r\n更多项目： https://github.com/elixir-lang/elixir/wiki/Projects-in-the-wild\r\n\r\n上面大部分都在开发早期，因为Elixir接近0.10.2但是还不是1.0，很多API都在早期，喜欢看源码学习的朋友可以看看。\r\n\r\n##编辑器插件\r\nVim: https://github.com/elixir-lang/vim-elixir\r\nEmacs: https://github.com/elixir-lang/emacs-elixir\r\nTextmate/Subl : https://github.com/elixir-lang/elixir-tmbundle\r\n\r\n外加一个我写的Emacs Yasnippet的snippets:\r\nhttps://github.com/hisea/elixir-yasnippets','2013-09-02 04:40:27','2013-09-15 11:30:22',1,0,2),
+	(14,1,'我校2013级统招本科新生开始首日军训',' 8月29日，我校2013级统招本科新生开始了第一天的军训。早上六点半，参加军训的新生们身着迷彩服，个个精神抖擞，在奥林匹克运动场集合，开始了大学里的第一课。胡剑锋、黄辉玲副校长在教务处、学工处等部门负责人的陪同下巡视了现场。胡剑锋详细询问了各学院的中队分布情况和出勤率，要求各学院认真抓好入学教育的第一课，叮嘱医务等后勤人员做好医疗急救、水源供给等后勤工作，确保新生军训安全有序地进行。据悉，军训首日的安排是学唱校歌、入学专业介绍和自查内务。','2013-09-02 05:53:46','2013-09-02 05:53:46',0,0,0),
+	(15,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:24','2013-10-02 08:43:54',1,0,0),
+	(16,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-09-02 05:54:25',0,0,0),
+	(17,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-09-02 05:54:25',0,0,0),
+	(18,1,'Ruby on Rails Validation Errors','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:25','2013-10-02 11:31:21',1,5,7),
+	(19,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0,0),
+	(20,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:40','2013-09-02 05:54:40',0,0,0),
+	(21,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-02 11:38:25',1,4,0),
+	(22,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-10-03 06:09:39',1,1,0),
+	(23,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:41','2013-09-02 05:54:41',0,0,0),
+	(24,1,'ASDASDS','def create\r\n    interest = KnownInterest.new( :email => params[:email] )\r\n    if(interest.valid? and interest.save)\r\n        flash[:notice] = \"Thanks for showing interest, We\'ll be in touch with updates.\"\r\n    else\r\n        flash[:notice] = interest.errors.messages\r\n    end     \r\n    redirect_to action: \"index\"\r\nend','2013-09-02 05:54:42','2013-09-02 05:54:42',0,0,0),
+	(25,1,'safasfs','afsfadf','2013-09-02 06:00:12','2013-09-02 06:00:12',0,0,0),
+	(26,1,'我是受信任的组吗？','萨达撒的撒','2013-09-02 13:37:57','2013-09-02 13:37:57',0,0,0),
+	(27,1,'发个试下','我的也要审核？','2013-09-02 13:42:12','2013-09-02 13:42:12',0,0,0),
+	(28,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:42:36','2013-09-02 13:42:36',0,0,0),
+	(29,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:07','2013-09-02 13:43:07',0,0,0),
+	(30,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:09','2013-09-02 13:43:09',0,0,0),
+	(31,1,'最近在学习 Elixir, 分享些资源, 顺便寻找同好','阿萨德撒打算的撒的','2013-09-02 13:43:21','2013-09-02 13:47:43',2,0,0),
+	(33,1,'新的帖子测试','<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	离新一代 iPhone 发布还有几个小时，同学们都很兴奋吧。这里再告诉同学们一个好消息，《使用 RSpec 测试 Rails 程序》这本书昨天正式发布了，购买地址：<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<h4 style=\"color:#222222;background-color:#ffffff;text-indent:0px;\">\r\n	简介\r\n</h4>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	《使用 RSpec 测试 Rails 程序》是《Everyday Rails Testing with RSpec》的中文版，原作者为 Aaron Sumner。本书的部分内容源自 Aaron 在<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"http://everydayrails.com/\">Everyday Rails</a><span class=\"Apple-converted-space\">&nbsp;</span>网站上发布的系列文章，后来汇编成书，并增添了部分内容。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	本书较为系统全面地介绍了如何使用 RSpec 测试 Rails 程序，通过本书你可以：\r\n</p>\r\n<ul style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		了解测试的类型；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何测试 Rails 程序；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何编写各种类型的测试；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何组织程序；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		了解 Rails 测试的原则和策略；\r\n	</li>\r\n	<li style=\"font-size:13px;color:#333333;\">\r\n		知道如何使用“测试驱动开发”理念开发 Rails 程序；\r\n	</li>\r\n</ul>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	这本书特别适合对“测试”概念不熟悉，刚开始学 Rails，而且想学习 TDD 的同学。\r\n</p>\r\n<h4 style=\"color:#222222;background-color:#ffffff;text-indent:0px;\">\r\n	FAQ\r\n</h4>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>如何购买，怎么支付？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	这本书通过 Leanpub 发布，可以直接在 Leanpub 的网站购买，地址为<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>。可以使用 Paypal 或信用卡支付。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	如果实在不便使用 Paypal 支付，可以在某宝上找我代购，地址<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"http://item.taobao.com/item.htm?id=20151973725\" target=\"_blank\">http://item.taobao.com/item.htm?id=20151973725</a>。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>购买后还会收到后续更新吗？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	Leanpub 的理念就是尽早发布，持续发布。所以，我会保持更新，而且所有更新都不会再收费。一旦有更新，您会收到来自 Leanpub 的邮件通知。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>购买后，如果不满意可以退款吗？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	可以。按 Leanpub 规定，您有 45 天得免费退款期，100% 返还。但退款后，无法收到后续更新。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	<strong>发现问题怎么反馈？</strong>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	如果您对本书有任何建议、意见和错误指正，请发往<span class=\"Apple-converted-space\">&nbsp;</span><a href=\"https://github.com/AndorChen/everydayrailsrspec-cn/issues\" target=\"_blank\">https://github.com/AndorChen/everydayrailsrspec-cn/issues</a>，我会尽快回复。\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	购买地址：<a href=\"https://leanpub.com/everydayrailsrspec-cn\" target=\"_blank\">https://leanpub.com/everydayrailsrspec-cn</a>\r\n</p>\r\n<p style=\"color:#333333;background-color:#ffffff;text-indent:0px;\">\r\n	趁直播还没开始，赶快打开浏览器购买吧，把知识转换成<span class=\"Apple-converted-space\">&nbsp;</span><img title=\":iphone:\" class=\"emoji\" style=\"height:20px;width:20px;\" alt=\"\" src=\"http://l.ruby-china.org/assets/emojis/iphone.png\" />！\r\n</p>','2013-09-15 11:40:22','2013-10-05 09:14:30',3,4,7),
+	(34,1,'师大打算 as 丶','安师大安师大撒撒速度','2013-09-28 05:00:30','2013-10-05 12:15:03',1,9,36),
+	(35,1,'华东师范大学心理学考研详细内部信息介绍_学习年代_天涯论坛','<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　主题：华东师范大学心理学考研复习备考</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　主讲人：勤思蓝老师</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　主讲人简介： 勤思心理学蓝老师，心理学考研专业老师，幽默风趣、善于指导学生有条理、有秩序的轻松愉快的复习，经她指导的大部分学生都考入了理想的学校，是粉丝众多、最受学生欢迎的心理学老师</span><br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　准备考心理学研究生的同学可以关注蓝老师的微博http://weibo.com/u/2274889737?topnav=1&amp;wvr=5或者直接联系蓝老师 QQ1336658057</span><br />\r\n<br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　讲座内容：</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　一、华东师范大学心理学考研内部的招生信息</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　二、华东师大心理学学术如何准备 真题情况介绍</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　三、华东师大心理学专硕暑期如何准备？</span><br />\r\n<br />\r\n<span style=\"font-family:宋体;font-size:16px;line-height:28px;background-color:#EEEEEE;\">　　四、各大专硕的真题情况介绍 如果选校</span>','2013-10-05 08:49:31','2013-10-05 11:58:53',1,1,26);
 
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1142,15 +1164,15 @@ CREATE TABLE `users` (
   `teacher_position` varchar(255) DEFAULT NULL,
   `grade` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `created_at`, `updated_at`, `status`, `lastlogin`, `account`, `qq`, `phone`, `teacher_position`, `grade`)
 VALUES
-	(1,'邵成磊','chareice@live.com','9c8c784647ef61e23dc0a134e940b32e','2013-08-07 04:34:13','2013-10-03 00:59:37',1,'2013-10-02 14:20:20','chareice','81376258','18942321753','',''),
-	(2,'年级组长','chareice@live.com','c4ca4238a0b923820dcc509a6f75849b','2013-09-25 11:53:15','2013-10-02 08:37:38',1,'2013-09-26 07:49:56','tester','81376258','18942321753','','');
+	(1,'邵成磊','chareice@live.com','9c8c784647ef61e23dc0a134e940b32e','2013-08-07 04:34:13','2013-10-05 08:34:12',1,'2013-10-03 13:23:53','chareice','81376258','18942321753','',''),
+	(2,'年级组长','chareice@live.com','c4ca4238a0b923820dcc509a6f75849b','2013-09-25 11:53:15','2013-10-05 12:00:29',1,'2013-10-03 06:28:47','tester','81376258','18942321753','','');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1168,7 +1190,7 @@ CREATE TABLE `users_groups` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `users_groups` WRITE;
 /*!40000 ALTER TABLE `users_groups` DISABLE KEYS */;

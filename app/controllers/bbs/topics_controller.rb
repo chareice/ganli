@@ -14,6 +14,7 @@ class Bbs::TopicsController < Bbs::BbsController
 
 	def audit
 		@topics = Topic.wait_audit
+		session[:back] = audit_bbs_topics_path
 	end
 
 	def replies_audit
@@ -33,6 +34,7 @@ class Bbs::TopicsController < Bbs::BbsController
 		else
 			@replies = @topic.replies.public
 		end
+		session[:back] = bbs_topics_path
 	end
 
 	def show_content
@@ -90,8 +92,8 @@ class Bbs::TopicsController < Bbs::BbsController
 	def destroy
 		@topic = Topic.find params[:id]
 		@topic.destroy
-
-		redirect_to :back,flash: {notice: "删除成功"}
+		flash[:notice] =  "删除成功"
+		redirect_to session[:back]
 	end
 
 	private

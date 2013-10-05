@@ -4,10 +4,11 @@ class Bbs::TopicsController < Bbs::BbsController
 	before_action :authenticate,only: [:show_content,:change_status,:replies_audit,:show_reply_content]
 	
 	def index
+		require 'will_paginate/array'
 		if is_admin?
-			@topics = Topic.public_and_hidden.paginate(:page=>params[:page],:per_page => 10).order("created_at DESC")
+			@topics = Topic.order_by_replies.paginate(:page=>params[:page],:per_page => 20)
 		else
-			@topics = Topic.public.paginate(:page=>params[:page],:per_page => 10).order("created_at DESC")
+			@topics = Topic.order_by_replies_public.paginate(:page=>params[:page],:per_page => 20)
 		end
 	end
 
@@ -23,6 +24,9 @@ class Bbs::TopicsController < Bbs::BbsController
 		@topic = Topic.find params[:id]
 		if (@topic.hidden? || @topic.wait_audit?) && !is_admin?
 			access_forbidden
+		end
+		if @topic.public?
+			Topic.increment_counter(:read_count,@topic.id)
 		end
 		if is_admin?
 			@replies = @topic.replies.public_and_hidden

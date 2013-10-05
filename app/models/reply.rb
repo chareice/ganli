@@ -54,7 +54,7 @@ class Reply < ActiveRecord::Base
 	end
 
 	def public?
-		self.status == 1
+		self.status == 1 or self.status == 3
 	end
 	
 	private

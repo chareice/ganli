@@ -5,8 +5,11 @@
 			.title
 				=@topic.title
 			.auth
-				="由#{@topic.user.name}发布于#{@topic.created_at.localtime.to_s(:db)}"
+				%span="由#{@topic.user.name}发布于#{@topic.created_at.localtime.to_s(:db)}"
+				-if is_admin?
+					=render partial: '/bbs/topics/manage',locals: {topic: @topic}
 			=@topic.content.html_safe
+			
 	.replies
 		=render partial: "/bbs/replies/reply",collection:@replies
 		=form_for Reply.new,url: bbs_topic_replies_path(@topic) do |f|

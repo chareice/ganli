@@ -2,7 +2,16 @@
 	.topic
 		.title{class: ("hidden" if topic.hidden?)}
 			=link_to topic.title,bbs_topic_path(topic)
-			-if is_admin?
-				=render partial: 'manage',locals: {topic: topic}
-		.infos
-			="由#{topic.user.name}发布于#{topic.created_at.localtime.to_s(:db)}"
+		.author
+			.author-name=topic.user.name
+			.author-public-date= "#{distance_of_time_in_words_to_now topic.created_at}前"
+		.replies-views-count
+			.repies-count=topic.replies.public.count
+			.views-count=topic.read_count
+		.last-active
+			-#if is_admin?
+				-#last_active = topic.admin_last_active
+			-#else
+			-last_active = topic.last_active
+			.last-user= last_active[0]
+			.last-time= "#{distance_of_time_in_words_to_now last_active[1].to_datetime}前"

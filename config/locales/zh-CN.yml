@@ -119,6 +119,7 @@
       default: ! '%Y-%m-%d'
       long: ! '%Y年%b%d日'
       short: ! '%b%d日'
+      date: ! '%Y-%m-%d'
     month_names:
     -
     - 一月

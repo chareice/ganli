@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002091605) do
+ActiveRecord::Schema.define(version: 20131005093556) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -223,6 +223,7 @@ ActiveRecord::Schema.define(version: 20131002091605) do
     t.datetime "updated_at"
     t.integer  "status",     default: 0
     t.integer  "last_floor", default: 0
+    t.integer  "read_count", default: 0
   end
 
   create_table "users", force: true do |t|

@@ -15,7 +15,11 @@ class Document < ActiveRecord::Base
 	belongs_to :uploader,class_name: "User",foreign_key: "uploader"
 	
 	validates :name,:path,presence: true
-	default_scope order: "created_at desc"
+	
+	default_scope {
+		order("created_at DESC")
+	}
+	
 	private
 	def self.save_file(upload_file,main_path = "document")
 		unless upload_file

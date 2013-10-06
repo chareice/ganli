@@ -23,7 +23,7 @@ class Admin::FilesController < Admin::BaseController
 	end
 
 	def fileup
-		white_ext_list = %w{.xls .xlsx .doc .docx .pdf .ppt .txt .rar .zip}
+		white_ext_list = %w{.xls .xlsx .doc .docx .pdf .ppt .pptx .txt .rar .zip}
 		ext_name = Pathname.new(params[:imgFile].original_filename).extname().downcase
 		unless white_ext_list.include?(ext_name)
 			render json: {error: 1,message: "不允许的文件类型，请上传#{white_ext_list.join(' ')}类型"} and return

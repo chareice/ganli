@@ -1,0 +1,6 @@
+.ganli-box
+  .header
+    %span=header_name
+  %ul
+    -articles.each do |article|
+      %li=link_to truncate_u(article.title,15),article_path(article) 

@@ -128,4 +128,5 @@ Ganli::Application.routes.draw do
   match '/logout',to:'sessions#destroy',via: :delete
 
   get '/page/service',to: 'pages#service'
+  get '/search',to: 'articles#search',as: "search"
 end

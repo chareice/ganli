@@ -1,0 +1,15 @@
+.article-list-page.main-page
+  .left-c
+    =render partial: '/pages/ganli_box_articles_custom',locals:{articles: @newsest_articles,header_name: "最新文章"}
+  .right-c
+    .row
+      .location=%Q|主页 >> 搜索 #{params[:search]} 得到#{@articles.count}结果|
+      .article-list-c
+        .header
+        .article-list
+          -if @articles.empty?
+            没有搜索结果
+          -else
+            =render partial: "article",collection: @articles
+            =will_paginate @articles
+        .footer

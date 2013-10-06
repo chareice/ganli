@@ -173,6 +173,11 @@ $asset-prefix: "style";
 			height: 197px;
 			background: image("header.jpg"); 
 			position: relative;
+			.search{
+				position: absolute;
+				right: 10px;
+				top: 55px;
+			}
 			.header-nav-c{
 				position: absolute;
 				right: 10px;

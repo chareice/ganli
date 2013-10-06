@@ -15,4 +15,10 @@ class ArticlesController < ApplicationController
 		@page_title = @classification.name
 		render :index
 	end
+
+	def search
+		@articles = Article.search(params[:search]).paginate(:page=>params[:page],per_page: 10)
+		@newsest_articles = Article.all.limit(10)
+		@page_title = %Q{"#{params[:search]}" 的搜索结果}
+	end
 end

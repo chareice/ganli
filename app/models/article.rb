@@ -20,7 +20,10 @@ class Article < ActiveRecord::Base
 	scope :find_by_classification,->(classification){
 		where(classification_id:classification)
 	}
-
+	scope :search,->(search){
+		public.where('title LIKE ?', "%#{search}%")
+	}
+	
 	scope :public,->{
 		where(status: 0)
 	}

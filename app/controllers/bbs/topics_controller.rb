@@ -14,10 +14,12 @@ class Bbs::TopicsController < Bbs::BbsController
 
 	def audit
 		@topics = Topic.wait_audit
+		@page_title = "审核帖子"
 	end
 
 	def replies_audit
 		@replies = Reply.wait_audit
+		@page_title = "审核回复"
 	end
 
 	def show
@@ -33,6 +35,7 @@ class Bbs::TopicsController < Bbs::BbsController
 		else
 			@replies = @topic.replies.public
 		end
+		@page_title = @topic.title
 	end
 
 	def show_content
@@ -45,6 +48,7 @@ class Bbs::TopicsController < Bbs::BbsController
 
 	def new
 		@topic = Topic.new
+		@page_title = "发表帖子"
 	end
 
 	def create

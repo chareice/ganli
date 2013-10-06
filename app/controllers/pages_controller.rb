@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
 	def show
 		@page = Page.find params[:id]
+		@page_title = @page.navigation.name
 	end
 
 	def create
@@ -30,6 +31,6 @@ class PagesController < ApplicationController
 	end
 
 	def service
-		
+		@page_title = "服务窗口"
 	end
 end

@@ -12,8 +12,14 @@ module ApplicationHelper
 	end
 
 	def render_page_title
-		site_name = "深圳市甘李学校"
-		title = @page_title ? "#{site_name} | #{@page_title}" : site_name
+		site_name = "深圳市龙岗区甘李学校"
+		title = @page_title ? "#{@page_title} | #{site_name}" : site_name
+		content_tag(:title,title)
+	end
+
+	def render_bbs_title
+		site_name = "甘李学校论坛"
+		title = @page_title ? "#{@page_title} | #{site_name}" : site_name
 		content_tag(:title,title)
 	end
 

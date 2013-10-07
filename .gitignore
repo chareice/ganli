@@ -17,5 +17,10 @@
 .swp
 .swo
 /.sass-cache
+
 /.idea
 .DS_Store
+
+#private file stroge
+document/
+public/assets/article/*

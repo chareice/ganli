@@ -12,6 +12,14 @@ class Admin::DocumentsController < Admin::BaseController
 		@document = Document.new
 		@document.name = params[:document][:name]
 		@document.uploader = current_user
+
+		white_ext_list = %w{.xls .xlsx .doc .docx .pdf .ppt .pptx .txt .rar .zip}
+		ext_name = Pathname.new(params[:document][:path].original_filename).extname().downcase
+		unless white_ext_list.include?(ext_name)
+			flash[:error] = "不允许的文件类型，请上传#{white_ext_list.join(' ')}类型"
+			redirect_to action: :new and return
+		end
+
 		@document.path = Document.save_file(params[:document][:path]).gsub("#{Rails.root}","")
 
 		if @document.save

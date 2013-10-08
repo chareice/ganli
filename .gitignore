@@ -22,5 +22,6 @@
 .DS_Store
 
 #private file stroge
-document/
-public/assets/article/*
+/document/
+public/assets/
+#!public/assets/style/admin-aside-bg.jpg

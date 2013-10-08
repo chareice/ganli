@@ -23,5 +23,8 @@
 
 #private file stroge
 /document/
-public/assets/
-#!public/assets/style/admin-aside-bg.jpg
+!public/assets/
+public/assets/*
+!public/assets/style/
+!public/assets/kindeditor/
+vender/bundle/

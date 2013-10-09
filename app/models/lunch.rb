@@ -56,7 +56,7 @@ class Lunch < ActiveRecord::Base
 
 	def self.lunch_date
 		now = Time.new
-		if now.hour > 15
+		if now.hour > 17
 			now.tomorrow.tomorrow
 		else
 			now.tomorrow

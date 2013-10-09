@@ -27,4 +27,4 @@
 public/assets/*
 !public/assets/style/
 !public/assets/kindeditor/
-vender/bundle/
+vendor/bundle/

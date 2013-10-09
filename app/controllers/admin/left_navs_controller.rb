@@ -14,8 +14,8 @@ class Admin::LeftNavsController < Admin::BaseController
 		left_nav.rank = params[:left_nav][:rank]
 
 		if params[:left_nav][:thumb]
-			path = Document.save_file params[:left_nav][:thumb],"app/assets/images/article"
-			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+			path = Document.save_file(params[:left_nav][:thumb],"public/assets/article").gsub(Rails.root.to_s,"")
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("public/assets/",""))
 			left_nav.thumb = asset_path
 		end
 
@@ -39,9 +39,9 @@ class Admin::LeftNavsController < Admin::BaseController
 		end
 
 		if params[:left_nav][:thumb]
-			path = Document.save_file params[:left_nav][:thumb],"app/assets/images/article"
-			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
-			left_nav.thumb = asset_path
+			path = Document.save_file(params[:left_nav][:thumb],"public/assets/article").gsub(Rails.root.to_s,"")
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("public/assets/",""))
+			@left_nav.thumb = asset_path
 		end
 		@left_nav.name = params[:left_nav][:name]
 		if @left_nav.save

@@ -34,7 +34,7 @@ gem 'mysql2'
 gem 'sqlite3'
 gem 'dalli'
 gem 'easy_captcha'
-gem 'rmagick'
+gem 'rmagick', :require => false
 gem 'will_paginate'
 gem 'cells'
 gem 'settingslogic'

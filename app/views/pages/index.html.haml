@@ -5,8 +5,9 @@
         =render 'primary_login_form'
     -else
       =render 'welcome'
-    .flash-c
-      =render 'main_flash'
+    -if Article.public.flash.size > 0
+      .flash-c
+        =render 'main_flash'
     =render 'left_navs'
   .right-c
     .row

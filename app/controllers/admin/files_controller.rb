@@ -15,7 +15,9 @@ class Admin::FilesController < Admin::BaseController
 
 		path = Document.save_file(params[:imgFile],"public/assets/article").gsub(Rails.root.to_s,"")
 		asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("public/assets/",""))
-		render json: {url:asset_path,error: 0}
+		
+		content_type = request.env['HTTP_ACCEPT'].split(',').include?("application/json") ? "application/json" : "text/html"
+		render json: {url:asset_path,error: 0},:content_type => content_type
 	end
 
 	def imagemanger
@@ -41,10 +43,12 @@ class Admin::FilesController < Admin::BaseController
 			uuid = Crocodoc::Document.upload(File.open("#{Rails.root}#{asset_path}",'r'))
 			asset_path += "?uuid=#{uuid}"
 		end
-		render json: {url:asset_path,error: 0}
+		content_type = request.env['HTTP_ACCEPT'].split(',').include?("application/json") ? "application/json" : "text/html"
+		render json: {url:asset_path,error: 0},:content_type => content_type
 	end
 
 	def thumb
 		render :nothing
 	end
+
 end

@@ -4,8 +4,6 @@
     %p="上次登录时间 #{current_user.lastlogin.strftime("%F %T")}"
     %p{class: "actions"}
       -if current_user.has_permission? Permission.find(7)
-        =link_to "进入后台",admin_path 
-      =link_to "修改密码",edit_user_path(current_user)
-      =link_to "修改资料",profile_path
+        =link_to "进入个人中心",admin_path
   .user-logout
     =button_to "退出","/logout",method: :delete

@@ -1,3 +1,6 @@
+-content_for :actions_button do
+	=link_to "发件箱",{action: :outbox},class: "tiny secondary button"
+	=link_to "写私信",{action: :new},class: "tiny secondary button"
 %table
 	%tr
 		%td ID

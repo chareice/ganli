@@ -37,3 +37,18 @@ window.SetHome = (obj, vrl) ->
         alert "此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。"
       prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch)
       prefs.setCharPref "browser.startup.homepage", vrl
+window.AddFavorite = (sURL, sTitle) ->
+  try
+    window.external.addFavorite sURL, sTitle
+  catch e
+    try
+      window.sidebar.addPanel sTitle, sURL, ""
+    catch e
+      alert "加入收藏失败，请使用Ctrl+D进行添加"
+$(".search form").submit ->
+	q = $("#search").val().trim().length
+	if q == 0
+		alert("请输入搜索关键词")
+		$("#search").val("")
+		$("#search").focus()
+		return false

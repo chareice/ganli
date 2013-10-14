@@ -1,11 +1,18 @@
 -if action_name == 'preview'
 	%p="收件人 #{@message.receiver.name}"
 	-content_for :actions_button do
-		=link_to "删除私信",{action: :destroy,type: "outbox"},class: "alert small button",method: "delete",data:{confirm: "确定删除这条私信吗？"}
+		=link_to "收件箱",{action: :index},class: "tiny secondary button"
+		=link_to "写私信",{action: :new},class: "tiny secondary button"
+	-content_for :actions_button do
+		=link_to "删除私信",{action: :destroy,type: "outbox"},class: "alert tiny button",method: "delete",data:{confirm: "确定删除这条私信吗？"}
 -else
 	%p="发件人 #{@message.sender.name}"
 	-content_for :actions_button do
-		=link_to "删除私信",{action: :destroy,type: "inbox"},class: "alert small button",method: "delete",data:{confirm: "确定删除这条私信吗？"}
+		=link_to "发件箱",{action: :outbox},class: "tiny secondary button"
+		=link_to "写私信",{action: :new},class: "tiny secondary button"
+	-content_for :actions_button do
+		=link_to "删除私信",{action: :destroy,type: "inbox"},class: "alert tiny button",method: "delete",data:{confirm: "确定删除这条私信吗？"}
+	
 %p.send-time="发送时间 #{@message.created_at.localtime.to_s(:db)}"
 .message_content
 	-content = @message.content.html_safe

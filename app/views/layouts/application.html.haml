@@ -8,6 +8,7 @@
       = javascript_include_tag "html5shiv/dist/html5shiv.js"
     = yield(:head)
   %body
+    =render "/pages/main_top_header_nav"
     %div{class:"ganli-page"}
       =render "/pages/header"
       =render "/layouts/message"

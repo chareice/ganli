@@ -1,0 +1,10 @@
+.main-top-header-nav
+	.main-top-header
+		.time="今天是 #{l Time.now, format: :default}"
+		=render '/pages/search'
+		.header-nav-c
+			%ul
+				%li{:class => "topico_ind"}
+					=link_to_function "设为首页","SetHome(this,window.location)"
+				%li{:class => "topico_add"}
+					=link_to_function "加入收藏","AddFavorite(window.location,document.title)"

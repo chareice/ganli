@@ -1,21 +1,21 @@
 =form_for [:admin,@user] do |f|
 	%p
-		=f.label :name
-		=f.text_field :name
-	%p
-		=f.label :account
+		=f.label :account,"用户账号 *"
 		=f.text_field :account
 	%p
-		=f.label :password
+		=f.label :name,"姓名 *"
+		=f.text_field :name
+	%p
+		=f.label :password,"密码 *"
 		=f.password_field :password,{:autocomplete =>"off"}
 	%p
-		=f.label :email
+		=f.label :email,"用户邮箱 *"
 		=f.text_field :email
 	%p
-		=f.label :qq
+		=f.label :qq,"QQ *"
 		=f.text_field :qq
 	%p
-		=f.label :phone
+		=f.label :phone,"联系电话 *"
 		=f.text_field :phone
 	%p
 		=f.label :teacher_position

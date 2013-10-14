@@ -18,6 +18,7 @@
 				.tips
 					="欢迎您 #{current_user.name}，您的用户组为 #{current_user.group.name} <br/>上次登录时间 #{current_user.lastlogin.localtime.to_s(:db)}".html_safe
 				.header-actions-button-group
+					=link_to '网站首页',root_path, class:'admin-index'
 					=link_to '系统首页',admin_path, class:'admin-index'
 					=link_to '修改密码',edit_user_path(current_user),class:'admin-reset-password'
 					=link_to '修改资料',profile_path,class:'admin-profile'

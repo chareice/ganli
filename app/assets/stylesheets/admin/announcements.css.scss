@@ -23,4 +23,10 @@
 		text-indent: 2em;
 		margin: 15px 0;
 	}
+	table{
+		border-collapse:collapse;
+	}
+	table,th, td{
+		border: 1px solid #666;
+	}
 }

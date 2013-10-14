@@ -1,1 +1,4 @@
 = render 'form'
+-content_for :actions_button do
+	=link_to "发件箱",{action: :outbox},class: "tiny secondary button"
+	=link_to "收件箱",{action: :index},class: "tiny secondary button"

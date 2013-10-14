@@ -66,7 +66,7 @@
         password: "密码"
         email: "用户邮箱"
         account: "用户账户"
-        teacher_position: "教师职位"
+        teacher_position: "教师/职位"
         phone: "手机号码"
         qq: "QQ号码"
         grade: "年级"
@@ -119,7 +119,6 @@
       default: ! '%Y-%m-%d'
       long: ! '%Y年%b%d日'
       short: ! '%b%d日'
-      date: ! '%Y-%m-%d'
     month_names:
     -
     - 一月
@@ -272,7 +271,7 @@
   time:
     am: 上午
     formats:
-      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      default: ! '%Y年%b%d日 %A'
       long: ! '%Y年%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午

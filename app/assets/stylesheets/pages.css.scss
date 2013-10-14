@@ -83,6 +83,48 @@ $asset-prefix: "style";
 .ganli-box{
 	@include ganli-box;
 }
+.main-top-header-nav{
+	border-top: 4px #98E22E solid;
+	width: 100%;
+	background: #f5f5f5;
+	height: 25px;
+	margin-bottom: 1px;
+	.main-top-header{
+		@include clearfix;
+		line-height: 25px;
+		margin: 0 auto;
+		font-size: 12px;
+		width: $full-width;
+		.time{
+			float: left;
+		}
+		.search{
+			float: right;
+		}
+		.header-nav-c{
+			float: right;
+			margin-right: 10px;
+			li{
+				float: left;
+				padding-left: 15px;
+				margin-right: 5px;
+				&.topico_ind{
+					background: image("topico.gif") 0 -54.5px no-repeat;
+				}
+				&.topico_add{
+					background: image("topico.gif") 0 -24.5px no-repeat;
+				}
+			}
+			a{
+				color: #666;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
 .ganli-page{
 	font-family: Simsun;
 	.index-welcome{
@@ -165,6 +207,12 @@ $asset-prefix: "style";
 					text-indent: 2em;
 					margin: 15px 0;
 				}
+				table{
+					border-collapse:collapse;
+				}
+				table,th, td{
+					border: 1px solid #666;
+				}
 			}
 		}	
 	}
@@ -192,7 +240,6 @@ $asset-prefix: "style";
 						}
 					}
 				}
-				
 			}
 		}
 		.primary-nav{
@@ -297,6 +344,7 @@ $asset-prefix: "style";
 				}
 				.button-group{
 					margin-top: 15px;
+					margin-left: 45px;
 				}
 				button,.submit{
 					background: image("login-button.jpg");

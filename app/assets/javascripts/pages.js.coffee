@@ -20,7 +20,6 @@ $("#captcha-img").click ->
 	return false
 $(".friendly-links-select").change ->
 	link = this.value
-	console.log link
 	if link
 		window.open link
 	else
@@ -52,3 +51,5 @@ $(".search form").submit ->
 		$("#search").val("")
 		$("#search").focus()
 		return false
+if $("#captcha-img").length > 0
+	$("#captcha-img")[0].src = "/captcha?i=#{(new Date()).valueOf()}"

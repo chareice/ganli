@@ -30,6 +30,9 @@ class Article < ActiveRecord::Base
 	scope :flash,->{
 		where(flag: "f")
 	}
+	scope :by_user_self,->(user_id){
+		where(author:user_id)
+	}
 	default_scope {
 		order("created_at DESC")
 	}

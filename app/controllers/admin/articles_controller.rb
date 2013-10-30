@@ -1,9 +1,17 @@
 class Admin::ArticlesController < Admin::BaseController
 	def index
-		if params[:classification].to_i > 0
-			@articles = Article.find_by_classification(params[:classification]).paginate(:page=>params[:page],per_page: 10)
+		if current_user.is_admin?
+			if params[:classification].to_i > 0
+				@articles = Article.find_by_classification(params[:classification]).paginate(:page=>params[:page],per_page: 10)
+			else
+				@articles = Article.all.paginate(:page=>params[:page],per_page: 10)
+			end
 		else
-			@articles = Article.all.paginate(:page=>params[:page],per_page: 10)
+			if params[:classification].to_i > 0
+				@articles = Article.find_by_classification(params[:classification]).by_user_self(current_user.id).paginate(:page=>params[:page],per_page: 10)
+			else
+				@articles = Article.by_user_self(current_user.id).paginate(:page=>params[:page],per_page: 10)
+			end
 		end
 	end
 

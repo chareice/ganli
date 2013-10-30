@@ -85,6 +85,11 @@ class User < ActiveRecord::Base
 		self.password.eql?(Digest::MD5.hexdigest(che_password))
 	end
 
+	def is_admin?
+		admin_group = Group.find(1)
+		self.group == admin_group
+	end
+
 	private
 	def encryptionPassword
 		require 'digest/md5'

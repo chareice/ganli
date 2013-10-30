@@ -39,10 +39,23 @@ class Admin::ArticlesController < Admin::BaseController
 
 	def edit
 		@article = Article.find params[:id]
+
+		unless current_user.is_admin?
+			unless @article.author == current_user
+				access_forbidden
+			end
+		end
 	end
 	
 	def update
 		@article = Article.find params[:id]
+
+		unless current_user.is_admin?
+			unless @article.author == current_user
+				access_forbidden
+			end
+		end
+
 		@article.title = params[:article][:title]
 		@article.content = params[:article][:content]
 		@article.classification_id = params[:article][:classification_id]
@@ -79,4 +92,5 @@ class Admin::ArticlesController < Admin::BaseController
 	def article_params
 		params.require(:article).permit(:title,:content,:classification_id)
 	end
+
 end

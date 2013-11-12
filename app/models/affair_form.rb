@@ -15,4 +15,12 @@ class AffairForm < ActiveRecord::Base
 	has_many :affair_form_instances
 
 	validates :title,:audit_process,:form,presence: true
+	before_save :form_to_hash
+
+	def form_to_hash
+		doc = Nokogiri::HTML(self.form)
+		doc.css("td").each_with_index{|td,i| i.even? ? td['class'] = 'field' : td['class'] = 'value' }
+		self.form = doc.serialize
+	end
+
 end

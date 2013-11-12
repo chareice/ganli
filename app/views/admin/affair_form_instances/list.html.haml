@@ -4,6 +4,8 @@
 	=select_date @start_date,:prefix => "start_date",start_year: 2013
 	%label 结束日期
 	=select_date @end_date,:prefix => "end_date",start_year: 2013
+	.type-select
+		=affair_form_types_radio(AffairForm.all, params[:affair_form_type])
 	=submit_tag "查看"
 -if @instances.empty?
 	没有申请表

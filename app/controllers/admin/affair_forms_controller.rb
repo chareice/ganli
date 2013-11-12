@@ -16,7 +16,7 @@ class Admin::AffairFormsController < Admin::BaseController
 	end
 
 	def create
-		@affair_form = AffairForm.create affair_from_params
+		@affair_form = AffairForm.new affair_from_params
 		@affair_form.audit_process = params[:affair_form][:audit_process]
 		
 		if @affair_form.save
@@ -52,8 +52,11 @@ class Admin::AffairFormsController < Admin::BaseController
 
 		redirect_to action: :index
 	end
+
 	private
+
 	def affair_from_params
-		params.require(:affair_form).permit(:title,:form,:audit_process)
+		params.require(:affair_form).permit(:title,:form,:audit_process,:describe)
 	end
+
 end

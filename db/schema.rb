@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131005093556) do
+ActiveRecord::Schema.define(version: 20131110005424) do
 
   create_table "admin_menu_permissions", force: true do |t|
     t.integer  "admin_menu_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131005093556) do
     t.string   "audit_process"
     t.integer  "status",         default: 0
     t.integer  "proposer"
+    t.string   "describe"
   end
 
   create_table "affair_forms", force: true do |t|
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20131005093556) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "audit_process"
+    t.string   "describe"
   end
 
   create_table "announcement_viewers", force: true do |t|

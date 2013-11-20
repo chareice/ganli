@@ -23,7 +23,7 @@
 		=f.text_field :grade
 	%p
 		=f.label :group
-		-if @user.id
+		-if @user.id and @user.group
 			=collection_select :user,:group,Group.all,:id,:name,{selected: @user.group.id}
 		-else
 			=collection_select :user,:group,Group.all,:id,:name

@@ -25,7 +25,8 @@
 				%td
 					=user.account
 				%td
-					=user.group.name
+					-if user.group
+						=user.group.name
 				%td
 					-if user.lastlogin
 						=user.lastlogin.localtime.to_s(:db)

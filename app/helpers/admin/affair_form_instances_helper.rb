@@ -1,6 +1,6 @@
 module Admin::AffairFormInstancesHelper
 	def affair_form_types_radio(affairs,affair_form_type)
-		if !!affair_form_type or affair_form_type == '0'
+		if  affair_form_type == '0' or !affair_form_type
 			html = content_tag(:input, nil, :type => "radio", :name => "affair_form_type", 
 					:value => 0, :checked => "checked",:id => "affair_form_type_id_0")
 		else

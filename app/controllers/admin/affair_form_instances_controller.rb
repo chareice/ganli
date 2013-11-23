@@ -8,7 +8,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 			begin
 				@start_date = "#{params[:start_date][:year]}-#{params[:start_date][:month]}-#{params[:start_date][:day]}".to_date
 				@end_date = "#{params[:end_date][:year]}-#{params[:end_date][:month]}-#{params[:end_date][:day]}".to_date
-				if !!params[:affair_form_type]
+				if !!params[:affair_form_type] and params[:affair_form_type] != '0'
 					@instances = AffairFormInstance.where(:affair_form_id => params[:affair_form_type], :created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 10)
 				else
 					@instances = AffairFormInstance.where(:created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 10)

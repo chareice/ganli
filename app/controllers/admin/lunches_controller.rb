@@ -3,7 +3,7 @@ class Admin::LunchesController < Admin::BaseController
 
 		@query_date = if params[:date] then params[:date].values.join("-").to_date else Lunch.lunch_date.to_date end
 		@lunches = Lunch.where(date:@query_date)
-
+	
 		respond_to do |format|
 			format.html
 			format.xls
@@ -11,6 +11,12 @@ class Admin::LunchesController < Admin::BaseController
 	end
 
 	def new
+		last_checked = Lunch.where(teacher:current_user.id).order("created_at desc").first()
+		if not last_checked.mold.empty?
+			@last_mold = last_checked.mold.join(',')
+		else
+			@last_mold = nil
+		end
 		@lunch = Lunch.new
 	end
 

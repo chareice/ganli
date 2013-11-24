@@ -18,8 +18,11 @@ class AffairFormInstance < ActiveRecord::Base
 	belongs_to :affair_form
 	belongs_to :proposer,foreign_key:"proposer",class_name:"User"
 	has_many :logs,foreign_key: "instance_id",class_name:"AffairFormInstanceAuditLog",dependent: :destroy
-
-	default_scope order: "created_at desc"
+	before_save :form_to_hash
+	
+	default_scope{
+		order("created_at desc")
+	}
 	scope :audit_by_user,->(user){
 		where("audit_process like ? AND status = ?","%'#{user.id}'%",0).select{|instance|
 			user.id.to_s == instance.audit_process[instance.logs.size]
@@ -44,4 +47,15 @@ class AffairFormInstance < ActiveRecord::Base
 				"#{i+1}.#{c_user.name}(#{c_user.group.name})"
 			}.join " -> "
 	end
+
+	def form_to_hash
+		doc = Nokogiri::HTML(self.form)
+		doc.css("td").each_with_index{|td,i| i.even? ? td['class'] = 'field' : td['class'] = 'value' }
+		self.form = doc.serialize
+	end
+
+	def get_values
+        doc = Nokogiri::HTML(self.form)
+        doc.css(".value").map{|value| value.children.text.strip }
+    end
 end

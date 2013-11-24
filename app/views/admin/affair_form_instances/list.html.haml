@@ -1,3 +1,6 @@
+-if @instance_tmp
+	-content_for :actions_button do
+		=link_to "导出excel","list.json",class: "tiny secondary button"
 按日期区间
 =form_tag list_admin_affair_form_instances_path,class: "query_by_data",method: :get do
 	%label 起始日期	

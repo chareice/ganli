@@ -23,4 +23,8 @@ class AffairForm < ActiveRecord::Base
 		self.form = doc.serialize
 	end
 
+    def get_fields
+        doc = Nokogiri::HTML(self.form)
+        doc.css(".field").map{|field| field.children.text.strip }
+    end
 end

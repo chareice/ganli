@@ -29,6 +29,16 @@ class AffairFormInstance < ActiveRecord::Base
 		}
 	}
 
+	def is_pass?
+		status !=0 and audit_process.size == logs.size
+	end
+
+	def last_approver
+		if logs.size
+			logs.last.approver.name
+		end
+	end
+
 	def current_status_to_s
 		if status == 0
 			"等待" + audit_user_name = User.find(audit_process[logs.size]).name + "审核"

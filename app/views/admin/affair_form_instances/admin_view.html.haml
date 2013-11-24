@@ -1,6 +1,7 @@
 -content_for :actions_button do
 	=link_to "打印","#",onclick: "window.print();return false;",class: "tiny secondary button"
-=render partial: "/admin/delete_button",locals: {name: "删除此次申请"}
+-if not @instance.is_pass?
+	=render partial: "/admin/delete_button",locals: {name: "删除此次申请"}
 .printable
 	%h4
 		=@instance.title

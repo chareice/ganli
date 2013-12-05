@@ -4,15 +4,34 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 	end
 
 	def list
-		if !!params[:start_date] and !!params[:end_date]
+
+		if !!params[:start_date] and !!params[:end_date] #提交了按分类查看
+
+			case params[:affair_form_audit_status]
+			when '1' #审核通过
+				status = 1
+			when '2' #审核进行中
+				status = 0
+			when '3' #审核拒绝
+				status = 2
+			end
+
 			begin
 				@start_date = "#{params[:start_date][:year]}-#{params[:start_date][:month]}-#{params[:start_date][:day]}".to_date
 				@end_date = "#{params[:end_date][:year]}-#{params[:end_date][:month]}-#{params[:end_date][:day]}".to_date
-				if !!params[:affair_form_type] and params[:affair_form_type] != '0'
+				if !!params[:affair_form_type] and params[:affair_form_type] != '0' #选择了表单类型
 					@instance_tmp = AffairForm.find(params[:affair_form_type])
-					@instances = AffairFormInstance.where(:affair_form_id => params[:affair_form_type], :created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 10)
-				else
-					@instances = AffairFormInstance.where(:created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 10)
+					if params[:affair_form_audit_status] == '0'
+						@instances = AffairFormInstance.where(:affair_form_id => params[:affair_form_type], :created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 30)
+					else
+						@instances = AffairFormInstance.where(:status => status,:affair_form_id => params[:affair_form_type], :created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 30)
+					end
+				else#全部表单
+					if params[:affair_form_audit_status] == '0'
+						@instances = AffairFormInstance.where(:created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 30)
+					else
+						@instances = AffairFormInstance.where(:status => status,:created_at => @start_date..@end_date.tomorrow).paginate(:page=>params[:page],per_page: 30)
+					end
 				end
 			rescue
 				flash[:error] = "时间格式不正确"
@@ -23,9 +42,21 @@ class Admin::AffairFormInstancesController < Admin::BaseController
 			@start_date = @end_date = Time.now
 			@instances = AffairFormInstance.all.paginate(:page=>params[:page],per_page: 10)
 		end
+
+		@instances = @instances.to_a
+		
 		respond_to do |format|
     		format.html
-    		format.xls
+    		format.xlsx{
+    			if @instance_tmp.id == 3 #请假登记表
+    				render "qingjiadengjibiao.xlsx.axlsx"
+    			elsif @instance_tmp == 5 #公务出差表
+    				render "gongwuchuchaibuchangqianshoubiao.xlsx.axlsx"
+    			end
+    		}
+    		format.json{
+    			render json: params
+    		}
    		end
 	end
 

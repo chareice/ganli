@@ -1,0 +1,28 @@
+wb = xlsx_package.workbook
+
+title = wb.styles.add_style :sz => 15, :b => true, :alignment => { :horizontal => :center}
+
+default = wb.styles.add_style(:border => Axlsx::STYLE_THIN_BORDER)
+
+wb.add_worksheet(name: "sheet1") do |sheet|
+  sheet.add_row ['公务出差补助签收表'], :style => title
+  sheet.add_row []
+  sheet.add_row []
+  sheet.add_row ['制表单位（盖章）：']
+  sheet.add_row []
+  
+  sheet.add_row ['出差人姓名','出差事由','出差起止日期','计算天数','伙食费包干补助','伙食费包干补助','伙食费包干补助','出差人签收'], :style => default
+  @instances.each do |instance|
+    sheet.add_row [instance.id, instance.get_values[0], instance.get_values[4], instance.get_values[3], instance.last_approver, '', ''], :style => default
+  end
+  
+  sheet.add_row []
+  sheet.add_row ['审批人','','审核人','','','']
+  sheet.add_row []
+  sheet.add_row ['注']
+  sheet.add_row ['1、补助标准按深龙财[2009]33号《关于转发深圳市市直机关和事业单位差旅费管理办法的通知》规定执行。']
+  sheet.add_row ['2、出差补助报销需附相关会议通知、学习通知，如没有纸质通知，请在说明栏说明。']
+  sheet.add_row ['3、报销时，需填写差旅费用报销单。']
+  sheet.add_row ['4、本表是样表，各单位可适当调整。']
+  sheet.merge_cells("A1:G1")
+end

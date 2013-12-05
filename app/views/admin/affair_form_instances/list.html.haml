@@ -1,6 +1,6 @@
--if @instance_tmp
+-if @instance_tmp and params[:affair_form_audit_status].to_i == 1 and @instances.any?
 	-content_for :actions_button do
-		=link_to "导出excel","list.json",class: "tiny secondary button"
+		=link_to "导出excel",request.fullpath.sub('?','.json?'),class: "tiny secondary button"
 按日期区间
 =form_tag list_admin_affair_form_instances_path,class: "query_by_data",method: :get do
 	%label 起始日期	
@@ -8,7 +8,11 @@
 	%label 结束日期
 	=select_date @end_date,:prefix => "end_date",start_year: 2013
 	.type-select
+		%label 表单类型
 		=affair_form_types_radio(AffairForm.all, params[:affair_form_type])
+	.audit-status-select
+		%label 审核状态
+		=affair_form_audit_status_radio(params[:affair_form_audit_status].to_i)
 	=submit_tag "查看"
 -if @instances.empty?
 	没有申请表

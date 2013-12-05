@@ -1,0 +1,15 @@
+wb = xlsx_package.workbook
+
+title = wb.styles.add_style :sz => 15, :b => true, :alignment => { :horizontal => :center}
+
+default = wb.styles.add_style(:border => Axlsx::STYLE_THIN_BORDER)
+
+wb.add_worksheet(name: "sheet1") do |sheet|
+  sheet.add_row ['请假登记表'], :style => title
+
+  sheet.add_row ['序号','请假人','请假事由','请假时间','审核人','审批人','备注'], :style => default
+  @instances.each do |instance|
+    sheet.add_row [instance.id, instance.get_values[0], instance.get_values[4], instance.get_values[3], instance.last_approver, '', ''], :style => default
+  end
+  sheet.merge_cells("A1:G1")
+end

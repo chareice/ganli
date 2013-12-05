@@ -29,8 +29,36 @@ class AffairFormInstance < ActiveRecord::Base
 		}
 	}
 
+	scope :get_waiting, ->{
+		where("status = 0")
+	}
+
+	scope :get_pass, -> {
+		where("status = 1")
+	}
+
+	scope :get_reject, -> {
+		where("status = 2")
+	}
+
 	def is_pass?
 		status !=0 and audit_process.size == logs.size
+	end
+
+	def pass_status
+		if status == 0
+			0 #等待审核
+		else
+			if audit_process.size == logs.size#所有人都审核了一遍
+				if logs.last.status == 0
+					1 #通过审核
+				else
+					2 #审核拒绝
+				end
+			else
+				2 #审核拒绝
+			end
+		end
 	end
 
 	def last_approver
@@ -40,14 +68,13 @@ class AffairFormInstance < ActiveRecord::Base
 	end
 
 	def current_status_to_s
-		if status == 0
+		case pass_status
+		when 0
 			"等待" + audit_user_name = User.find(audit_process[logs.size]).name + "审核"
-		else
-			if audit_process.size == logs.size
-				"审核通过"
-			else
-				"审核拒绝"	
-			end
+		when 1
+			"审核通过"
+		when 2
+			"审核拒绝"
 		end
 	end
 

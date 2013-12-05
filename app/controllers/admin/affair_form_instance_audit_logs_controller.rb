@@ -23,8 +23,11 @@ class Admin::AffairFormInstanceAuditLogsController < Admin::BaseController
 			
 			log.save
 		end
-		if @instance.audit_process.last == current_user.id.to_s or log.status == 1
-			@instance.status = "1"
+		if @instance.audit_process.last == current_user.id.to_s and log.status == 0
+			@instance.status = "1" #最后一个审核并且审核审核通过
+			@instance.save
+		elsif log.status == 1
+			@instance.status = "2" #审核拒绝
 			@instance.save
 		end
 		flash[:notice] = "审核成功"

@@ -50,7 +50,7 @@ class Admin::AffairFormInstancesController < Admin::BaseController
     		format.xlsx{
     			if @instance_tmp.id == 3 #请假登记表
     				render "qingjiadengjibiao.xlsx.axlsx"
-    			elsif @instance_tmp == 5 #公务出差表
+    			elsif @instance_tmp.id == 5 #公务出差表
     				render "gongwuchuchaibuchangqianshoubiao.xlsx.axlsx"
     			end
     		}

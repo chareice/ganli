@@ -12,8 +12,9 @@ wb.add_worksheet(name: "sheet1") do |sheet|
   sheet.add_row []
   
   sheet.add_row ['出差人姓名','出差事由','出差起止日期','计算天数','伙食费包干补助','伙食费包干补助','伙食费包干补助','出差人签收'], :style => default
+
   @instances.each do |instance|
-    sheet.add_row [instance.id, instance.get_values[0], instance.get_values[4], instance.get_values[3], instance.last_approver, '', ''], :style => default
+    sheet.add_row [instance.get_values[0], instance.get_values[2], instance.get_values[1], '', '', '', '', ''], :style => default
   end
   
   sheet.add_row []

@@ -1,0 +1,27 @@
+=form_tag  url_for(controller:"admin/articles",action:"index"),method: :get do
+    =label_tag "articles_classification","按分类"
+    =collection_select :post,:post_id,Classification.all,:id,:name,!!params[:classification]?{:selected => params[:classification],prompt: "所有"}:{prompt: "所有"},{id:"articles_classification",name:"classification"}
+    =submit_tag "查看"
+-if @articles.empty?
+    没有可显示的内容
+-else
+    %table
+        %tr
+            %td
+                ID
+            %td
+                文章标题
+            %td
+                发布时间
+            %td
+                更新时间
+            %td
+                所属分类
+            %td
+                权限
+            %td
+                发布人
+            %td
+                操作
+        =render partial: 'article',collection: @articles
+    =will_paginate @articles

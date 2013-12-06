@@ -21,6 +21,8 @@ module Admin::ArticlesHelper
 
 	def article_status_to_s(article)
 		if article.status == 0
+			"待审核"
+		elsif article.status == 1
 			"上线"
 		else
 			"下线"

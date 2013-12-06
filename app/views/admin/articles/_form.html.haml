@@ -29,9 +29,9 @@
 	%p
 		=f.label :status,"状态"
 		%select{id:"article_status",name:"article[status]","data-status" =>article_status(@article)}
-			%option{value:0}
-				上线
 			%option{value:1}
+				上线
+			%option{value:2}
 				下线
 	%p
 		=f.label :content,"内容"

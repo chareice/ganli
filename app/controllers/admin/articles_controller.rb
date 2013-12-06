@@ -80,6 +80,46 @@ class Admin::ArticlesController < Admin::BaseController
 		end
 	end
 
+	def audit
+		if params[:classification].to_i > 0
+			@articles = Article.find_by_classification(params[:classification]).where("status = 0").paginate(:page=>params[:page],per_page: 10)
+		else
+			@articles = Article.where("status = 0").paginate(:page=>params[:page],per_page: 10)
+		end
+	end
+
+	def audit_edit
+		@article = Article.find params[:id]
+	end
+
+	def audit_article
+		@article = Article.find params[:id]
+
+		@article.title = params[:article][:title]
+		@article.content = params[:article][:content]
+		@article.classification_id = params[:article][:classification_id]
+		@article.status = params[:article][:status]
+		@article.flag = params[:article][:flag]
+
+		if params[:article][:clear_thumb] == "1"
+			@article.thumb = nil
+		end
+
+		if params[:article][:thumb]
+			path = Document.save_file(params[:article][:thumb],"app/assets/images/article").gsub(Rails.root.to_s,"")
+			asset_path = "/assets" + ActionController::Base.helpers.asset_path(path.gsub("app/assets/images/",""))
+			@article.thumb = asset_path
+		end
+
+		@article.save
+		if @article.save
+			redirect_to audit_admin_articles_path,flash:{notice: "审核成功"}
+		else
+			redirect_to audit_edit_admin_article_path(@article),flash: {error: @article.errors.full_messages.join(",")}
+		end
+
+	end
+
 	def destroy
 		@article = Article.find params[:id]
 		@article.destroy

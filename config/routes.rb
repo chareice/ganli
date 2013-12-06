@@ -21,7 +21,13 @@ Ganli::Application.routes.draw do
   namespace 'admin' do
     root "admin#index"
     resources :articles do
-
+      collection do
+        get 'audit'
+      end
+      member do
+        get 'audit_edit'
+        patch 'audit_article'
+      end
     end
     resources :classifications
     resources :navigations

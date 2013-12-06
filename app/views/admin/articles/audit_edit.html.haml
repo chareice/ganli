@@ -1,0 +1,40 @@
+-if action_name == 'audit_edit'
+    =render partial: '/admin/delete_button',locals:{name: "拒绝通过",confirm:"拒绝通过 #{@article.title} ? 将直接删除文章"}
+=render partial: '/admin/ueditor/admin',locals:{ueditor_id: "article_content"}
+=form_for @article, url: audit_article_admin_article_path do |f|
+    %p
+        =f.label :title,"标题"
+        =f.text_field :title
+    %p{class: "article-classification"}
+        =f.label :classification_id,"文章分类"
+        %select{id:"article_classification_id", name: "article[classification_id]","data-article-classification" => article_classification(@article)}
+            -Classification.all.each do |classification|
+                %option{"value" => classification.id,"data-thumb-size" => thumb_size?(classification)}
+                    =classification.name
+        =link_to "分类管理",admin_classifications_path
+        %div{class: "article_thumb"}
+            =f.label :thumb,"缩略图"
+            =f.file_field :thumb
+            .thumb
+                -if @article.thumb
+                    =image_tag(@article.thumb)
+                    %input{type:"hidden",value:0,id:"clear-thumb",name:"article[clear_thumb]"}
+                    %p
+                        %button{id:"clear-thumb-button",class: "tiny"}
+                            删除缩略图
+    %p{class: "flag"}
+        =f.label :flag,"自定义属性"
+        首页幻灯展示(缩略图尺寸为230x210)
+        =check_box(:article,:flag,{},"f")
+    %p
+        =f.label :status,"状态"
+        %select{id:"article_status",name:"article[status]","data-status" =>article_status(@article)}
+            %option{value:1}
+                上线
+            %option{value:2}
+                下线
+    %p
+        =f.label :content,"内容"
+        =f.text_area :content
+    %p
+        =f.submit "通过审核",:disable_with => "通过审核..."

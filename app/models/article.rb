@@ -23,9 +23,9 @@ class Article < ActiveRecord::Base
 	scope :search,->(search){
 		public.where('title LIKE ?', "%#{search}%")
 	}
-	
+
 	scope :public,->{
-		where(status: 0)
+		where(status: 1)
 	}
 	scope :flash,->{
 		where(flag: "f")

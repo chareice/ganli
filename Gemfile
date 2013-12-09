@@ -4,8 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 gem 'annotate'
+
 gem 'axlsx_rails'
 gem 'rubyzip', '<1.0.0'
+
+gem 'capistrano', '~> 3.0.1'
+gem 'capistrano-rails', '~> 1.1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -1,4 +1,5 @@
-=render partial: "/admin/delete_button",locals: {name: "删除本次申请"}
+-if not @instance.is_pass?
+	=render partial: "/admin/delete_button",locals: {name: "删除本次申请"}
 %h4
 	=@instance.title
 =@instance.form.html_safe

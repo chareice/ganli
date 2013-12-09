@@ -42,6 +42,10 @@ task :restart do
   queue '/etc/init.d/nginx restart' 
 end
 
+task :chmod do
+  queue %[chmod 777 -R "#{deploy_to}"]
+end
+
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
@@ -63,6 +67,6 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
-    
+    invoke :'chmod'
   end
 end

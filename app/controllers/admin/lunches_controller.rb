@@ -12,7 +12,7 @@ class Admin::LunchesController < Admin::BaseController
 
 	def new
 		last_checked = Lunch.where(teacher:current_user.id).order("created_at desc").first()
-		if not last_checked.mold.empty?
+		if last_checked and not last_checked.mold.empty?
 			@last_mold = last_checked.mold.join(',')
 		else
 			@last_mold = nil

@@ -7,7 +7,7 @@ gem 'annotate'
 
 gem 'axlsx_rails'
 gem 'rubyzip', '<1.0.0'
-
+gem 'rails_12factor', group: :production
 gem 'capistrano', '~> 3.0.1'
 gem 'capistrano-rails', '~> 1.1.0'
 

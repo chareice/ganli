@@ -33,7 +33,7 @@ module PagesHelper
 				if @page.navigation.is_top_nav?
 					s << " >> #{@page.navigation.name}"
 				else
-					s << " >> #{link_to @page.navigation.nav.name,page_path(@page.navigation.nav.page)} >> #{@page.navigation.name}".html_safe
+					s << " >> #{link_to @page.navigation.nav.name,@page.navigation.nav.link_url } >> #{@page.navigation.name}".html_safe
 				end
 			end
 		end

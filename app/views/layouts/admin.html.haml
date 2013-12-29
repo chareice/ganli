@@ -12,6 +12,8 @@
 		/[if lt IE 9]
 			= javascript_include_tag "html5shiv/dist/html5shiv.js"
 		=render_page_title
+		= yield :javascript
+		= javascript_include_tag "admin/base.js"
 	%body
 		.layout
 			#admin-header
@@ -31,7 +33,6 @@
 				.main-admin-c
 					= render "/layouts/message"
 					= yield
-			= javascript_include_tag "admin/base.js"
 			-unless controller_path == 'admin/admin'
 				= javascript_include_tag controller_path
 			#admin-footer
@@ -39,4 +40,3 @@
 					甘李学校网站 Copyright © 2013 Chareice. All Rights Reserved.
 			-if current_user
 				= render '/admin/messages/pop_window'
-			= yield :javascript

@@ -25,6 +25,7 @@
 /document/
 !public/assets/
 public/assets/*
+public/upload/*
 !public/assets/style/
 !public/assets/kindeditor/
 vendor/bundle/

@@ -49,6 +49,7 @@ gem 'settingslogic'
 gem 'sugar-rails'
 gem 'crocodoc'
 gem 'nokogiri'
+gem 'rails_kindeditor'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

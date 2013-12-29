@@ -275,3 +275,6 @@
       long: ! '%Y年%b%d日 %H:%M'
       short: ! '%b%d日 %H:%M'
     pm: 下午
+  errors:
+    messages:
+      extension_white_list_error: "上传文件类型错误"

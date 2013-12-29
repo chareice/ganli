@@ -61,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
     cells (3.9.0)
       actionpack (>= 3.0)
       railties (>= 3.0)
@@ -121,6 +125,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.2)
@@ -145,6 +151,9 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_kindeditor (0.4.4)
+      carrierwave
+      mini_magick
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.0.0)
@@ -203,6 +212,7 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh
       term-ansicolor
+    subexec (0.2.3)
     sugar-rails (1.4.1)
       railties (>= 3.0.0)
     term-ansicolor (1.2.2)
@@ -253,6 +263,7 @@ DEPENDENCIES
   nokogiri
   rails (= 4.0.0)
   rails_12factor
+  rails_kindeditor
   rmagick
   rspec-rails (~> 2.14.0)
   rubyzip (< 1.0.0)

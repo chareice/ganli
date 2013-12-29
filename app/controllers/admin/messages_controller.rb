@@ -29,7 +29,7 @@ class Admin::MessagesController < Admin::BaseController
 	end
 
 	def download
-		send_file("#{Rails.root}#{params[:path]}.#{params[:format]}")
+		send_file("#{Rails.root}/public/#{params[:path]}.#{params[:format]}")
 	end
 	def crocodoc
 		status = Crocodoc::Document.status params[:uuid]

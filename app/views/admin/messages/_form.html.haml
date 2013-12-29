@@ -1,4 +1,3 @@
-=render partial: '/admin/ueditor/message',locals:{ueditor_id: "message_content"}
 %input{type:"hidden",id:"user-data","data-users"=> User.with_group_id.to_json}
 = form_for [:admin,@message] do |f|
 	=f.label :receiver
@@ -11,6 +10,6 @@
 	=render partial: '/admin/users/user_list'
 	%p
 		=f.label :content
-		=f.text_area :content
+		=f.kindeditor :content
 	%p
 		=f.submit disable_with: "发送中..."

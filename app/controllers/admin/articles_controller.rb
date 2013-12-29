@@ -30,8 +30,12 @@ class Admin::ArticlesController < Admin::BaseController
 			article.thumb = asset_path
 		end
 
+		if not current_user.is_admin?
+			article.status = 0
+		end
+		
 		if article.save
-			redirect_to edit_admin_article_path(article),flash:{notice: "添加成功"}
+			redirect_to edit_admin_article_path(article),flash:{notice: "添加成功 等待审核"}
 		else
 			redirect_to new_admin_article_path,flash: {error: article.errors.full_messages.join(",")}
 		end
@@ -59,7 +63,7 @@ class Admin::ArticlesController < Admin::BaseController
 		@article.title = params[:article][:title]
 		@article.content = params[:article][:content]
 		@article.classification_id = params[:article][:classification_id]
-		@article.status = params[:article][:status]
+		@article.status = params[:article][:status] if @article.status != 0
 		@article.flag = params[:article][:flag]
 
 		if params[:article][:clear_thumb] == "1"
